@@ -29,6 +29,7 @@ LeetCode coding questions often follow specific patterns that can help you ident
 13. **Graph Depth-First Search (DFS)**: Used for graph traversal problems. Example: Finding connected components in a graph.
 
 14. **Graph Breadth-First Search (BFS)**: Used for shortest path problems in unweighted graphs. Example: Finding the shortest path in a maze.
+15. **Divide and Conquer** 
 
 These patterns can help you approach and solve a wide range of coding problems on LeetCode[1](https://leetcode.com/discuss/study-guide/4039411/14-Patterns-to-Ace-Any-Coding-Interview-Question)[2](https://www.teamblind.com/blog/top-leetcode-patterns-coding-interview-questions/)[3](https://seanprashad.com/leetcode-patterns/).
 
@@ -39,7 +40,9 @@ Would you like more details on any specific pattern or an example problem?
 [3](https://seanprashad.com/leetcode-patterns/): [Leetcode Patterns - Sean Prashad](https://seanprashad.com/leetcode-patterns/)
 
 
-# What is Prefix sum
+# Patterns
+
+## Prefix Sum
 
 A **prefix sum**, also known as a cumulative sum, is a technique used to efficiently calculate the sum of elements in an array up to a certain index. It is particularly useful for range sum queries and dynamic programming problems.
 
@@ -100,7 +103,8 @@ Would you like more examples or details on how to use prefix sums in specific pr
 [1](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Solve-the-prefix-sum-problem): [The prefix sum array problem - TheServerSide](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Solve-the-prefix-sum-problem)
 
 
-# How Sliding Window works and explain with example in java
+## Sliding Window
+
 The **Sliding Window** technique is an efficient way to solve problems involving subarrays or substrings within a certain window size. It reduces the need for nested loops by maintaining a window that slides over the data structure, updating the result incrementally.
 
 ### Example: Finding the Maximum Sum of a Subarray of Fixed Size
@@ -159,7 +163,7 @@ Would you like to see another example or have any questions about this implement
 [2](https://www.javatpoint.com/sliding-window-algorithm): [Sliding Window Algorithm in Java - Examples Java Code Geeks](https://examples.javacodegeeks.com/sliding-window-algorithm-in-java/)
 
 
-# How Two Pointers works and explain with example in java
+## Two Pointers
 
 The **Two Pointers** technique is a powerful algorithmic approach used to solve problems involving arrays or linked lists. It involves using two pointers to traverse the data structure simultaneously, often starting from different ends or moving at different speeds. This technique is particularly useful for finding pairs, subarrays, or sequences that meet specific criteria.
 
@@ -296,7 +300,7 @@ Would you like to see another example or have any questions about this implement
 [1](https://emre.me/coding-patterns/fast-slow-pointers/): [Coding Patterns: Fast & Slow Pointers - emre.me](https://emre.me/coding-patterns/fast-slow-pointers/)
 [2](https://iq.opengenus.org/fast-and-slow-pointer-technique/): [Fast and slow pointer technique in Linked List - OpenGenus IQ](https://iq.opengenus.org/fast-and-slow-pointer-technique/)
 
-# How Merge Intervals works and explain with example in java
+## Merge Intervals
 
 The **Merge Intervals** problem involves combining overlapping intervals into a single interval. This is useful in various applications such as scheduling, data analysis, and computational geometry.
 
@@ -391,7 +395,7 @@ Would you like to see another example or have any questions about this implement
 [1](https://www.baeldung.com/java-collection-merge-overlapping-intervals): [Merge Overlapping Intervals in a Java Collection - Baeldung](https://www.baeldung.com/java-collection-merge-overlapping-intervals)
 [2](https://www.javatpoint.com/merge-overlapping-intervals): [Merge Overlapping Intervals - Javatpoint](https://www.javatpoint.com/merge-overlapping-intervals)
 
-# How Cyclic Sort works and explain with example in java
+## Cyclic Sort
 
 **Cyclic Sort** is a comparison sorting algorithm that is theoretically optimal in terms of the number of writes to the original array. It works by placing each element at its correct position in the array. This algorithm is particularly useful when dealing with arrays containing elements in a given range, such as 1 to \( n \).
 
@@ -454,7 +458,7 @@ Would you like to see another example or have any questions about this implement
 [1](https://www.javatpoint.com/cycle-sort): [Cycle Sort - Javatpoint](https://www.javatpoint.com/cycle-sort)
 [2](https://algodaily.com/lessons/cycling-through-cycle-sort): [Cycling Through Cycle Sort - AlgoDaily](https://algodaily.com/lessons/cycling-through-cycle-sort)
 
-# How In-place Reversal of a Linked List works and explain with example in java
+## In-place Reversal
 
 In-place reversal of a linked list involves reversing the direction of the pointers in the list so that the last node becomes the first node, the second-to-last node becomes the second node, and so on. This can be done iteratively or recursively. Here, I'll explain the iterative approach.
 
@@ -557,7 +561,7 @@ Would you like to see another example or have any questions about this implement
 [1](https://www.javatpoint.com/how-to-reverse-linked-list-in-java): [How to Reverse Linked List in Java - Javatpoint](https://www.javatpoint.com/how-to-reverse-linked-list-in-java)
 [2](https://www.baeldung.com/java-reverse-linked-list): [Reversing a Linked List in Java - Baeldung](https://www.baeldung.com/java-reverse-linked-list)
 
-# How Tree Depth-First Search (DFS) works and explain with example in java
+## Tree Depth-First Search (DFS)
 
 Tree Depth-First Search (DFS) is a traversal algorithm used to explore nodes and edges of a tree data structure. DFS starts at the root node and explores as far as possible along each branch before backtracking. There are three common orders for DFS traversal in trees:
 
@@ -632,7 +636,7 @@ Would you like more details on any specific traversal or another example?
 
 
 
-# How Tree Breadth-First Search (BFS) works and explain with example in java
+## Tree Breadth-First Search (BFS)
 
 **Tree Breadth-First Search (BFS)** is a traversal algorithm that explores nodes level by level, starting from the root node and moving to the next level of nodes. It uses a queue to keep track of the nodes to be explored next. BFS is particularly useful for finding the shortest path in an unweighted tree or graph.
 
@@ -730,7 +734,7 @@ Would you like to see another example or have any questions about this implement
 [1](https://www.guru99.com/breadth-first-search-bfs-graph-example.html): [Breadth First Search (BFS) Algorithm with Example - Guru99](https://www.guru99.com/breadth-first-search-bfs-graph-example.html)
 [2](https://www.javatpoint.com/bfs-algorithm-in-java): [BFS Algorithm in Java - Javatpoint](https://www.javatpoint.com/bfs-algorithm-in-java)
 
-# How Binary Search works and explain with example in java
+## Binary Search
 
 **Binary Search** is an efficient algorithm for finding an element in a sorted array. It works by repeatedly dividing the search interval in half and comparing the target value with the middle element. If the target value is equal to the middle element, the search is successful. If the target value is less than the middle element, the search continues in the left half; otherwise, it continues in the right half.
 
@@ -806,7 +810,7 @@ Would you like to see another example or have any questions about this implement
 [1](https://javacodepoint.com/logical-programs/binary-search-in-java-examples/): [Binary Search in Java - Javatpoint](https://www.javatpoint.com/binary-search-in-java)
 [2](https://www.javatpoint.com/binary-search-in-java): [Binary Search in Java with Examples - Javacodepoint](https://javacodepoint.com/logical-programs/binary-search-in-java-examples/)
 
-# How Dynamic Programming works and explain with example in java
+## Dynamic Programming
 
 **Dynamic Programming (DP)** is a method for solving complex problems by breaking them down into simpler subproblems, solving each subproblem just once, and storing their solutions. This approach avoids redundant calculations and optimizes the overall solution. DP is particularly useful for optimization problems where you need to find the minimum or maximum solution.
 
@@ -892,7 +896,7 @@ Would you like to see another example or have any questions about this implement
 [2](https://www.freecodecamp.org/news/learn-dynamic-programming-in-java/): [Learn Dynamic Programming Techniques in Java - freeCodeCamp.org](https://www.freecodecamp.org/news/learn-dynamic-programming-in-java/)
 
 
-# How Greedy Algorithms works and explain with example in java
+## Greedy Algorithms
 
 **Greedy Algorithms** are a class of algorithms that make a series of choices, each of which looks best at the moment, with the hope of finding a global optimum. The key idea is to make the locally optimal choice at each step with the hope that these local solutions will lead to a global solution.
 
@@ -961,7 +965,7 @@ Would you like to see another example or have any questions about this implement
 [2](https://www.javatpoint.com/greedy-algorithms): [Greedy Algorithms Introduction - Javatpoint](https://www.javatpoint.com/greedy-algorithms)
 
 
-# How Backtracking works and explain with example in java
+## Backtracking
 
 **Backtracking** is an algorithmic technique used to solve problems recursively by trying to build a solution incrementally, one piece at a time, and removing those solutions that fail to satisfy the constraints of the problem at any point. It is particularly useful for solving problems with multiple solutions, such as puzzles, permutations, and combinations.
 
@@ -1088,7 +1092,7 @@ Would you like to see another example or have any questions about this implement
 [2](https://examples.javacodegeeks.com/backtracking-algorithm/): [Backtracking Algorithm - Java Code Geeks](https://examples.javacodegeeks.com/backtracking-algorithm/)
 [3](https://www.programiz.com/dsa/backtracking-algorithm): [Backtracking Algorithm - Programiz](https://www.programiz.com/dsa/backtracking-algorithm)
 
-# How Graph Depth-First Search (DFS) works and explain with example in java
+## Graph Depth-First Search (DFS)
 
 **Graph Depth-First Search (DFS)** is a traversal algorithm used to explore nodes and edges of a graph. It starts at a given node (often called the root) and explores as far as possible along each branch before backtracking. DFS can be implemented using either recursion or an explicit stack.
 
@@ -1197,7 +1201,7 @@ Would you like to see another example or have any questions about this implement
 [2](https://www.javatpoint.com/depth-first-search-algorithm): [DFS (Depth First Search) algorithm - Javatpoint](https://www.javatpoint.com/depth-first-search-algorithm)
 
 
-# How Graph Breadth-First Search (BFS) works and explain with example in java
+## Graph Breadth-First Search (BFS)
 
 **Graph Breadth-First Search (BFS)** is a traversal algorithm that explores nodes level by level, starting from the root node and moving to the next level of nodes. It uses a queue to keep track of the nodes to be explored next. BFS is particularly useful for finding the shortest path in an unweighted graph.
 
@@ -1305,7 +1309,7 @@ Would you like to see another example or have any questions about this implement
 [2](https://www.javatpoint.com/breadth-first-search-algorithm): [BFS Algorithm - Javatpoint](https://www.javatpoint.com/breadth-first-search-algorithm)
 [3](https://www.programiz.com/dsa/graph-bfs): [BFS Graph Algorithm - Programiz](https://www.programiz.com/dsa/graph-bfs)
 
-# How Topological sort works and explain with example in java
+## Topological Sort
 
 **Topological Sort** is a linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge \( u \rightarrow v \), vertex \( u \) comes before vertex \( v \) in the ordering. This is particularly useful in scenarios like task scheduling, where certain tasks must be completed before others.
 
@@ -1434,7 +1438,7 @@ Would you like to see another example or have any questions about this implement
 [2](https://www.javatpoint.com/kahns-algorithm-for-topological-sorting-in-java): [Kahn's Algorithm for Topological Sorting - Javatpoint](https://www.javatpoint.com/kahns-algorithm-for-topological-sorting-in-java)
 [3](https://examples.javacodegeeks.com/topological-sort-java-example/): [Topological Sort Java Example - Java Code Geeks](https://examples.javacodegeeks.com/topological-sort-java-example/)
 
-# How Scheduling Pattern works and explain with example in java for coding question
+## Scheduling Pattern
 
 The **Scheduling Pattern** is a design pattern used to manage the execution of tasks or jobs at specific intervals or based on certain conditions. This pattern is particularly useful for automating repetitive tasks, handling background processes, and ensuring timely execution of critical operations.
 
@@ -1564,6 +1568,153 @@ Would you like to see another example or have any questions about this implement
 [2](https://examples.javacodegeeks.com/java-scheduling-example/): [Java Scheduling Example - Java Code Geeks](https://examples.javacodegeeks.com/java-scheduling-example/)
 
 
+## Divide and Conquer
+
+The Divide and Conquer approach is a powerful algorithmic technique used to solve complex problems by breaking them down into smaller, more manageable subproblems. Here's a detailed explanation along with some examples in Java:
+
+### Steps of Divide and Conquer
+1. **Divide**: Break the problem into smaller subproblems of the same type.
+2. **Conquer**: Solve the subproblems recursively. If the subproblems are small enough, solve them directly.
+3. **Combine**: Combine the solutions of the subproblems to solve the original problem.
+
+### Example 1: Merge Sort
+Merge Sort is a classic example of the Divide and Conquer approach. It divides the array into two halves, recursively sorts them, and then merges the sorted halves.
+
+```java
+public class MergeSort {
+    public static void mergeSort(int[] array, int left, int right) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+            mergeSort(array, left, mid);
+            mergeSort(array, mid + 1, right);
+            merge(array, left, mid, right);
+        }
+    }
+
+    private static void merge(int[] array, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+        int[] leftArray = new int[n1];
+        int[] rightArray = new int[n2];
+
+        for (int i = 0; i < n1; i++) {
+            leftArray[i] = array[left + i];
+        }
+        for (int i = 0; i < n2; i++) {
+            rightArray[i] = array[mid + 1 + i];
+        }
+
+        int i = 0, j = 0, k = left;
+        while (i < n1 && j < n2) {
+            if (leftArray[i] <= rightArray[j]) {
+                array[k] = leftArray[i];
+                i++;
+            } else {
+                array[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            array[k] = leftArray[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            array[k] = rightArray[j];
+            j++;
+            k++;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {12, 11, 13, 5, 6, 7};
+        mergeSort(array, 0, array.length - 1);
+        System.out.println("Sorted array: " + Arrays.toString(array));
+    }
+}
+```
+
+### Example 2: Quick Sort
+Quick Sort is another example where the array is partitioned into two subarrays around a pivot element, and then each subarray is sorted recursively.
+
+```java
+public class QuickSort {
+    public static void quickSort(int[] array, int low, int high) {
+        if (low < high) {
+            int pi = partition(array, low, high);
+            quickSort(array, low, pi - 1);
+            quickSort(array, pi + 1, high);
+        }
+    }
+
+    private static int partition(int[] array, int low, int high) {
+        int pivot = array[high];
+        int i = (low - 1);
+        for (int j = low; j < high; j++) {
+            if (array[j] <= pivot) {
+                i++;
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+        int temp = array[i + 1];
+        array[i + 1] = array[high];
+        array[high] = temp;
+        return i + 1;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {10, 7, 8, 9, 1, 5};
+        quickSort(array, 0, array.length - 1);
+        System.out.println("Sorted array: " + Arrays.toString(array));
+    }
+}
+```
+
+### Example 3: Binary Search
+Binary Search is a classic example of Divide and Conquer where the array is divided into halves to find the target element.
+
+```java
+public class BinarySearch {
+    public static int binarySearch(int[] array, int target) {
+        return binarySearch(array, target, 0, array.length - 1);
+    }
+
+    private static int binarySearch(int[] array, int target, int left, int right) {
+        if (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (array[mid] == target) {
+                return mid;
+            }
+            if (array[mid] > target) {
+                return binarySearch(array, target, left, mid - 1);
+            } else {
+                return binarySearch(array, target, mid + 1, right);
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {2, 3, 4, 10, 40};
+        int target = 10;
+        int result = binarySearch(array, target);
+        System.out.println("Element found at index: " + result);
+    }
+}
+```
+
+These examples illustrate how the Divide and Conquer approach can be applied to different problems in Java. This technique is powerful for solving problems efficiently by breaking them down into smaller, more manageable subproblems[1](https://www.javatpoint.com/divide-and-conquer-introduction)[2](https://www.programiz.com/dsa/divide-and-conquer).
+
+Would you like more details on any specific example or another problem solved using Divide and Conquer?
+[1](https://www.javatpoint.com/divide-and-conquer-introduction): [1](https://www.javatpoint.com/divide-and-conquer-introduction)
+[2](https://www.programiz.com/dsa/divide-and-conquer): [2](https://www.programiz.com/dsa/divide-and-conquer)
+
+
 # List of Data structures in DSA
 
 Here's a list of some essential data structures commonly used in Data Structures and Algorithms (DSA):
@@ -1616,10 +1767,10 @@ Would you like more details on any specific data structure or an example impleme
 [3](https://www.almabetter.com/bytes/cheat-sheet/dsa): [DSA Cheat Sheet - AlmaBetter](https://www.almabetter.com/bytes/cheat-sheet/dsa)
 
 
-# Big(O) Cheat sheet
+## Big(O) Cheat sheet
 ![ds-cheatseet.png](ds-cheatseet.png)
 
-# How array works internally in Java
+## Array
 
 In Java, arrays are a fundamental data structure that store elements of the same data type in contiguous memory locations. Here's a deeper look at how arrays work internally:
 
@@ -1637,7 +1788,7 @@ In Java, arrays are a fundamental data structure that store elements of the same
 
 Would you like to know more about a specific aspect of arrays in Java?
 
-# How linked list internally works in Java
+## Linked List
 
 In Java, the `LinkedList` class is part of the Java Collections Framework and implements the `List` and `Deque` interfaces using a doubly linked list. Here's a detailed look at how it works internally:
 
@@ -1791,7 +1942,7 @@ These methods provide a comprehensive set of operations to manage and manipulate
 
 Is there a specific method or operation you'd like to explore further?
 
-# How Vector works internally in Java
+## Vector
 
 In Java, the `Vector` class is part of the Java Collections Framework and implements a growable array of objects. It is synchronized, making it thread-safe, but this can also lead to performance overhead in multi-threaded environments. Here's a detailed look at how it works internally:
 
@@ -1902,7 +2053,7 @@ public class VectorExample {
 
 Would you like to explore any specific methods or concepts related to the `Vector` class in Java?
 
-# How Stack works internally in Java
+## Stack
 
 In Java, the `Stack` class is part of the Java Collections Framework and extends the `Vector` class. It represents a last-in-first-out (LIFO) stack of objects. Here's a detailed look at how it works internally and the methods it provides:
 
@@ -2000,7 +2151,7 @@ public class StackExample {
 
 Would you like to explore any specific methods or concepts related to the `Stack` class in Java?
 
-# How Queues works internally In Java and list out all methods
+## Queues
 
 In Java, the `Queue` interface is part of the Java Collections Framework and represents a collection designed for holding elements prior to processing. It follows the First-In-First-Out (FIFO) principle, although there are exceptions like `PriorityQueue` which orders elements based on their priority.
 
@@ -2085,7 +2236,7 @@ Would you like to explore any specific implementation or method in more detail?
 [3](https://www.softwaretestinghelp.com/java-queue-interface/): [Java Queue - Queue Methods, Queue Implementation & Example](https://www.softwaretestinghelp.com/java-queue-interface/)
 
 
-# How Tree data structure works internally 
+## Tree 
 
 In Java, a tree is a non-linear data structure used to represent hierarchical relationships. Trees are composed of nodes, where each node contains data and references to its child nodes. Here's a detailed look at the tree data structure and its methods:
 
@@ -2341,7 +2492,7 @@ Would you like to explore any specific type of tree or operation in more detail?
 [1](https://www.baeldung.com/java-binary-tree): [Implementing a Binary Tree in Java - Baeldung](https://www.baeldung.com/java-binary-tree)
 [2](https://www.happycoders.eu/algorithms/binary-tree-java/): [Binary Tree (+ Java Code Examples) - HappyCoders.eu](https://www.happycoders.eu/algorithms/binary-tree-java/)
 
-# Binary Search Trees (BST) internally works in Java
+## Binary Search Trees (BST)
 
 In Java, a Binary Search Tree (BST) is a specialized form of a binary tree that maintains a sorted order of elements, enabling efficient search, insertion, and deletion operations. Here's a detailed look at how BSTs work internally:
 
@@ -2473,7 +2624,7 @@ Would you like to explore any specific type of tree or operation in more detail?
 [3](https://www.softwaretestinghelp.com/binary-search-tree-in-java/): [Binary Search Tree In Java – Implementation & Code Examples - SoftwareTestingHelp](https://www.softwaretestinghelp.com/binary-search-tree-in-java/)
 
 
-# How AVL Trees internally works in Java
+## AVL Trees
 
 In Java, an AVL tree is a self-balancing binary search tree (BST) named after its inventors, Adelson-Velsky and Landis. The AVL tree maintains its balance by ensuring that the difference in heights between the left and right subtrees of any node is at most one. Here's a detailed look at how AVL trees work internally:
 
@@ -2973,7 +3124,7 @@ public class Main {
 ### Disadvantages
 - **Complexity**: More complex to implement compared to simple binary search trees due to the need for balancing operations[1](https://www.happycoders.eu/algorithms/red-black-tree-java/)[^2
 
-# How Heaps works internally in Java
+## Heaps
 
 In Java, a heap is a specialized tree-based data structure that satisfies the heap property. Heaps are commonly used to implement priority queues. There are two main types of heaps: **Min-Heaps** and **Max-Heaps**.
 
@@ -3123,7 +3274,7 @@ Would you like to explore any specific operations or concepts related to heaps i
 [3](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html): [Understanding Memory Management - Oracle](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html)
 
 
-# How Tries internally works in Java
+## Tries
 
 In Java, a Trie (pronounced "try") is a tree-based data structure used for efficient retrieval of keys, typically strings. Tries are particularly useful for tasks like autocomplete and spell checking. Here's a detailed look at how Tries work internally:
 
@@ -3253,7 +3404,7 @@ Would you like to explore any specific operations or concepts related to Tries i
 [2](https://www.techiedelight.com/implement-trie-data-structure-java/): [Java Implementation of Trie Data Structure - Techie Delight](https://www.techiedelight.com/implement-trie-data-structure-java/)
 [3](https://dev.to/mlarocca/tries-3ddb): [Implementing Tries in Java - DEV Community](https://dev.to/mlarocca/tries-3ddb)
 
-# Graph Data structure in Java
+## Graph
 
 A graph is a versatile data structure used to represent relationships between pairs of objects. It consists of vertices (or nodes) and edges (or arcs) that connect pairs of vertices. Graphs are widely used in various applications such as social networks, transportation networks, and computer networks.
 
@@ -3374,7 +3525,7 @@ Would you like to explore any specific operations or concepts related to graphs 
 [3](https://www.programiz.com/java-programming/examples/graph-implementation): [Java Program to Implement the graph data structure - Programiz](https://www.programiz.com/java-programming/examples/graph-implementation)
 
 
-# How Directed Graphs works internally in Java 
+## Directed Graphs 
 
 In Java, a directed graph (or digraph) is a type of graph where edges have a specific direction, indicating a one-way relationship between vertices. Here's a detailed look at how directed graphs work internally and how they can be implemented:
 
@@ -3730,7 +3881,7 @@ Would you like to explore any specific operations or concepts related to undirec
 [3](https://www.youtube.com/watch?v=qEEswKeAzB8): [How To Implement Undirected Graph and Graph Processor In Java](https://www.youtube.com/watch?v=qEEswKeAzB8)
 
 
-# How Weighted Graphs works internally in Java
+## Weighted Graphs
 
 In Java, a weighted graph is a type of graph where each edge has an associated weight or cost. These weights can represent various properties such as distance, time, or any other numerical value relevant to the problem being modeled. Here's a detailed look at how weighted graphs work internally and how they can be implemented:
 
@@ -3866,7 +4017,7 @@ Would you like to explore any specific operations or concepts related to weighte
 [2](https://tutorialhorizon.com/algorithms/weighted-graph-implementation-java/): [Weighted Graph Implementation – JAVA - TutorialHorizon](https://tutorialhorizon.com/algorithms/weighted-graph-implementation-java/)
 [3](https://labex.io/tutorials/java-how-to-handle-graph-edge-weights-in-java-419112): [How to handle graph edge weights in Java - LabEx](https://labex.io/tutorials/java-how-to-handle-graph-edge-weights-in-java-419112)
 
-# How Unweighted Graphs works internally in Java
+## Unweighted Graphs
 
 In Java, an unweighted graph is a type of graph where all edges are treated equally, meaning they do not have any associated weights or costs. Here's a detailed look at how unweighted graphs work internally and how they can be implemented:
 
@@ -4043,7 +4194,7 @@ Would you like to explore any specific operations or concepts related to unweigh
 [2](https://stackoverflow.com/questions/43327156/how-to-represent-a-unweight-directed-graph-and-find-the-shortest-path-java): [How to represent a unweight directed graph and find the shortest path? - Stack Overflow](https://stackoverflow.com/questions/43327156/how-to-represent-a-unweight-directed-graph-and-find-the-shortest-path-java)
 [3](https://dev.to/wittedtech-by-harshit/the-ultimate-guide-to-graphs-in-java-a-deep-dive-for-developers-of-all-levels-fo1): [The Ultimate Guide to Graphs in Java - DEV Community](https://dev.to/wittedtech-by-harshit/the-ultimate-guide-to-graphs-in-java-a-deep-dive-for-developers-of-all-levels-fo1)
 
-# How Hash-Based Structures works
+## Hash-Based
 
 Hash-based data structures use hash functions to map keys to specific locations in a data structure, allowing for efficient data retrieval, insertion, and deletion. Here's a detailed look at how hash-based structures work:
 
@@ -4154,7 +4305,7 @@ Would you like to explore any specific hash-based data structure or concept in m
 [2](https://www.scholarhat.com/tutorial/datastructures/hashing-in-data-structures): [Hash Function in Data Structure: Types and Functions - ScholarHat](https://www.scholarhat.com/tutorial/datastructures/hashing-in-data-structures)
 [3](https://www.theknowledgeacademy.com/blog/hashing-in-data-structure/): [Hashing in Data Structure: Usage, Function, and Examples - The Knowledge Academy](https://www.theknowledgeacademy.com/blog/hashing-in-data-structure/)
 
-# How Hash Tables works in Java
+## Hash Tables
 
 In Java, a hash table is a data structure that stores key-value pairs and allows for efficient data retrieval, insertion, and deletion. The `Hashtable` class in Java is part of the `java.util` package and implements the `Map` interface. Here's a detailed look at how hash tables work internally:
 
@@ -4272,7 +4423,7 @@ Would you like to explore any specific operations or concepts related to hash ta
 [2](https://howtodoinjava.com/java/collections/hashtable-class/): [HashTable in Java - Java Hashtable example - HowToDoInJava](https://howtodoinjava.com/java/collections/hashtable-class/)
 [3](https://www.baeldung.com/java-hash-table): [An Introduction to java.util.Hashtable Class - Baeldung](https://www.baeldung.com/java-hash-table)
 
-# How Hash Maps works internally in Java
+## Hash Maps
 
 In Java, a `HashMap` is a widely used data structure that stores key-value pairs and allows for efficient data retrieval, insertion, and deletion. Here's a detailed look at how `HashMap` works internally:
 
@@ -4390,7 +4541,7 @@ Would you like to explore any specific operations or concepts related to `HashMa
 [2](https://www.freecodecamp.org/news/how-java-hashmaps-work-internal-mechanics-explained/): [How Java HashMaps Work – Internal Mechanics Explained - freeCodeCamp.org](https://www.freecodecamp.org/news/how-java-hashmaps-work-internal-mechanics-explained/)
 [3](https://www.javatpoint.com/working-of-hashmap-in-java): [Working of HashMap in Java | How HashMap works - javatpoint](https://www.javatpoint.com/working-of-hashmap-in-java)
 
-# How Segment Trees works internally in Java
+## Segment Trees
 
 Segment Trees are a powerful data structure used for efficiently solving range queries and updates on arrays. Here's a brief overview of how they work internally in Java:
 
@@ -4461,7 +4612,7 @@ This code demonstrates how to build a Segment Tree, update an element, and perfo
 
 If you have any specific questions or need further details, feel free to ask!
 
-# How Fenwick Trees (Binary Indexed Trees) works internally in Java
+## Fenwick Trees (Binary Indexed Trees)
 
 Fenwick Trees, also known as Binary Indexed Trees (BIT), are a data structure that efficiently supports range queries and updates. Here's a breakdown of how they work internally in Java:
 
@@ -4594,7 +4745,7 @@ Disjoint Set Union is highly efficient, with both union and find operations havi
 
 If you have any specific questions or need further details, feel free to ask!
 
-# How Multimaps works internally in Java
+## Multimaps
 
 Multimaps in Java are a type of data structure that allows a single key to be associated with multiple values, unlike traditional maps where each key is associated with a single value. Java does not have a built-in Multimap implementation, but you can use libraries like Google's Guava or Apache Commons Collections to achieve this functionality.
 
@@ -4698,7 +4849,7 @@ Multimaps are useful in scenarios where you need to associate multiple values wi
 
 If you have any specific questions or need further details, feel free to ask!
 
-# How Multisets (Bags) works internally in Java
+## Multisets (Bags)
 
 Multisets, also known as Bags, are a type of collection that allows duplicate elements. Unlike a standard Set, which only allows unique elements, a Multiset can store multiple occurrences of the same element. Java does not have a built-in Multiset implementation, but you can use libraries like Google's Guava or Apache Commons Collections to achieve this functionality.
 
@@ -4805,7 +4956,7 @@ Multisets are useful in scenarios where you need to count occurrences of element
 
 If you have any specific questions or need further details, feel free to ask!
 
-# What is Fibonacci Heap data structure in Java
+## Fibonacci Heap
 
 A Fibonacci heap is a data structure used for priority queue operations, consisting of a collection of heap-ordered trees. It was invented by Michael L. Fredman and Robert E. Tarjan in 1984 and is named after the Fibonacci numbers, which are used in its running time analysis[1](https://en.wikipedia.org/wiki/Fibonacci_heap)[2](https://www.programiz.com/dsa/fibonacci-heap).
 
@@ -4838,7 +4989,7 @@ Fibonacci heaps are particularly useful in scenarios where the decrease-key oper
 
 If you have any specific questions or need further details, feel free to ask!
 
-# Design a O(1) data structure
+## Design a O(1) All one
 
 Designing a data structure that supports O(1) operations for insertion, deletion, and access can be quite challenging but is achievable with the right approach. One well-known example is the **All O`one Data Structure**, which supports the following operations in constant time:
 
@@ -4957,10 +5108,4867 @@ This design ensures that all operations are performed in constant time, making i
 
 If you have any specific questions or need further details, feel free to ask!
 
-# Leetcode 225 questions with solution in Java (Leetcode 150 + Leetcode 75)
+# Sorting Algorithms
+
+Sure! Here is a list of some common sorting algorithms, along with a brief description of each:
+
+### Comparison-Based Sorting Algorithms
+1. **Bubble Sort**: Repeatedly swaps adjacent elements if they are in the wrong order. Simple but inefficient for large datasets.
+2. **Selection Sort**: Selects the smallest (or largest) element from the unsorted portion and swaps it with the first unsorted element.
+3. **Insertion Sort**: Builds the sorted array one element at a time by repeatedly inserting the next element into the correct position.
+4. **Merge Sort**: Divides the array into halves, recursively sorts them, and then merges the sorted halves. Efficient with a time complexity of \(O(n \log n)\).
+5. **Quick Sort**: Divides the array into two parts based on a pivot element, recursively sorts the parts, and combines them. Average time complexity is \(O(n \log n)\).
+6. **Heap Sort**: Converts the array into a heap data structure, then repeatedly extracts the maximum element and rebuilds the heap. Time complexity is \(O(n \log n)\).
+7. **Shell Sort**: Generalization of insertion sort that allows the exchange of far-apart elements. Time complexity varies based on the gap sequence used.
+
+### Non-Comparison-Based Sorting Algorithms
+1. **Counting Sort**: Counts the occurrences of each element and uses this information to place elements in the correct position. Efficient for small range of integers.
+2. **Radix Sort**: Sorts numbers digit by digit, starting from the least significant digit to the most significant digit. Often used with counting sort as a subroutine.
+3. **Bucket Sort**: Divides the array into a number of buckets, sorts each bucket individually, and then concatenates the sorted buckets. Useful when input is uniformly distributed.
+
+### Other Sorting Algorithms
+1. **Cocktail Shaker Sort**: A variation of bubble sort that sorts in both directions on each pass through the list.
+2. **Comb Sort**: An improvement over bubble sort that eliminates turtles, or small values near the end of the list, by using a gap sequence.
+3. **Gnome Sort**: Similar to insertion sort but uses a different method to move elements to their correct position.
+4. **Odd-Even Sort**: A parallel version of bubble sort that compares and swaps adjacent elements in alternating phases.
+
+These algorithms cover a wide range of use cases and performance characteristics[1](https://en.wikipedia.org/wiki/Sorting_algorithm)[2](https://www.wscubetech.com/resources/dsa/sorting-algorithms).
+
+Would you like more details on any specific sorting algorithm?
+[1](https://en.wikipedia.org/wiki/Sorting_algorithm): [1](https://en.wikipedia.org/wiki/Sorting_algorithm)
+[2](https://www.wscubetech.com/resources/dsa/sorting-algorithms): [2](https://www.wscubetech.com/resources/dsa/sorting-algorithms)
+
+## Bubble Sort
+
+Sure! Bubble Sort is one of the simplest sorting algorithms. It works by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they are in the wrong order. This process is repeated until the list is sorted. Here's how you can implement Bubble Sort in Java:
+
+### Bubble Sort Implementation in Java
+
+```java
+public class BubbleSort {
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swap arr[j] and arr[j + 1]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        System.out.println("Array before Bubble Sort:");
+        System.out.println(Arrays.toString(arr));
+
+        bubbleSort(arr);
+
+        System.out.println("Array after Bubble Sort:");
+        System.out.println(Arrays.toString(arr));
+    }
+}
+```
+
+### How It Works
+1. **Outer Loop**: Runs from the start of the array to the second last element.
+2. **Inner Loop**: Runs from the start of the array to the last unsorted element.
+3. **Comparison and Swap**: Compares each pair of adjacent elements and swaps them if they are in the wrong order.
+
+### Complexity Analysis
+- **Time Complexity**: \(O(n^2)\) in the worst and average cases, where \(n\) is the number of elements in the array. This is because each element is compared with every other element.
+- **Space Complexity**: \(O(1)\) as it is an in-place sorting algorithm.
+
+### Advantages
+- Simple to understand and implement.
+- Does not require additional memory space.
+
+### Disadvantages
+- Inefficient for large datasets due to its high time complexity.
+- Not suitable for performance-critical applications.
+
+Bubble Sort is often used for educational purposes to help understand the basics of sorting algorithms[1](https://www.javatpoint.com/bubble-sort-in-java)[2](https://javacodepoint.com/logical-programs/bubble-sort-in-java/).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.javatpoint.com/bubble-sort-in-java): [1](https://www.javatpoint.com/bubble-sort-in-java)
+[2](https://javacodepoint.com/logical-programs/bubble-sort-in-java/): [2](https://javacodepoint.com/logical-programs/bubble-sort-in-java/)
+
+
+## Selection Sort
+
+Sure! Selection Sort is a simple comparison-based sorting algorithm. It works by dividing the array into a sorted and an unsorted part. The algorithm repeatedly selects the smallest (or largest, depending on sorting order) element from the unsorted part and moves it to the end of the sorted part. Here's how you can implement Selection Sort in Java:
+
+### Selection Sort Implementation in Java
+
+```java
+public class SelectionSort {
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            // Find the minimum element in the unsorted part
+            int minIdx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIdx]) {
+                    minIdx = j;
+                }
+            }
+            // Swap the found minimum element with the first element of the unsorted part
+            int temp = arr[minIdx];
+            arr[minIdx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        System.out.println("Original array:");
+        System.out.println(Arrays.toString(arr));
+
+        selectionSort(arr);
+
+        System.out.println("Sorted array:");
+        System.out.println(Arrays.toString(arr));
+    }
+}
+```
+
+### How It Works
+1. **Outer Loop**: Runs from the start of the array to the second last element.
+2. **Inner Loop**: Finds the minimum element in the unsorted part of the array.
+3. **Swap**: Swaps the found minimum element with the first element of the unsorted part.
+
+### Complexity Analysis
+- **Time Complexity**: \(O(n^2)\) in the worst, average, and best cases, where \(n\) is the number of elements in the array. This is because each element is compared with every other element.
+- **Space Complexity**: \(O(1)\) as it is an in-place sorting algorithm.
+
+### Advantages
+- Simple to understand and implement.
+- Does not require additional memory space.
+
+### Disadvantages
+- Inefficient for large datasets due to its high time complexity.
+- Not suitable for performance-critical applications.
+
+Selection Sort is often used for educational purposes to help understand the basics of sorting algorithms[1](https://www.javatpoint.com/selection-sort-in-java)[2](https://javacodepoint.com/logical-programs/selection-sort-in-java/).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.javatpoint.com/selection-sort-in-java): [1](https://www.javatpoint.com/selection-sort-in-java)
+[2](https://javacodepoint.com/logical-programs/selection-sort-in-java/): [2](https://javacodepoint.com/logical-programs/selection-sort-in-java/)
+
+## Insertion Sort
+
+Sure! Insertion Sort is a simple and efficient comparison-based sorting algorithm that works similarly to how you might sort playing cards in your hands. It builds the sorted array one element at a time by placing each new element into its correct position within the already sorted part of the array. Here's how you can implement Insertion Sort in Java:
+
+### Insertion Sort Implementation in Java
+
+```java
+public class InsertionSort {
+    public static void insertionSort(int[] array) {
+        int n = array.length;
+        for (int i = 1; i < n; i++) {
+            int key = array[i];
+            int j = i - 1;
+            // Shift elements of the sorted part to the right to make space for the key
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            // Place the key in its correct position
+            array[j + 1] = key;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {12, 11, 13, 5, 6};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(numbers));
+
+        insertionSort(numbers);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(numbers));
+    }
+}
+```
+
+### How It Works
+1. **Outer Loop**: Starts from the second element (index 1) and iterates through the array.
+2. **Inner Loop**: Compares the current element (key) with the elements in the sorted portion of the array (from right to left) and shifts elements to the right to make space for the key.
+3. **Insertion**: Places the key in its correct position within the sorted portion.
+
+### Complexity Analysis
+- **Time Complexity**:
+   - Best Case (nearly sorted array): \(O(n)\)
+   - Average Case: \(O(n^2)\)
+   - Worst Case (reverse sorted array): \(O(n^2)\)
+- **Space Complexity**: \(O(1)\) as it is an in-place sorting algorithm.
+
+### Advantages
+- Simple to understand and implement.
+- Efficient for small datasets and nearly sorted arrays.
+- Adaptive: Performs well on partially sorted arrays.
+
+### Disadvantages
+- Inefficient for large datasets due to its high time complexity.
+- Not suitable for performance-critical applications.
+
+Insertion Sort is often used for educational purposes and in scenarios where the dataset is small or nearly sorted[1](https://www.javatpoint.com/insertion-sort-in-java)[2](https://javacodepoint.com/logical-programs/insertion-sort-in-java/).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.javatpoint.com/insertion-sort-in-java): [1](https://www.javatpoint.com/insertion-sort-in-java)
+[2](https://javacodepoint.com/logical-programs/insertion-sort-in-java/): [2](https://javacodepoint.com/logical-programs/insertion-sort-in-java/)
+
+## Merge Sort
+
+Sure! Merge Sort is an efficient, stable, comparison-based sorting algorithm that follows the divide-and-conquer paradigm. It works by recursively dividing the array into two halves, sorting each half, and then merging the sorted halves to produce the final sorted array. Here's how you can implement Merge Sort in Java:
+
+### Merge Sort Implementation in Java
+
+```java
+public class MergeSort {
+    public static void mergeSort(int[] array, int left, int right) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+            mergeSort(array, left, mid);
+            mergeSort(array, mid + 1, right);
+            merge(array, left, mid, right);
+        }
+    }
+
+    private static void merge(int[] array, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        int[] leftArray = new int[n1];
+        int[] rightArray = new int[n2];
+
+        for (int i = 0; i < n1; i++) {
+            leftArray[i] = array[left + i];
+        }
+        for (int i = 0; i < n2; i++) {
+            rightArray[i] = array[mid + 1 + i];
+        }
+
+        int i = 0, j = 0, k = left;
+        while (i < n1 && j < n2) {
+            if (leftArray[i] <= rightArray[j]) {
+                array[k] = leftArray[i];
+                i++;
+            } else {
+                array[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            array[k] = leftArray[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            array[k] = rightArray[j];
+            j++;
+            k++;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {12, 11, 13, 5, 6, 7};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(array));
+
+        mergeSort(array, 0, array.length - 1);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+```
+
+### How It Works
+1. **Divide**: Recursively divide the array into two halves until each subarray contains a single element.
+2. **Conquer**: Sort each subarray.
+3. **Combine**: Merge the sorted subarrays to produce the final sorted array.
+
+### Complexity Analysis
+- **Time Complexity**: \(O(n \log n)\) for all cases (worst, average, and best).
+- **Space Complexity**: \(O(n)\) due to the temporary arrays used for merging.
+
+### Advantages
+- Stable sort: Maintains the relative order of equal elements.
+- Predictable time complexity: Always \(O(n \log n)\).
+
+### Disadvantages
+- Requires additional memory space proportional to the size of the array.
+- Not as fast as some other algorithms (like Quick Sort) for small datasets.
+
+Merge Sort is often used in scenarios where stability is important and predictable performance is required[1](https://www.baeldung.com/java-merge-sort)[2](https://www.programiz.com/java-programming/examples/merge-sort).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.baeldung.com/java-merge-sort): [1](https://www.baeldung.com/java-merge-sort)
+[2](https://www.programiz.com/java-programming/examples/merge-sort): [2](https://www.programiz.com/java-programming/examples/merge-sort)
+
+
+## Quick Sort
+
+Sure! Quick Sort is an efficient, comparison-based sorting algorithm that follows the divide-and-conquer paradigm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively. Here's how you can implement Quick Sort in Java:
+
+### Quick Sort Implementation in Java
+
+```java
+public class QuickSort {
+    // Method to find the partition position
+    static int partition(int[] array, int low, int high) {
+        int pivot = array[high]; // Choose the rightmost element as pivot
+        int i = (low - 1); // Pointer for the greater element
+
+        for (int j = low; j < high; j++) {
+            if (array[j] <= pivot) {
+                i++;
+                // Swap elements at i and j
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+
+        // Swap the pivot element with the greater element at i
+        int temp = array[i + 1];
+        array[i + 1] = array[high];
+        array[high] = temp;
+
+        return i + 1; // Return the partition point
+    }
+
+    // Main method to implement Quick Sort
+    static void quickSort(int[] array, int low, int high) {
+        if (low < high) {
+            // Find the pivot element such that elements smaller than pivot are on the left
+            // and elements greater than pivot are on the right
+            int pi = partition(array, low, high);
+
+            // Recursively sort the elements before and after partition
+            quickSort(array, low, pi - 1);
+            quickSort(array, pi + 1, high);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] data = {8, 7, 2, 1, 0, 9, 6};
+        System.out.println("Unsorted Array:");
+        System.out.println(Arrays.toString(data));
+
+        int size = data.length;
+        quickSort(data, 0, size - 1);
+
+        System.out.println("Sorted Array in Ascending Order:");
+        System.out.println(Arrays.toString(data));
+    }
+}
+```
+
+### How It Works
+1. **Partitioning**: The array is partitioned into two parts based on the pivot element. Elements less than the pivot go to the left, and elements greater than the pivot go to the right.
+2. **Recursive Sorting**: The left and right sub-arrays are recursively sorted.
+3. **Combining**: The sorted sub-arrays are combined to form the final sorted array.
+
+### Complexity Analysis
+- **Time Complexity**:
+   - Best Case: \(O(n \log n)\)
+   - Average Case: \(O(n \log n)\)
+   - Worst Case: \(O(n^2)\) (when the smallest or largest element is always chosen as the pivot)
+- **Space Complexity**: \(O(\log n)\) due to the recursion stack.
+
+### Advantages
+- Efficient for large datasets.
+- In-place sorting algorithm (requires only a small, constant amount of extra storage space).
+
+### Disadvantages
+- Worst-case time complexity can be \(O(n^2)\), but this can be mitigated by using randomized or median-of-three pivot selection.
+
+Quick Sort is widely used due to its efficiency and simplicity[1](https://www.javatpoint.com/quick-sort)[2](https://www.programiz.com/java-programming/examples/quick-sort).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.javatpoint.com/quick-sort): [1](https://www.javatpoint.com/quick-sort)
+[2](https://www.programiz.com/java-programming/examples/quick-sort): [2](https://www.programiz.com/java-programming/examples/quick-sort)
+
+## Heap Sort
+
+Sure! Heap Sort is an efficient, comparison-based sorting algorithm that uses a binary heap data structure. It works by building a heap from the input data and then repeatedly extracting the maximum element from the heap and rebuilding the heap. Here's how you can implement Heap Sort in Java:
+
+### Heap Sort Implementation in Java
+
+```java
+public class HeapSort {
+    public void heapSort(int[] array) {
+        int n = array.length;
+
+        // Build max heap
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(array, n, i);
+        }
+
+        // Extract elements from heap one by one
+        for (int i = n - 1; i > 0; i--) {
+            // Move current root to end
+            int temp = array[0];
+            array[0] = array[i];
+            array[i] = temp;
+
+            // Call max heapify on the reduced heap
+            heapify(array, i, 0);
+        }
+    }
+
+    // To heapify a subtree rooted with node i which is an index in array[]
+    private void heapify(int[] array, int n, int i) {
+        int largest = i; // Initialize largest as root
+        int left = 2 * i + 1; // left child
+        int right = 2 * i + 2; // right child
+
+        // If left child is larger than root
+        if (left < n && array[left] > array[largest]) {
+            largest = left;
+        }
+
+        // If right child is larger than largest so far
+        if (right < n && array[right] > array[largest]) {
+            largest = right;
+        }
+
+        // If largest is not root
+        if (largest != i) {
+            int swap = array[i];
+            array[i] = array[largest];
+            array[largest] = swap;
+
+            // Recursively heapify the affected sub-tree
+            heapify(array, n, largest);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {12, 11, 13, 5, 6, 7};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(array));
+
+        HeapSort sorter = new HeapSort();
+        sorter.heapSort(array);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+```
+
+### How It Works
+1. **Build Max Heap**: Convert the array into a max heap, where the largest element is at the root.
+2. **Heap Sort**: Repeatedly extract the maximum element from the heap and rebuild the heap with the remaining elements.
+
+### Complexity Analysis
+- **Time Complexity**: \(O(n \log n)\) for all cases (worst, average, and best).
+- **Space Complexity**: \(O(1)\) as it is an in-place sorting algorithm.
+
+### Advantages
+- Efficient for large datasets.
+- In-place sorting algorithm (requires only a small, constant amount of extra storage space).
+
+### Disadvantages
+- Not a stable sort: Does not maintain the relative order of equal elements.
+
+Heap Sort is often used in scenarios where a stable sort is not required and predictable performance is needed[1](https://www.javatpoint.com/heap-sort)[2](https://www.baeldung.com/java-heap-sort).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.javatpoint.com/heap-sort): [1](https://www.javatpoint.com/heap-sort)
+[2](https://www.baeldung.com/java-heap-sort): [2](https://www.baeldung.com/java-heap-sort)
+
+## Shell Sort
+
+Sure! Shell Sort is an efficient comparison-based sorting algorithm that generalizes Insertion Sort to allow the exchange of items that are far apart. The idea is to arrange the list of elements so that, starting anywhere, taking every \(k\)th element produces a sorted list. Here's how you can implement Shell Sort in Java:
+
+### Shell Sort Implementation in Java
+
+```java
+public class ShellSort {
+    public static void shellSort(int[] array) {
+        int n = array.length;
+
+        // Start with a big gap, then reduce the gap
+        for (int gap = n / 2; gap > 0; gap /= 2) {
+            // Do a gapped insertion sort for this gap size
+            for (int i = gap; i < n; i++) {
+                int key = array[i];
+                int j = i;
+                // Shift earlier gap-sorted elements up until the correct location for array[i] is found
+                while (j >= gap && array[j - gap] > key) {
+                    array[j] = array[j - gap];
+                    j -= gap;
+                }
+                // Put key (the original array[i]) in its correct location
+                array[j] = key;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {12, 34, 54, 2, 3};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(array));
+
+        shellSort(array);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+```
+
+### How It Works
+1. **Gap Sequence**: Start with a large gap and reduce the gap by half in each iteration.
+2. **Gapped Insertion Sort**: Perform insertion sort for elements that are `gap` distance apart.
+3. **Reduce Gap**: Continue reducing the gap until it becomes 1, at which point the array is fully sorted.
+
+### Complexity Analysis
+- **Time Complexity**: The time complexity of Shell Sort depends on the gap sequence. The worst-case time complexity is \(O(n^2)\), but with a good gap sequence, it can be as low as \(O(n \log^2 n)\).
+- **Space Complexity**: \(O(1)\) as it is an in-place sorting algorithm.
+
+### Advantages
+- More efficient than Insertion Sort for large arrays.
+- In-place sorting algorithm (requires only a small, constant amount of extra storage space).
+
+### Disadvantages
+- The performance depends on the choice of gap sequence.
+- Not a stable sort: Does not maintain the relative order of equal elements.
+
+Shell Sort is often used in scenarios where a simple and efficient sorting algorithm is needed[1](https://www.baeldung.com/java-shell-sort)[2](https://www.javatpoint.com/shell-sort).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.baeldung.com/java-shell-sort): [1](https://www.baeldung.com/java-shell-sort)
+[2](https://www.javatpoint.com/shell-sort): [2](https://www.javatpoint.com/shell-sort)
+
+## Counting Sort
+
+Sure! Counting Sort is a non-comparison-based sorting algorithm that sorts elements by counting the number of occurrences of each unique element in the array. It is particularly efficient when the range of input values is not significantly larger than the number of elements. Here's how you can implement Counting Sort in Java:
+
+### Counting Sort Implementation in Java
+
+```java
+public class CountingSort {
+    public static void countingSort(int[] array) {
+        int n = array.length;
+
+        // Find the maximum element in the array
+        int max = array[0];
+        for (int i = 1; i < n; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+
+        // Create a count array to store the count of each unique element
+        int[] count = new int[max + 1];
+
+        // Store the count of each element in the count array
+        for (int i = 0; i < n; i++) {
+            count[array[i]]++;
+        }
+
+        // Modify the count array such that each element at each index
+        // stores the sum of previous counts
+        for (int i = 1; i <= max; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Output array to store the sorted elements
+        int[] output = new int[n];
+
+        // Build the output array using the count array
+        for (int i = n - 1; i >= 0; i--) {
+            output[count[array[i]] - 1] = array[i];
+            count[array[i]]--;
+        }
+
+        // Copy the sorted elements back to the original array
+        for (int i = 0; i < n; i++) {
+            array[i] = output[i];
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {4, 2, 2, 8, 3, 3, 1};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(array));
+
+        countingSort(array);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+```
+
+### How It Works
+1. **Find Maximum Element**: Determine the maximum value in the array to define the range of the count array.
+2. **Count Occurrences**: Create a count array to store the count of each unique element.
+3. **Cumulative Count**: Modify the count array to store the cumulative count of elements.
+4. **Build Output Array**: Use the count array to place elements in their correct positions in the output array.
+5. **Copy Back**: Copy the sorted elements from the output array back to the original array.
+
+### Complexity Analysis
+- **Time Complexity**: \(O(n + k)\), where \(n\) is the number of elements in the array and \(k\) is the range of the input values.
+- **Space Complexity**: \(O(n + k)\) due to the count and output arrays.
+
+### Advantages
+- Efficient for sorting integers with a limited range.
+- Linear time complexity for small ranges.
+
+### Disadvantages
+- Not suitable for large ranges of input values.
+- Requires additional memory proportional to the range of the input values.
+
+Counting Sort is often used in scenarios where the range of input values is small compared to the number of elements[1](https://www.javatpoint.com/counting-sort-in-java)[2](https://www.programiz.com/dsa/counting-sort).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.javatpoint.com/counting-sort-in-java): [1](https://www.javatpoint.com/counting-sort-in-java)
+[2](https://www.programiz.com/dsa/counting-sort): [2](https://www.baeldung.com/java-counting-sort)
+
+## Radix Sort
+
+Sure! Radix Sort is a non-comparison-based sorting algorithm that sorts integers by processing individual digits. It works by sorting the numbers digit by digit, starting from the least significant digit to the most significant digit. Here's how you can implement Radix Sort in Java:
+
+### Radix Sort Implementation in Java
+
+```java
+import java.util.Arrays;
+
+public class RadixSort {
+    public static void radixSort(int[] array) {
+        // Find the maximum number to know the number of digits
+        int max = Arrays.stream(array).max().getAsInt();
+
+        // Apply counting sort to sort elements based on place value
+        for (int exp = 1; max / exp > 0; exp *= 10) {
+            countingSort(array, exp);
+        }
+    }
+
+    private static void countingSort(int[] array, int exp) {
+        int n = array.length;
+        int[] output = new int[n]; // Output array
+        int[] count = new int[10]; // Count array to store count of occurrences of digits
+
+        // Store count of occurrences of digits
+        for (int i = 0; i < n; i++) {
+            int index = (array[i] / exp) % 10;
+            count[index]++;
+        }
+
+        // Change count[i] so that count[i] contains the actual position of this digit in output[]
+        for (int i = 1; i < 10; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Build the output array
+        for (int i = n - 1; i >= 0; i--) {
+            int index = (array[i] / exp) % 10;
+            output[count[index] - 1] = array[i];
+            count[index]--;
+        }
+
+        // Copy the output array to array[], so that array[] now contains sorted numbers
+        System.arraycopy(output, 0, array, 0, n);
+    }
+
+    public static void main(String[] args) {
+        int[] array = {170, 45, 75, 90, 802, 24, 2, 66};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(array));
+
+        radixSort(array);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+```
+
+### How It Works
+1. **Find Maximum Element**: Determine the maximum value in the array to know the number of digits.
+2. **Counting Sort by Digit**: Perform counting sort for each digit, starting from the least significant digit to the most significant digit.
+
+### Complexity Analysis
+- **Time Complexity**: \(O(d \times (n + k))\), where \(d\) is the number of digits in the maximum number, \(n\) is the number of elements, and \(k\) is the range of the digit (0-9 for decimal numbers).
+- **Space Complexity**: \(O(n + k)\) due to the count and output arrays.
+
+### Advantages
+- Efficient for sorting integers with a fixed range of digits.
+- Linear time complexity for small ranges.
+
+### Disadvantages
+- Not suitable for large ranges of input values.
+- Requires additional memory proportional to the range of the input values.
+
+Radix Sort is often used in scenarios where the range of input values is small compared to the number of elements[1](https://www.javatpoint.com/radix-sort)[2](https://www.baeldung.com/java-radix-sort).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.javatpoint.com/radix-sort): [1](https://www.javatpoint.com/radix-sort)
+[2](https://www.baeldung.com/java-radix-sort): [2](https://www.baeldung.com/java-radix-sort)
+
+## Bucket Sort
+
+Sure! Bucket Sort is a non-comparison-based sorting algorithm that works by distributing elements into several buckets and then sorting each bucket individually. It is particularly useful for sorting floating-point numbers or uniformly distributed data. Here's how you can implement Bucket Sort in Java:
+
+### Bucket Sort Implementation in Java
+
+```java
+import java.util.*;
+
+public class BucketSort {
+    public static void bucketSort(float[] array, int n) {
+        if (n <= 0) return;
+
+        // Create empty buckets
+        @SuppressWarnings("unchecked")
+        ArrayList<Float>[] buckets = new ArrayList[n];
+
+        for (int i = 0; i < n; i++) {
+            buckets[i] = new ArrayList<>();
+        }
+
+        // Put array elements in different buckets
+        for (int i = 0; i < n; i++) {
+            int bucketIndex = (int) array[i] * n;
+            buckets[bucketIndex].add(array[i]);
+        }
+
+        // Sort individual buckets
+        for (int i = 0; i < n; i++) {
+            Collections.sort(buckets[i]);
+        }
+
+        // Concatenate all buckets into array
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+            for (float value : buckets[i]) {
+                array[index++] = value;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        float[] array = {0.897f, 0.565f, 0.656f, 0.1234f, 0.665f, 0.3434f};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(array));
+
+        bucketSort(array, array.length);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+```
+
+### How It Works
+1. **Create Buckets**: Create an array of empty buckets.
+2. **Distribute Elements**: Distribute the elements into their respective buckets based on a hashing function.
+3. **Sort Buckets**: Sort each bucket individually using a suitable sorting algorithm (e.g., Insertion Sort or Collections.sort).
+4. **Concatenate Buckets**: Concatenate the sorted buckets to form the final sorted array.
+
+### Complexity Analysis
+- **Time Complexity**:
+   - Best Case: \(O(n + k)\)
+   - Average Case: \(O(n + k)\)
+   - Worst Case: \(O(n^2)\) (when all elements are placed in a single bucket)
+- **Space Complexity**: \(O(n + k)\), where \(n\) is the number of elements and \(k\) is the number of buckets.
+
+### Advantages
+- Efficient for sorting floating-point numbers or uniformly distributed data.
+- Reduces the number of comparisons.
+
+### Disadvantages
+- Not an in-place sorting algorithm (requires additional space for buckets).
+- Performance depends on the distribution of input data.
+
+Bucket Sort is often used in scenarios where the input data is uniformly distributed and the range of values is known[1](https://www.javatpoint.com/bucket-sort-in-java)[2](https://www.baeldung.com/java-bucket-sort).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.javatpoint.com/bucket-sort-in-java): [1](https://www.javatpoint.com/bucket-sort-in-java)
+[2](https://www.baeldung.com/java-bucket-sort): [2](https://www.baeldung.com/java-bucket-sort)
+
+
+## Cocktail Shaker Sort
+
+Cocktail Shaker Sort, also known as Bidirectional Bubble Sort, is an extension of Bubble Sort that sorts an array in both directions. It improves on Bubble Sort by more quickly moving items to their correct positions at both ends of the list. Here's how you can implement Cocktail Shaker Sort in Java:
+
+### Cocktail Shaker Sort Implementation in Java
+
+```java
+public class CocktailShakerSort {
+    public static void cocktailShakerSort(int[] array) {
+        boolean swapped = true;
+        int start = 0;
+        int end = array.length;
+
+        while (swapped) {
+            swapped = false;
+
+            // Traverse the array from left to right
+            for (int i = start; i < end - 1; ++i) {
+                if (array[i] > array[i + 1]) {
+                    // Swap elements
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            // If no elements were swapped, the array is sorted
+            if (!swapped) {
+                break;
+            }
+
+            // Otherwise, reset the swapped flag so that it can be used in the next stage
+            swapped = false;
+
+            // Move the end point back by one, because the last element is in its correct position
+            end--;
+
+            // Traverse the array from right to left
+            for (int i = end - 1; i >= start; --i) {
+                if (array[i] > array[i + 1]) {
+                    // Swap elements
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            // Increase the starting point, because the first element is in its correct position
+            start++;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {5, 1, 4, 2, 8, 0, 2};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(array));
+
+        cocktailShakerSort(array);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+```
+
+### How It Works
+1. **Bidirectional Traversal**: The algorithm traverses the array from left to right, then from right to left, repeatedly.
+2. **Swapping Elements**: During each traversal, adjacent elements are compared and swapped if they are in the wrong order.
+3. **Adjusting Boundaries**: After each pass, the boundaries of the unsorted portion of the array are adjusted.
+
+### Complexity Analysis
+- **Time Complexity**:
+   - Best Case: \(O(n)\) (when the array is already sorted)
+   - Average and Worst Case: \(O(n^2)\)
+- **Space Complexity**: \(O(1)\) as it is an in-place sorting algorithm.
+
+### Advantages
+- Simple to understand and implement.
+- More efficient than Bubble Sort for certain types of data.
+
+### Disadvantages
+- Still inefficient for large datasets due to its quadratic time complexity.
+- Not widely used in practice, mainly serves educational purposes[1](https://en.wikipedia.org/wiki/Cocktail_shaker_sort)[2](https://www.baeldung.com/cs/cocktail-sort).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://en.wikipedia.org/wiki/Cocktail_shaker_sort): [1](https://en.wikipedia.org/wiki/Cocktail_shaker_sort)
+[2](https://www.baeldung.com/cs/cocktail-sort): [2](https://www.baeldung.com/cs/cocktail-sort)
+
+## Comb Sort
+
+Sure! Comb Sort is an improvement over Bubble Sort that eliminates "turtles" (small values near the end of the list) by using a gap sequence that starts larger and shrinks over time. The gap is initially set to the length of the array divided by a shrink factor (commonly 1.3), and it decreases with each iteration until it becomes 1. Here's how you can implement Comb Sort in Java:
+
+### Comb Sort Implementation in Java
+
+```java
+public class CombSort {
+    public static void combSort(int[] array) {
+        int n = array.length;
+        int gap = n;
+        boolean swapped = true;
+        double shrink = 1.3;
+
+        while (gap > 1 || swapped) {
+            // Update the gap value for the next comb
+            gap = (int) (gap / shrink);
+            if (gap < 1) {
+                gap = 1;
+            }
+
+            swapped = false;
+
+            // Compare all elements with the current gap
+            for (int i = 0; i + gap < n; i++) {
+                if (array[i] > array[i + gap]) {
+                    // Swap elements
+                    int temp = array[i];
+                    array[i] = array[i + gap];
+                    array[i + gap] = temp;
+                    swapped = true;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {8, 4, 1, 56, 3, -44, 23, -6, 28, 0};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(array));
+
+        combSort(array);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+```
+
+### How It Works
+1. **Gap Sequence**: Start with a large gap and reduce it by a shrink factor (commonly 1.3) in each iteration.
+2. **Swapping Elements**: Compare and swap elements that are `gap` distance apart.
+3. **Adjust Gap**: Continue reducing the gap until it becomes 1, at which point the array is sorted using a final pass similar to Bubble Sort.
+
+### Complexity Analysis
+- **Time Complexity**:
+   - Best Case: \(O(n \log n)\)
+   - Average and Worst Case: \(O(n^2)\)
+- **Space Complexity**: \(O(1)\) as it is an in-place sorting algorithm.
+
+### Advantages
+- More efficient than Bubble Sort for larger datasets.
+- Simple to understand and implement.
+
+### Disadvantages
+- Still not as efficient as more advanced algorithms like Quick Sort or Merge Sort for very large datasets.
+
+Comb Sort is often used as an educational tool to demonstrate improvements over Bubble Sort[1](https://www.javatpoint.com/comb-sort)[2](https://www.tutorialspoint.com/java-program-for-comb-sort).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.javatpoint.com/comb-sort): [1](https://www.javatpoint.com/comb-sort)
+[2](https://www.tutorialspoint.com/java-program-for-comb-sort): [2](https://www.tutorialspoint.com/java-program-for-comb-sort)
+
+## Gnome Sort
+
+Sure! Gnome Sort, also known as Stupid Sort, is a simple sorting algorithm that works by iterating through a list, comparing adjacent elements, and swapping them if they are in the wrong order. If a swap occurs, the algorithm moves one step backward to recheck the order; otherwise, it moves forward. This process continues until the array is sorted. Here's how you can implement Gnome Sort in Java:
+
+### Gnome Sort Implementation in Java
+
+```java
+public class GnomeSort {
+    public static void gnomeSort(int[] arr) {
+        int index = 0;
+        while (index < arr.length) {
+            if (index == 0 || arr[index] >= arr[index - 1]) {
+                index++;
+            } else {
+                // Swap elements
+                int temp = arr[index];
+                arr[index] = arr[index - 1];
+                arr[index - 1] = temp;
+                index--;
+            }
+        }
+    }
+
+    // Helper method to print the array
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {34, 2, 78, 12, 45, 1, 90};
+        System.out.println("Original Array:");
+        printArray(arr);
+
+        gnomeSort(arr);
+
+        System.out.println("Sorted Array:");
+        printArray(arr);
+    }
+}
+```
+
+### How It Works
+1. **Forward Movement**: If the current element is greater than or equal to the previous element, move forward.
+2. **Backward Movement**: If the current element is smaller than the previous element, swap them and move backward.
+3. **Termination**: The loop continues until the end of the array is reached, ensuring all elements are sorted.
+
+### Complexity Analysis
+- **Time Complexity**: \(O(n^2)\) in the worst and average cases, similar to Bubble Sort.
+- **Space Complexity**: \(O(1)\) as it is an in-place sorting algorithm.
+
+### Advantages
+- Simple to understand and implement.
+- Works well for small or nearly sorted datasets.
+
+### Disadvantages
+- Inefficient for large datasets due to its quadratic time complexity.
+
+Gnome Sort is often used for educational purposes to demonstrate basic sorting concepts[1](https://www.tutorialspoint.com/java-program-for-gnome-sort)[2](https://www.w3resource.com/java-exercises/sorting/java-sorting-algorithm-exercise-13.php).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://www.tutorialspoint.com/java-program-for-gnome-sort): [1](https://www.tutorialspoint.com/java-program-for-gnome-sort)
+[2](https://www.w3resource.com/java-exercises/sorting/java-sorting-algorithm-exercise-13.php): [2](https://www.w3resource.com/java-exercises/sorting/java-sorting-algorithm-exercise-13.php)
+
+## Odd-Even Sort
+
+Sure! Odd-Even Sort, also known as Brick Sort, is a simple comparison-based sorting algorithm. It works by iteratively comparing and swapping adjacent elements in two phases: odd and even. Here's how you can implement Odd-Even Sort in Java:
+
+### Odd-Even Sort Implementation in Java
+
+```java
+public class OddEvenSort {
+    public static void oddEvenSort(int[] array) {
+        boolean sorted = false;
+        while (!sorted) {
+            sorted = true;
+
+            // Perform Bubble Sort on odd indexed elements
+            for (int i = 1; i < array.length - 1; i += 2) {
+                if (array[i] > array[i + 1]) {
+                    // Swap elements
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    sorted = false;
+                }
+            }
+
+            // Perform Bubble Sort on even indexed elements
+            for (int i = 0; i < array.length - 1; i += 2) {
+                if (array[i] > array[i + 1]) {
+                    // Swap elements
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    sorted = false;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {34, 2, 78, 12, 45, 1, 90};
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(array));
+
+        oddEvenSort(array);
+
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+```
+
+### How It Works
+1. **Odd Phase**: Compare and swap adjacent elements at odd indices.
+2. **Even Phase**: Compare and swap adjacent elements at even indices.
+3. **Repeat**: Continue the process until the array is sorted.
+
+### Complexity Analysis
+- **Time Complexity**:
+   - Best Case: \(O(n)\) (when the array is already sorted)
+   - Average and Worst Case: \(O(n^2)\)
+- **Space Complexity**: \(O(1)\) as it is an in-place sorting algorithm.
+
+### Advantages
+- Simple to understand and implement.
+- Can be parallelized easily.
+
+### Disadvantages
+- Inefficient for large datasets due to its quadratic time complexity.
+
+Odd-Even Sort is often used for educational purposes and in parallel computing scenarios[1](https://en.wikipedia.org/wiki/Odd%E2%80%93even_sort)[2](https://www.altcademy.com/blog/odd-even-sort-or-brick-sort/).
+
+Would you like to know more about any other sorting algorithms?
+[1](https://en.wikipedia.org/wiki/Odd%E2%80%93even_sort): [1](https://en.wikipedia.org/wiki/Odd%E2%80%93even_sort)
+[2](https://www.altcademy.com/blog/odd-even-sort-or-brick-sort/): [2](https://www.altcademy.com/blog/odd-even-sort-or-brick-sort/)
 
 
 
+
+
+
+# Most asked Algorithms
+
+
+
+
+
+# Leetcode 150 + Blind 75 and handpicked questions from Love Baber DSA 450 list
+
+
+# Topic - Array
+
+## Two Sum
+
+The Two Sum problem is a classic algorithmic challenge that can be solved using various approaches. Here are three different methods to solve the Two Sum problem in Java:
+
+### 1. Brute Force Approach
+This is the simplest approach where we use two nested loops to check every possible pair of numbers to see if they add up to the target.
+
+```java
+public class TwoSum {
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[] { i, j };
+                }
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
+    }
+
+    public static void main(String[] args) {
+        TwoSum ts = new TwoSum();
+        int[] result = ts.twoSum(new int[] {2, 7, 11, 15}, 9);
+        System.out.println("Indices: " + result[0] + ", " + result[1]);
+    }
+}
+```
+- **Time Complexity**: \( O(n^2) \)
+- **Space Complexity**: \( O(1) \)
+
+### 2. Using HashMap
+This approach uses a HashMap to store the difference between the target and each element as we iterate through the array. This allows us to find the solution in linear time.
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class TwoSum {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("No two sum solution");
+    }
+
+    public static void main(String[] args) {
+        TwoSum ts = new TwoSum();
+        int[] result = ts.twoSum(new int[] {2, 7, 11, 15}, 9);
+        System.out.println("Indices: " + result[0] + ", " + result[1]);
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(n) \)
+
+### 3. Two-Pointer Approach
+This approach works when the array is sorted. We use two pointers, one starting from the beginning and the other from the end of the array, and move them towards each other until we find the target sum.
+
+```java
+import java.util.Arrays;
+
+public class TwoSum {
+    public int[] twoSum(int[] nums, int target) {
+        int[] sortedNums = nums.clone();
+        Arrays.sort(sortedNums);
+        int left = 0, right = sortedNums.length - 1;
+        while (left < right) {
+            int sum = sortedNums[left] + sortedNums[right];
+            if (sum == target) {
+                return new int[] { left, right };
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
+    }
+
+    public static void main(String[] args) {
+        TwoSum ts = new TwoSum();
+        int[] result = ts.twoSum(new int[] {2, 7, 11, 15}, 9);
+        System.out.println("Indices: " + result[0] + ", " + result[1]);
+    }
+}
+```
+- **Time Complexity**: \( O(n \log n) \) due to sorting
+- **Space Complexity**: \( O(n) \)
+
+Each of these approaches has its own advantages and trade-offs. The brute force method is straightforward but inefficient for large arrays. The HashMap approach is efficient and works well for unsorted arrays. The two-pointer approach is efficient but requires the array to be sorted[1](https://www.callicoder.com/two-sum-problem/)[2](https://kodeao.com/how-to-solve-two-sum-problem-2-solutions/)[3](https://dev.to/nullvoidkage/solving-the-two-sum-problem-multiple-approaches-using-javapython-9kk).
+
+If you have any specific questions or need further details, feel free to ask!
+
+
+## Best Time to Buy and Sell Stock
+
+The "Best Time to Buy and Sell Stock" problem is a classic algorithmic challenge that can be solved using various approaches. Here are three different methods to solve this problem in Java:
+
+### Problem Statement
+Given an array `prices` where `prices[i]` is the price of a given stock on the `i`-th day, you want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+### 1. Brute Force Approach
+This approach checks every possible pair of days to find the maximum profit. It is simple but inefficient for large inputs.
+
+```java
+public class BestTimeToBuyAndSellStock {
+    public int maxProfit(int[] prices) {
+        int maxProfit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = i + 1; j < prices.length; j++) {
+                int profit = prices[j] - prices[i];
+                if (profit > maxProfit) {
+                    maxProfit = profit;
+                }
+            }
+        }
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println("Max Profit: " + solution.maxProfit(prices)); // Output: 5
+    }
+}
+```
+- **Time Complexity**: \( O(n^2) \)
+- **Space Complexity**: \( O(1) \)
+
+### 2. One-Pass Approach
+This approach keeps track of the minimum price encountered so far and calculates the maximum profit by comparing the current price with the minimum price.
+
+```java
+public class BestTimeToBuyAndSellStock {
+    public int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        for (int price : prices) {
+            if (price < minPrice) {
+                minPrice = price;
+            } else if (price - minPrice > maxProfit) {
+                maxProfit = price - minPrice;
+            }
+        }
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println("Max Profit: " + solution.maxProfit(prices)); // Output: 5
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(1) \)
+
+### 3. Dynamic Programming Approach
+This approach uses dynamic programming to keep track of the maximum profit at each step. It maintains an array to store the maximum profit that can be achieved up to each day.
+
+```java
+public class BestTimeToBuyAndSellStock {
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) return 0;
+        int[] dp = new int[prices.length];
+        int minPrice = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            dp[i] = Math.max(dp[i - 1], prices[i] - minPrice);
+            minPrice = Math.min(minPrice, prices[i]);
+        }
+        return dp[prices.length - 1];
+    }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println("Max Profit: " + solution.maxProfit(prices)); // Output: 5
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(n) \)
+
+### Summary
+- **Brute Force**: Simple but inefficient for large inputs.
+- **One-Pass**: Efficient and straightforward, with linear time complexity.
+- **Dynamic Programming**: Useful for understanding the problem in terms of subproblems, though it may use more space.
+
+Each approach has its own advantages and trade-offs. The one-pass approach is generally preferred due to its simplicity and efficiency[1](https://favtutor.com/articles/best-time-to-buy-and-sell-stock-problem/)[2](https://algo.monster/liteproblems/121)[3](https://www.programcreek.com/2014/02/leetcode-best-time-to-buy-and-sell-stock-java/).
+
+If you have any specific questions or need further details, feel free to ask!
+
+
+# Best Time to Buy and Sell Stock II
+
+The "Best Time to Buy and Sell Stock II" problem allows you to make multiple transactions to maximize profit. You can buy and sell the stock on the same day, but you can only hold one share of the stock at any time. Here are different approaches to solve this problem in Java:
+
+### Problem Statement
+Given an array `prices` where `prices[i]` is the price of a given stock on the `i`-th day, return the maximum profit you can achieve. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
+
+### 1. Greedy Approach
+This approach takes advantage of every profitable opportunity by buying on one day and selling on the next if the price is higher.
+
+```java
+public class BestTimeToBuyAndSellStockII {
+    public int maxProfit(int[] prices) {
+        int maxProfit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                maxProfit += prices[i] - prices[i - 1];
+            }
+        }
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println("Max Profit: " + solution.maxProfit(prices)); // Output: 7
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(1) \)
+
+### 2. Peak Valley Approach
+This approach identifies every peak immediately following a valley to maximize profit.
+
+```java
+public class BestTimeToBuyAndSellStockII {
+    public int maxProfit(int[] prices) {
+        int i = 0;
+        int maxProfit = 0;
+        int n = prices.length;
+        while (i < n - 1) {
+            // Find the next valley
+            while (i < n - 1 && prices[i] >= prices[i + 1]) i++;
+            int valley = prices[i];
+            // Find the next peak
+            while (i < n - 1 && prices[i] <= prices[i + 1]) i++;
+            int peak = prices[i];
+            maxProfit += peak - valley;
+        }
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println("Max Profit: " + solution.maxProfit(prices)); // Output: 7
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(1) \)
+
+### 3. Dynamic Programming Approach
+This approach uses dynamic programming to keep track of the maximum profit at each step.
+
+```java
+public class BestTimeToBuyAndSellStockII {
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        if (n == 0) return 0;
+        int[][] dp = new int[n][2];
+        dp[0][0] = 0; // Max profit on day 0 with no stock
+        dp[0][1] = -prices[0]; // Max profit on day 0 with stock
+
+        for (int i = 1; i < n; i++) {
+            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]); // No stock
+            dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]); // With stock
+        }
+        return dp[n - 1][0];
+    }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println("Max Profit: " + solution.maxProfit(prices)); // Output: 7
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(n) \)
+
+### Summary
+- **Greedy Approach**: Efficient and straightforward, focusing on every profitable opportunity.
+- **Peak Valley Approach**: Identifies peaks and valleys to maximize profit.
+- **Dynamic Programming Approach**: Uses a more structured approach to track profits, though it may use more space.
+
+Each approach has its own advantages and trade-offs. The greedy approach is generally preferred due to its simplicity and efficiency[1](https://algo.monster/liteproblems/122)[2](https://github.com/ppriyasingh/LeetCode/blob/master/Solutions/122.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II.java)[3](https://favtutor.com/articles/best-time-to-buy-and-sell-stock-ii/).
+
+If you have any specific questions or need further details, feel free to ask!
+
+# Best Time to Buy and Sell Stock III
+
+The "Best Time to Buy and Sell Stock III" problem allows you to complete at most two transactions to maximize profit. Here are different approaches to solve this problem in Java:
+
+### Problem Statement
+Given an array `prices` where `prices[i]` is the price of a given stock on the `i`-th day, return the maximum profit you can achieve from at most two transactions. A transaction consists of buying and then selling one share of the stock. You cannot engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+### 1. Dynamic Programming Approach
+This approach uses dynamic programming to keep track of profits across four different states, representing the four actions you can take: buying the first stock, selling the first stock, buying the second stock, and selling the second stock.
+
+```java
+public class BestTimeToBuyAndSellStockIII {
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) return 0;
+
+        int n = prices.length;
+        int[] dp1 = new int[n];
+        int[] dp2 = new int[n];
+
+        // First transaction
+        int minPrice = prices[0];
+        for (int i = 1; i < n; i++) {
+            minPrice = Math.min(minPrice, prices[i]);
+            dp1[i] = Math.max(dp1[i - 1], prices[i] - minPrice);
+        }
+
+        // Second transaction
+        int maxPrice = prices[n - 1];
+        for (int i = n - 2; i >= 0; i--) {
+            maxPrice = Math.max(maxPrice, prices[i]);
+            dp2[i] = Math.max(dp2[i + 1], maxPrice - prices[i]);
+        }
+
+        // Combine the results of the two transactions
+        int maxProfit = 0;
+        for (int i = 0; i < n; i++) {
+            maxProfit = Math.max(maxProfit, dp1[i] + dp2[i]);
+        }
+
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStockIII solution = new BestTimeToBuyAndSellStockIII();
+        int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
+        System.out.println("Max Profit: " + solution.maxProfit(prices)); // Output: 6
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(n) \)
+
+### 2. Optimized Dynamic Programming Approach
+This approach optimizes space by using variables instead of arrays to keep track of the four states.
+
+```java
+public class BestTimeToBuyAndSellStockIII {
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) return 0;
+
+        int buy1 = Integer.MIN_VALUE, buy2 = Integer.MIN_VALUE;
+        int sell1 = 0, sell2 = 0;
+
+        for (int price : prices) {
+            buy1 = Math.max(buy1, -price);
+            sell1 = Math.max(sell1, buy1 + price);
+            buy2 = Math.max(buy2, sell1 - price);
+            sell2 = Math.max(sell2, buy2 + price);
+        }
+
+        return sell2;
+    }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStockIII solution = new BestTimeToBuyAndSellStockIII();
+        int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
+        System.out.println("Max Profit: " + solution.maxProfit(prices)); // Output: 6
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(1) \)
+
+### 3. Divide and Conquer Approach
+This approach divides the array into two parts and calculates the maximum profit for each part, then combines the results.
+
+```java
+public class BestTimeToBuyAndSellStockIII {
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) return 0;
+
+        int n = prices.length;
+        int[] leftProfits = new int[n];
+        int[] rightProfits = new int[n + 1];
+
+        // Left to right
+        int minPrice = prices[0];
+        for (int i = 1; i < n; i++) {
+            minPrice = Math.min(minPrice, prices[i]);
+            leftProfits[i] = Math.max(leftProfits[i - 1], prices[i] - minPrice);
+        }
+
+        // Right to left
+        int maxPrice = prices[n - 1];
+        for (int i = n - 1; i >= 0; i--) {
+            maxPrice = Math.max(maxPrice, prices[i]);
+            rightProfits[i] = Math.max(rightProfits[i + 1], maxPrice - prices[i]);
+        }
+
+        // Combine the results
+        int maxProfit = 0;
+        for (int i = 0; i < n; i++) {
+            maxProfit = Math.max(maxProfit, leftProfits[i] + rightProfits[i + 1]);
+        }
+
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStockIII solution = new BestTimeToBuyAndSellStockIII();
+        int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
+        System.out.println("Max Profit: " + solution.maxProfit(prices)); // Output: 6
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(n) \)
+
+### Summary
+- **Dynamic Programming**: Uses arrays to keep track of profits for each transaction.
+- **Optimized Dynamic Programming**: Uses variables to reduce space complexity.
+- **Divide and Conquer**: Splits the problem into two parts and combines the results.
+
+Each approach has its own advantages and trade-offs. The optimized dynamic programming approach is generally preferred due to its simplicity and efficiency[1](https://algo.monster/liteproblems/123)[2](https://favtutor.com/articles/best-time-to-buy-and-sell-stock-problem/)[3](https://www.naukri.com/code360/library/best-time-to-buy-and-sell-stock-iii).
+
+If you have any specific questions or need further details, feel free to ask!
+
+
+# Contains Duplicate 
+
+The "Contains Duplicate" problem is a common algorithmic challenge where you need to determine if an array contains any duplicate elements. Here are a few different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This approach uses two nested loops to compare each element with every other element in the array.
+
+```java
+public class ContainsDuplicate {
+    public boolean containsDuplicate(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        ContainsDuplicate solution = new ContainsDuplicate();
+        int[] nums = {1, 2, 3, 1};
+        System.out.println("Contains Duplicate: " + solution.containsDuplicate(nums)); // Output: true
+    }
+}
+```
+- **Time Complexity**: \( O(n^2) \)
+- **Space Complexity**: \( O(1) \)
+
+### 2. Using HashSet
+This approach uses a HashSet to keep track of the elements we have seen so far. If we encounter an element that is already in the HashSet, we return true.
+
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class ContainsDuplicate {
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (set.contains(num)) {
+                return true;
+            }
+            set.add(num);
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        ContainsDuplicate solution = new ContainsDuplicate();
+        int[] nums = {1, 2, 3, 1};
+        System.out.println("Contains Duplicate: " + solution.containsDuplicate(nums)); // Output: true
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(n) \)
+
+### 3. Using Sorting
+This approach sorts the array first and then checks for any consecutive duplicate elements.
+
+```java
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        ContainsDuplicate solution = new ContainsDuplicate();
+        int[] nums = {1, 2, 3, 1};
+        System.out.println("Contains Duplicate: " + solution.containsDuplicate(nums)); // Output: true
+    }
+}
+```
+- **Time Complexity**: \( O(n \log n) \) due to sorting
+- **Space Complexity**: \( O(1) \) if sorting in place
+
+### Summary
+- **Brute Force**: Simple but inefficient for large arrays.
+- **HashSet**: Efficient and straightforward, with linear time complexity.
+- **Sorting**: Efficient but requires sorting the array first.
+
+Each approach has its own advantages and trade-offs. The HashSet approach is generally preferred due to its simplicity and efficiency[1](https://leetcode.com/problems/contains-duplicate/)[2](https://www.baeldung.com/java-list-find-duplicates)[3](https://javaconceptoftheday.com/find-duplicates-in-array-in-java/).
+
+If you have any specific questions or need further details, feel free to ask!
+
+## Product of Array Except Self
+
+The "Product of Array Except Self" problem requires creating a new array where each element at index \( i \) of the new array is the product of all the numbers in the original array except the one at \( i \). The challenge is to solve this without using division and in optimal time complexity. Here are different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This approach uses two nested loops to calculate the product of all elements except the current one for each element in the array.
+
+```java
+public class ProductOfArrayExceptSelf {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[n];
+        for (int i = 0; i < n; i++) {
+            int product = 1;
+            for (int j = 0; j < n; j++) {
+                if (i != j) {
+                    product *= nums[j];
+                }
+            }
+            result[i] = product;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        ProductOfArrayExceptSelf solution = new ProductOfArrayExceptSelf();
+        int[] nums = {1, 2, 3, 4};
+        int[] result = solution.productExceptSelf(nums);
+        System.out.println(Arrays.toString(result)); // Output: [24, 12, 8, 6]
+    }
+}
+```
+- **Time Complexity**: \( O(n^2) \)
+- **Space Complexity**: \( O(n) \)
+
+### 2. Prefix and Suffix Products Approach
+This approach uses two auxiliary arrays to store the prefix and suffix products. The prefix product at index \( i \) is the product of all elements before \( i \), and the suffix product at index \( i \) is the product of all elements after \( i \).
+
+```java
+public class ProductOfArrayExceptSelf {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int[] left = new int[n];
+        int[] right = new int[n];
+        int[] result = new int[n];
+
+        // Fill the left array
+        left[0] = 1;
+        for (int i = 1; i < n; i++) {
+            left[i] = left[i - 1] * nums[i - 1];
+        }
+
+        // Fill the right array
+        right[n - 1] = 1;
+        for (int i = n - 2; i >= 0; i--) {
+            right[i] = right[i + 1] * nums[i + 1];
+        }
+
+        // Construct the result array
+        for (int i = 0; i < n; i++) {
+            result[i] = left[i] * right[i];
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        ProductOfArrayExceptSelf solution = new ProductOfArrayExceptSelf();
+        int[] nums = {1, 2, 3, 4};
+        int[] result = solution.productExceptSelf(nums);
+        System.out.println(Arrays.toString(result)); // Output: [24, 12, 8, 6]
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(n) \)
+
+### 3. Optimized Space Approach
+This approach optimizes space by using the result array to store the prefix products and then updating it with the suffix products in a single pass.
+
+```java
+public class ProductOfArrayExceptSelf {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[n];
+
+        // Calculate prefix products
+        result[0] = 1;
+        for (int i = 1; i < n; i++) {
+            result[i] = result[i - 1] * nums[i - 1];
+        }
+
+        // Calculate suffix products and update the result array
+        int suffixProduct = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            result[i] *= suffixProduct;
+            suffixProduct *= nums[i];
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        ProductOfArrayExceptSelf solution = new ProductOfArrayExceptSelf();
+        int[] nums = {1, 2, 3, 4};
+        int[] result = solution.productExceptSelf(nums);
+        System.out.println(Arrays.toString(result)); // Output: [24, 12, 8, 6]
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(1) \) (excluding the output array)
+
+### Summary
+- **Brute Force**: Simple but inefficient for large arrays.
+- **Prefix and Suffix Products**: Efficient and straightforward, with linear time complexity.
+- **Optimized Space**: Efficient and uses constant extra space.
+
+Each approach has its own advantages and trade-offs. The optimized space approach is generally preferred due to its simplicity and efficiency[1](https://kamleshsingad.com/efficiently-solving-the-product-of-array-except-self-problem-in-java/)[2](https://leetcode.com/problems/product-of-array-except-self/)[3](https://dev.to/aswinbarath/product-of-array-except-self-leetcode-java-solution-4j72).
+
+If you have any specific questions or need further details, feel free to ask!
+
+## Maximum Subarray
+
+The "Maximum Subarray" problem involves finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum. Here are different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This approach checks every possible subarray to find the one with the maximum sum. It is simple but inefficient for large inputs.
+
+```java
+public class MaximumSubarray {
+    public int maxSubArray(int[] nums) {
+        int maxSum = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            int currentSum = 0;
+            for (int j = i; j < nums.length; j++) {
+                currentSum += nums[j];
+                if (currentSum > maxSum) {
+                    maxSum = currentSum;
+                }
+            }
+        }
+        return maxSum;
+    }
+
+    public static void main(String[] args) {
+        MaximumSubarray solution = new MaximumSubarray();
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        System.out.println("Maximum Subarray Sum: " + solution.maxSubArray(nums)); // Output: 6
+    }
+}
+```
+- **Time Complexity**: \( O(n^2) \)
+- **Space Complexity**: \( O(1) \)
+
+### 2. Kadane's Algorithm
+This approach uses dynamic programming to find the maximum subarray sum in linear time. It maintains a running sum of the current subarray and updates the maximum sum whenever the running sum exceeds it.
+
+```java
+public class MaximumSubarray {
+    public int maxSubArray(int[] nums) {
+        int maxSum = nums[0];
+        int currentSum = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            currentSum = Math.max(nums[i], currentSum + nums[i]);
+            maxSum = Math.max(maxSum, currentSum);
+        }
+        return maxSum;
+    }
+
+    public static void main(String[] args) {
+        MaximumSubarray solution = new MaximumSubarray();
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        System.out.println("Maximum Subarray Sum: " + solution.maxSubArray(nums)); // Output: 6
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(1) \)
+
+### 3. Divide and Conquer Approach
+This approach divides the array into two halves and recursively finds the maximum subarray sum in the left half, right half, and the crossing subarray that spans both halves.
+
+```java
+public class MaximumSubarray {
+    public int maxSubArray(int[] nums) {
+        return maxSubArrayHelper(nums, 0, nums.length - 1);
+    }
+
+    private int maxSubArrayHelper(int[] nums, int left, int right) {
+        if (left == right) {
+            return nums[left];
+        }
+        int mid = left + (right - left) / 2;
+        int leftMax = maxSubArrayHelper(nums, left, mid);
+        int rightMax = maxSubArrayHelper(nums, mid + 1, right);
+        int crossMax = maxCrossingSubArray(nums, left, mid, right);
+        return Math.max(Math.max(leftMax, rightMax), crossMax);
+    }
+
+    private int maxCrossingSubArray(int[] nums, int left, int mid, int right) {
+        int leftSum = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int i = mid; i >= left; i--) {
+            sum += nums[i];
+            if (sum > leftSum) {
+                leftSum = sum;
+            }
+        }
+        int rightSum = Integer.MIN_VALUE;
+        sum = 0;
+        for (int i = mid + 1; i <= right; i++) {
+            sum += nums[i];
+            if (sum > rightSum) {
+                rightSum = sum;
+            }
+        }
+        return leftSum + rightSum;
+    }
+
+    public static void main(String[] args) {
+        MaximumSubarray solution = new MaximumSubarray();
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        System.out.println("Maximum Subarray Sum: " + solution.maxSubArray(nums)); // Output: 6
+    }
+}
+```
+- **Time Complexity**: \( O(n \log n) \)
+- **Space Complexity**: \( O(\log n) \) due to recursion stack
+
+### Summary
+- **Brute Force**: Simple but inefficient for large arrays.
+- **Kadane's Algorithm**: Efficient and straightforward, with linear time complexity.
+- **Divide and Conquer**: Uses a recursive approach to divide the problem, with logarithmic time complexity.
+
+Each approach has its own advantages and trade-offs. Kadane's Algorithm is generally preferred due to its simplicity and efficiency[1](https://www.baeldung.com/java-maximum-subarray)[2](https://www.programcreek.com/2013/02/leetcode-maximum-subarray-java/)[3](https://blog.heycoach.in/maximum-subarray-solution-in-java/).
+
+If you have any specific questions or need further details, feel free to ask!
+
+## Maximum Product Subarray
+
+The "Maximum Product Subarray" problem involves finding the contiguous subarray within a one-dimensional array of numbers which has the largest product. Here are different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This approach checks every possible subarray to find the one with the maximum product. It is simple but inefficient for large inputs.
+
+```java
+public class MaximumProductSubarray {
+    public int maxProduct(int[] nums) {
+        int maxProduct = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            int currentProduct = 1;
+            for (int j = i; j < nums.length; j++) {
+                currentProduct *= nums[j];
+                maxProduct = Math.max(maxProduct, currentProduct);
+            }
+        }
+        return maxProduct;
+    }
+
+    public static void main(String[] args) {
+        MaximumProductSubarray solution = new MaximumProductSubarray();
+        int[] nums = {2, 3, -2, 4};
+        System.out.println("Maximum Product Subarray: " + solution.maxProduct(nums)); // Output: 6
+    }
+}
+```
+- **Time Complexity**: \( O(n^2) \)
+- **Space Complexity**: \( O(1) \)
+
+### 2. Dynamic Programming Approach
+This approach uses dynamic programming to keep track of both the maximum and minimum product of subarrays ending at each position. This is necessary because a negative number can turn a small product into a large one and vice versa.
+
+```java
+public class MaximumProductSubarray {
+    public int maxProduct(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+
+        int maxProduct = nums[0];
+        int maxEndingHere = nums[0];
+        int minEndingHere = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            int temp = maxEndingHere;
+            maxEndingHere = Math.max(Math.max(maxEndingHere * nums[i], minEndingHere * nums[i]), nums[i]);
+            minEndingHere = Math.min(Math.min(temp * nums[i], minEndingHere * nums[i]), nums[i]);
+            maxProduct = Math.max(maxProduct, maxEndingHere);
+        }
+
+        return maxProduct;
+    }
+
+    public static void main(String[] args) {
+        MaximumProductSubarray solution = new MaximumProductSubarray();
+        int[] nums = {2, 3, -2, 4};
+        System.out.println("Maximum Product Subarray: " + solution.maxProduct(nums)); // Output: 6
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(1) \)
+
+### 3. Optimized Dynamic Programming Approach
+This approach is similar to the previous one but uses a single pass to update the maximum and minimum products.
+
+```java
+public class MaximumProductSubarray {
+    public int maxProduct(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+
+        int maxProduct = nums[0];
+        int maxEndingHere = nums[0];
+        int minEndingHere = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < 0) {
+                int temp = maxEndingHere;
+                maxEndingHere = minEndingHere;
+                minEndingHere = temp;
+            }
+            maxEndingHere = Math.max(nums[i], maxEndingHere * nums[i]);
+            minEndingHere = Math.min(nums[i], minEndingHere * nums[i]);
+            maxProduct = Math.max(maxProduct, maxEndingHere);
+        }
+
+        return maxProduct;
+    }
+
+    public static void main(String[] args) {
+        MaximumProductSubarray solution = new MaximumProductSubarray();
+        int[] nums = {2, 3, -2, 4};
+        System.out.println("Maximum Product Subarray: " + solution.maxProduct(nums)); // Output: 6
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(1) \)
+
+### Summary
+- **Brute Force**: Simple but inefficient for large arrays.
+- **Dynamic Programming**: Efficient and straightforward, with linear time complexity.
+- **Optimized Dynamic Programming**: Similar to dynamic programming but with a single pass and constant space.
+
+Each approach has its own advantages and trade-offs. The optimized dynamic programming approach is generally preferred due to its simplicity and efficiency[1](https://www.javatpoint.com/java-program-for-maximum-product-subarray)[2](https://www.javatpoint.com/maximum-product-subarray)[3](https://prepinsta.com/java-program/for-finding-the-maximum-product-of-sub-array-of-a-given-array/).
+
+If you have any specific questions or need further details, feel free to ask!
+
+## Find Minimum in Rotated Sorted Array
+
+The "Find Minimum in Rotated Sorted Array" problem involves finding the minimum element in a rotated sorted array. Here are different approaches to solve this problem in Java:
+
+### 1. Linear Search Approach
+This approach simply iterates through the array to find the minimum element. It is straightforward but not efficient for large arrays.
+
+```java
+public class FindMinimumInRotatedSortedArray {
+    public int findMin(int[] nums) {
+        int min = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < min) {
+                min = nums[i];
+            }
+        }
+        return min;
+    }
+
+    public static void main(String[] args) {
+        FindMinimumInRotatedSortedArray solution = new FindMinimumInRotatedSortedArray();
+        int[] nums = {3, 4, 5, 1, 2};
+        System.out.println("Minimum Element: " + solution.findMin(nums)); // Output: 1
+    }
+}
+```
+- **Time Complexity**: \( O(n) \)
+- **Space Complexity**: \( O(1) \)
+
+### 2. Binary Search Approach
+This approach leverages the properties of a rotated sorted array and uses binary search to find the minimum element efficiently.
+
+```java
+public class FindMinimumInRotatedSortedArray {
+    public int findMin(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] > nums[right]) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+
+        return nums[left];
+    }
+
+    public static void main(String[] args) {
+        FindMinimumInRotatedSortedArray solution = new FindMinimumInRotatedSortedArray();
+        int[] nums = {3, 4, 5, 1, 2};
+        System.out.println("Minimum Element: " + solution.findMin(nums)); // Output: 1
+    }
+}
+```
+- **Time Complexity**: \( O(\log n) \)
+- **Space Complexity**: \( O(1) \)
+
+### 3. Recursive Binary Search Approach
+This approach uses recursion to implement the binary search for finding the minimum element.
+
+```java
+public class FindMinimumInRotatedSortedArray {
+    public int findMin(int[] nums) {
+        return findMinHelper(nums, 0, nums.length - 1);
+    }
+
+    private int findMinHelper(int[] nums, int left, int right) {
+        if (left == right) {
+            return nums[left];
+        }
+
+        int mid = left + (right - left) / 2;
+
+        if (nums[mid] > nums[right]) {
+            return findMinHelper(nums, mid + 1, right);
+        } else {
+            return findMinHelper(nums, left, mid);
+        }
+    }
+
+    public static void main(String[] args) {
+        FindMinimumInRotatedSortedArray solution = new FindMinimumInRotatedSortedArray();
+        int[] nums = {3, 4, 5, 1, 2};
+        System.out.println("Minimum Element: " + solution.findMin(nums)); // Output: 1
+    }
+}
+```
+- **Time Complexity**: \( O(\log n) \)
+- **Space Complexity**: \( O(\log n) \) due to recursion stack
+
+### Summary
+- **Linear Search**: Simple but inefficient for large arrays.
+- **Binary Search**: Efficient and straightforward, with logarithmic time complexity.
+- **Recursive Binary Search**: Similar to binary search but uses recursion.
+
+Each approach has its own advantages and trade-offs. The binary search approach is generally preferred due to its simplicity and efficiency[1](https://www.javatpoint.com/find-minimum-in-rotated-sorted-array)[2](https://algo.monster/liteproblems/153)[3](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/).
+
+If you have any specific questions or need further details, feel free to ask!
+
+## Search in Rotated Sorted Array
+
+Sure! Searching in a rotated sorted array can be approached in several ways. Here are a few methods you can use in Java:
+
+### 1. Linear Search
+This is the simplest approach where you iterate through the array and compare each element with the target. The time complexity is \(O(n)\).
+
+```java
+public class LinearSearch {
+    public static int search(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        int target = 0;
+        System.out.println("Index of target: " + search(nums, target));
+    }
+}
+```
+
+### 2. Binary Search (Pivot-based Approach)
+This approach leverages the properties of the rotated sorted array. The time complexity is \(O(\log n)\).
+
+```java
+public class BinarySearch {
+    public static int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            }
+            if (nums[left] <= nums[mid]) { // Left half is sorted
+                if (nums[left] <= target && target < nums[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else { // Right half is sorted
+                if (nums[mid] < target && target <= nums[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        int target = 0;
+        System.out.println("Index of target: " + search(nums, target));
+    }
+}
+```
+
+### 3. Recursive Binary Search
+This is a more elegant solution with similar time complexity as the pivot-based method.
+
+```java
+public class RecursiveBinarySearch {
+    public static int search(int[] nums, int target) {
+        return search(nums, target, 0, nums.length - 1);
+    }
+
+    private static int search(int[] nums, int target, int left, int right) {
+        if (left > right) {
+            return -1;
+        }
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        }
+        if (nums[left] <= nums[mid]) { // Left half is sorted
+            if (nums[left] <= target && target < nums[mid]) {
+                return search(nums, target, left, mid - 1);
+            } else {
+                return search(nums, target, mid + 1, right);
+            }
+        } else { // Right half is sorted
+            if (nums[mid] < target && target <= nums[right]) {
+                return search(nums, target, mid + 1, right);
+            } else {
+                return search(nums, target, left, mid - 1);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        int target = 0;
+        System.out.println("Index of target: " + search(nums, target));
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to search in a rotated sorted array. The binary search methods are generally preferred due to their efficiency[1](https://www.javatpoint.com/search-in-a-rotated-sorted-array)[2](https://www.tutorialspoint.com/java-program-for-search-an-element-in-a-sorted-and-rotated-array).
+
+Would you like more details on any specific approach?
+
+## 3 Sum
+
+Sure! The 3Sum problem involves finding all unique triplets in an array that sum up to zero. Here are a few different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This is the simplest approach where you use three nested loops to check all possible triplets. The time complexity is \(O(n^3)\).
+
+```java
+import java.util.*;
+
+public class ThreeSumBruteForce {
+    public static List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        int n = nums.length;
+        for (int i = 0; i < n - 2; i++) {
+            for (int j = i + 1; j < n - 1; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    if (nums[i] + nums[j] + nums[k] == 0) {
+                        List<Integer> triplet = Arrays.asList(nums[i], nums[j], nums[k]);
+                        Collections.sort(triplet);
+                        if (!result.contains(triplet)) {
+                            result.add(triplet);
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {-1, 0, 1, 2, -1, -4};
+        System.out.println(threeSum(nums));
+    }
+}
+```
+
+### 2. Sorting and Two Pointers Approach
+This approach sorts the array first and then uses two pointers to find the triplets. The time complexity is \(O(n^2)\).
+
+```java
+import java.util.*;
+
+public class ThreeSumTwoPointers {
+    public static List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) continue; // Skip duplicates
+            int left = i + 1, right = nums.length - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+                if (sum == 0) {
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    while (left < right && nums[left] == nums[left + 1]) left++; // Skip duplicates
+                    while (left < right && nums[right] == nums[right - 1]) right--; // Skip duplicates
+                    left++;
+                    right--;
+                } else if (sum < 0) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {-1, 0, 1, 2, -1, -4};
+        System.out.println(threeSum(nums));
+    }
+}
+```
+
+### 3. HashSet Approach
+This approach uses a HashSet to avoid duplicates and find the triplets. The time complexity is \(O(n^2)\).
+
+```java
+import java.util.*;
+
+public class ThreeSumHashSet {
+    public static List<List<Integer>> threeSum(int[] nums) {
+        Set<List<Integer>> result = new HashSet<>();
+        for (int i = 0; i < nums.length - 2; i++) {
+            Set<Integer> seen = new HashSet<>();
+            for (int j = i + 1; j < nums.length; j++) {
+                int complement = -nums[i] - nums[j];
+                if (seen.contains(complement)) {
+                    List<Integer> triplet = Arrays.asList(nums[i], nums[j], complement);
+                    Collections.sort(triplet);
+                    result.add(triplet);
+                }
+                seen.add(nums[j]);
+            }
+        }
+        return new ArrayList<>(result);
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {-1, 0, 1, 2, -1, -4};
+        System.out.println(threeSum(nums));
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the 3Sum problem. The two-pointers method is generally preferred due to its efficiency[1](https://leetcode.com/problems/3sum/solutions/1489162/3-different-approaches-for-java/)[2](https://www.callicoder.com/three-sum-problem/).
+
+Would you like more details on any specific approach?
+
+## Container With Most Water
+
+Sure! The "Container With Most Water" problem involves finding two lines in an array that, together with the x-axis, form a container that holds the most water. Here are different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This approach checks all possible pairs of lines to find the maximum area. The time complexity is \(O(n^2)\).
+
+```java
+public class ContainerWithMostWaterBruteForce {
+    public int maxArea(int[] height) {
+        int maxArea = 0;
+        for (int i = 0; i < height.length; i++) {
+            for (int j = i + 1; j < height.length; j++) {
+                int area = Math.min(height[i], height[j]) * (j - i);
+                maxArea = Math.max(maxArea, area);
+            }
+        }
+        return maxArea;
+    }
+
+    public static void main(String[] args) {
+        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        ContainerWithMostWaterBruteForce solution = new ContainerWithMostWaterBruteForce();
+        System.out.println("Max Area: " + solution.maxArea(height)); // Output: 49
+    }
+}
+```
+
+### 2. Two Pointers Approach
+This optimized approach uses two pointers, starting at the beginning and end of the array, and moves them towards each other. The time complexity is \(O(n)\).
+
+```java
+public class ContainerWithMostWaterTwoPointers {
+    public int maxArea(int[] height) {
+        int maxArea = 0;
+        int left = 0, right = height.length - 1;
+        while (left < right) {
+            int area = Math.min(height[left], height[right]) * (right - left);
+            maxArea = Math.max(maxArea, area);
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return maxArea;
+    }
+
+    public static void main(String[] args) {
+        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        ContainerWithMostWaterTwoPointers solution = new ContainerWithMostWaterTwoPointers();
+        System.out.println("Max Area: " + solution.maxArea(height)); // Output: 49
+    }
+}
+```
+
+### 3. Optimized Two Pointers Approach
+This approach is similar to the two pointers method but includes additional checks to skip unnecessary calculations. The time complexity remains \(O(n)\).
+
+```java
+public class ContainerWithMostWaterOptimized {
+    public int maxArea(int[] height) {
+        int maxArea = 0;
+        int left = 0, right = height.length - 1;
+        while (left < right) {
+            int minHeight = Math.min(height[left], height[right]);
+            int area = minHeight * (right - left);
+            maxArea = Math.max(maxArea, area);
+            while (left < right && height[left] <= minHeight) left++;
+            while (left < right && height[right] <= minHeight) right--;
+        }
+        return maxArea;
+    }
+
+    public static void main(String[] args) {
+        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        ContainerWithMostWaterOptimized solution = new ContainerWithMostWaterOptimized();
+        System.out.println("Max Area: " + solution.maxArea(height)); // Output: 49
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Container With Most Water" problem. The two-pointers method is generally preferred due to its efficiency[1](https://algocademy.com/link/?problem=container-with-most-water&lang=java&solution=1)[2](https://algo.monster/liteproblems/11).
+
+Would you like more details on any specific approach?
+
+## Remove Element
+
+The "Remove Element" problem on LeetCode involves removing all instances of a specified value from an array in-place and returning the new length of the array. Here are different approaches to solve this problem in Java:
+
+### 1. Two Pointers Approach
+This is the most efficient approach, using two pointers to overwrite the elements to be removed. The time complexity is \(O(n)\).
+
+```java
+public class RemoveElementTwoPointers {
+    public int removeElement(int[] nums, int val) {
+        int k = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+        return k;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {3, 2, 2, 3};
+        int val = 3;
+        RemoveElementTwoPointers solution = new RemoveElementTwoPointers();
+        int newLength = solution.removeElement(nums, val);
+        System.out.println("New length: " + newLength); // Output: 2
+    }
+}
+```
+
+### 2. Two Pointers - When Elements to Remove are Rare
+This approach is optimized for cases where the elements to be removed are rare. It swaps the elements to be removed with the last element in the array. The time complexity is \(O(n)\).
+
+```java
+public class RemoveElementOptimized {
+    public int removeElement(int[] nums, int val) {
+        int n = nums.length;
+        int i = 0;
+        while (i < n) {
+            if (nums[i] == val) {
+                nums[i] = nums[n - 1];
+                n--;
+            } else {
+                i++;
+            }
+        }
+        return n;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 2, 2, 3, 0, 4, 2};
+        int val = 2;
+        RemoveElementOptimized solution = new RemoveElementOptimized();
+        int newLength = solution.removeElement(nums, val);
+        System.out.println("New length: " + newLength); // Output: 5
+    }
+}
+```
+
+### 3. Brute Force Approach
+This approach uses a simple loop to shift elements left whenever an element to be removed is found. The time complexity is \(O(n^2)\).
+
+```java
+public class RemoveElementBruteForce {
+    public int removeElement(int[] nums, int val) {
+        int n = nums.length;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == val) {
+                for (int j = i; j < n - 1; j++) {
+                    nums[j] = nums[j + 1];
+                }
+                n--;
+                i--;
+            }
+        }
+        return n;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {3, 2, 2, 3};
+        int val = 3;
+        RemoveElementBruteForce solution = new RemoveElementBruteForce();
+        int newLength = solution.removeElement(nums, val);
+        System.out.println("New length: " + newLength); // Output: 2
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Remove Element" problem. The two-pointers method is generally preferred due to its efficiency[1](https://www.programcreek.com/2014/04/leetcode-remove-element-java/)[2](https://dev.to/rahulgithubweb/leetcode-challenge-remove-element-top-interview-questions-java-solution-3f6h).
+
+Would you like more details on any specific approach?
+
+
+## Merge Sorted Array
+
+The "Merge Sorted Array" problem on LeetCode involves merging two sorted arrays into one sorted array in-place. Here are different approaches to solve this problem in Java:
+
+### 1. Two Pointers from End
+This approach uses two pointers starting from the end of both arrays and merges them into the first array. The time complexity is \(O(m + n)\).
+
+```java
+public class MergeSortedArray {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = m - 1; // Pointer for nums1
+        int j = n - 1; // Pointer for nums2
+        int k = m + n - 1; // Pointer for the merged array
+
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
+
+        while (j >= 0) {
+            nums1[k--] = nums2[j--];
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int m = 3;
+        int[] nums2 = {2, 5, 6};
+        int n = 3;
+        MergeSortedArray solution = new MergeSortedArray();
+        solution.merge(nums1, m, nums2, n);
+        System.out.println("Merged array: " + Arrays.toString(nums1)); // Output: [1, 2, 2, 3, 5, 6]
+    }
+}
+```
+
+### 2. Two Pointers from Start
+This approach uses two pointers starting from the beginning of both arrays and merges them into a temporary array. The time complexity is \(O(m + n)\), but it requires extra space.
+
+```java
+public class MergeSortedArrayTemp {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int[] temp = new int[m + n];
+        int i = 0, j = 0, k = 0;
+
+        while (i < m && j < n) {
+            if (nums1[i] <= nums2[j]) {
+                temp[k++] = nums1[i++];
+            } else {
+                temp[k++] = nums2[j++];
+            }
+        }
+
+        while (i < m) {
+            temp[k++] = nums1[i++];
+        }
+
+        while (j < n) {
+            temp[k++] = nums2[j++];
+        }
+
+        System.arraycopy(temp, 0, nums1, 0, m + n);
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int m = 3;
+        int[] nums2 = {2, 5, 6};
+        int n = 3;
+        MergeSortedArrayTemp solution = new MergeSortedArrayTemp();
+        solution.merge(nums1, m, nums2, n);
+        System.out.println("Merged array: " + Arrays.toString(nums1)); // Output: [1, 2, 2, 3, 5, 6]
+    }
+}
+```
+
+### 3. Using Built-in Functions
+This approach leverages Java's built-in functions to merge and sort the arrays. The time complexity is \(O((m + n) \log(m + n))\).
+
+```java
+import java.util.Arrays;
+
+public class MergeSortedArrayBuiltIn {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        System.arraycopy(nums2, 0, nums1, m, n);
+        Arrays.sort(nums1);
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int m = 3;
+        int[] nums2 = {2, 5, 6};
+        int n = 3;
+        MergeSortedArrayBuiltIn solution = new MergeSortedArrayBuiltIn();
+        solution.merge(nums1, m, nums2, n);
+        System.out.println("Merged array: " + Arrays.toString(nums1)); // Output: [1, 2, 2, 3, 5, 6]
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Merge Sorted Array" problem. The two-pointers method from the end is generally preferred due to its efficiency and in-place merging[1](https://leetcode.com/problems/merge-sorted-array/)[2](https://dev.to/rahulgithubweb/leetcode-challenge-merge-sorted-array-top-interview-questions-java-solution-dpa).
+
+Would you like more details on any specific approach?
+[1](https://leetcode.com/problems/merge-sorted-array/): [1](https://leetcode.com/problems/merge-sorted-array/)
+[2](https://dev.to/rahulgithubweb/leetcode-challenge-merge-sorted-array-top-interview-questions-java-solution-dpa): [2](https://dev.to/rahulgithubweb/leetcode-challenge-merge-sorted-array-top-interview-questions-java-solution-dpa)
+
+## Remove Duplicates from Sorted Array II
+
+The "Remove Duplicates from Sorted Array II" problem on LeetCode requires modifying a sorted array in-place so that each element appears at most twice. Here are different approaches to solve this problem in Java:
+
+### 1. Two Pointers Approach
+This approach uses two pointers to keep track of the position in the array where the next unique element should be placed. The time complexity is \(O(n)\).
+
+```java
+public class RemoveDuplicates {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length <= 2) return nums.length;
+
+        int k = 2; // Pointer for the position of the next unique element
+        for (int i = 2; i < nums.length; i++) {
+            if (nums[i] != nums[k - 2]) {
+                nums[k++] = nums[i];
+            }
+        }
+        return k;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 1, 2, 2, 3};
+        RemoveDuplicates solution = new RemoveDuplicates();
+        int newLength = solution.removeDuplicates(nums);
+        System.out.println("New length: " + newLength); // Output: 5
+        System.out.println("Modified array: " + Arrays.toString(Arrays.copyOf(nums, newLength))); // Output: [1, 1, 2, 2, 3]
+    }
+}
+```
+
+### 2. Optimized Two Pointers Approach
+This approach is similar to the first one but includes additional checks to handle edge cases more efficiently. The time complexity remains \(O(n)\).
+
+```java
+public class RemoveDuplicatesOptimized {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length <= 2) return nums.length;
+
+        int i = 1; // Pointer for the previous element
+        int j = 2; // Pointer for the current element
+        while (j < nums.length) {
+            if (nums[j] != nums[i] || nums[j] != nums[i - 1]) {
+                nums[++i] = nums[j];
+            }
+            j++;
+        }
+        return i + 1;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 1, 2, 2, 3};
+        RemoveDuplicatesOptimized solution = new RemoveDuplicatesOptimized();
+        int newLength = solution.removeDuplicates(nums);
+        System.out.println("New length: " + newLength); // Output: 5
+        System.out.println("Modified array: " + Arrays.toString(Arrays.copyOf(nums, newLength))); // Output: [1, 1, 2, 2, 3]
+    }
+}
+```
+
+### 3. Brute Force Approach
+This approach uses a simple loop to shift elements left whenever an element appears more than twice. The time complexity is \(O(n^2)\).
+
+```java
+public class RemoveDuplicatesBruteForce {
+    public int removeDuplicates(int[] nums) {
+        int n = nums.length;
+        if (n <= 2) return n;
+
+        int k = 2; // Pointer for the position of the next unique element
+        for (int i = 2; i < n; i++) {
+            if (nums[i] != nums[k - 2]) {
+                nums[k++] = nums[i];
+            }
+        }
+        return k;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 1, 2, 2, 3};
+        RemoveDuplicatesBruteForce solution = new RemoveDuplicatesBruteForce();
+        int newLength = solution.removeDuplicates(nums);
+        System.out.println("New length: " + newLength); // Output: 5
+        System.out.println("Modified array: " + Arrays.toString(Arrays.copyOf(nums, newLength))); // Output: [1, 1, 2, 2, 3]
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Remove Duplicates from Sorted Array II" problem. The two-pointers method is generally preferred due to its efficiency[1](https://algo.monster/liteproblems/80)[2](https://www.programcreek.com/2013/01/leetcode-remove-duplicates-from-sorted-array-ii-java/).
+
+Would you like more details on any specific approach?
+[1](https://algo.monster/liteproblems/80): [1](https://algo.monster/liteproblems/80)
+[2](https://www.programcreek.com/2013/01/leetcode-remove-duplicates-from-sorted-array-ii-java/): [2](https://www.programcreek.com/2013/01/leetcode-remove-duplicates-from-sorted-array-ii-java/)
+
+
+## Remove Duplicates from Sorted Array
+
+The "Remove Duplicates from Sorted Array" problem on LeetCode requires modifying a sorted array in-place so that each element appears only once. Here are different approaches to solve this problem in Java:
+
+### 1. Two Pointers Approach
+This is the most efficient approach, using two pointers to overwrite the duplicates. The time complexity is \(O(n)\).
+
+```java
+public class RemoveDuplicates {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i]) {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+        return i + 1;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 2};
+        RemoveDuplicates solution = new RemoveDuplicates();
+        int newLength = solution.removeDuplicates(nums);
+        System.out.println("New length: " + newLength); // Output: 2
+        System.out.println("Modified array: " + Arrays.toString(Arrays.copyOf(nums, newLength))); // Output: [1, 2]
+    }
+}
+```
+
+### 2. Using a Set
+This approach uses a `Set` to store unique elements and then copies them back to the array. The time complexity is \(O(n)\), but it requires extra space.
+
+```java
+import java.util.*;
+
+public class RemoveDuplicatesWithSet {
+    public int removeDuplicates(int[] nums) {
+        Set<Integer> set = new LinkedHashSet<>();
+        for (int num : nums) {
+            set.add(num);
+        }
+        int i = 0;
+        for (int num : set) {
+            nums[i++] = num;
+        }
+        return set.size();
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 2};
+        RemoveDuplicatesWithSet solution = new RemoveDuplicatesWithSet();
+        int newLength = solution.removeDuplicates(nums);
+        System.out.println("New length: " + newLength); // Output: 2
+        System.out.println("Modified array: " + Arrays.toString(Arrays.copyOf(nums, newLength))); // Output: [1, 2]
+    }
+}
+```
+
+### 3. Using Streams (Java 8+)
+This modern approach uses Java Streams to filter out duplicates and then copies the result back to the array. The time complexity is \(O(n)\), but it also requires extra space.
+
+```java
+import java.util.*;
+import java.util.stream.*;
+
+public class RemoveDuplicatesWithStreams {
+    public int removeDuplicates(int[] nums) {
+        int[] uniqueNums = Arrays.stream(nums).distinct().toArray();
+        System.arraycopy(uniqueNums, 0, nums, 0, uniqueNums.length);
+        return uniqueNums.length;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 2};
+        RemoveDuplicatesWithStreams solution = new RemoveDuplicatesWithStreams();
+        int newLength = solution.removeDuplicates(nums);
+        System.out.println("New length: " + newLength); // Output: 2
+        System.out.println("Modified array: " + Arrays.toString(Arrays.copyOf(nums, newLength))); // Output: [1, 2]
+    }
+}
+```
+
+### 4. Brute Force Approach
+This approach uses a simple loop to shift elements left whenever a duplicate is found. The time complexity is \(O(n^2)\).
+
+```java
+public class RemoveDuplicatesBruteForce {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+
+        int n = nums.length;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                for (int j = i + 1; j < n - 1; j++) {
+                    nums[j] = nums[j + 1];
+                }
+                n--;
+                i--;
+            }
+        }
+        return n;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 2};
+        RemoveDuplicatesBruteForce solution = new RemoveDuplicatesBruteForce();
+        int newLength = solution.removeDuplicates(nums);
+        System.out.println("New length: " + newLength); // Output: 2
+        System.out.println("Modified array: " + Arrays.toString(Arrays.copyOf(nums, newLength))); // Output: [1, 2]
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Remove Duplicates from Sorted Array" problem. The two-pointers method is generally preferred due to its efficiency[1](https://www.codementor.io/@noelkamphoa/5-effective-methods-to-remove-array-duplicates-while-preserving-original-order-2bff62aydc)[2](https://www.javaguides.net/2018/08/java-program-to-remove-duplicate.html).
+
+Would you like more details on any specific approach?
+[1](https://www.codementor.io/@noelkamphoa/5-effective-methods-to-remove-array-duplicates-while-preserving-original-order-2bff62aydc): [1](https://www.javaguides.net/2023/12/remove-duplicates-from-sorted-array-java.html)
+[2](https://www.javaguides.net/2018/08/java-program-to-remove-duplicate.html): [2](https://www.codementor.io/@noelkamphoa/5-effective-methods-to-remove-array-duplicates-while-preserving-original-order-2bff62aydc)
+
+## Majority Element
+
+The "Majority Element" problem involves finding an element in an array that appears more than \( \frac{n}{2} \) times, where \( n \) is the length of the array. Here are different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This approach uses nested loops to count the occurrences of each element. The time complexity is \( O(n^2) \).
+
+```java
+public class MajorityElementBruteForce {
+    public static Integer findMajorityElement(int[] nums) {
+        int majorityThreshold = nums.length / 2;
+        for (int i = 0; i < nums.length; i++) {
+            int count = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
+            }
+            if (count > majorityThreshold) {
+                return nums[i];
+            }
+        }
+        return null; // No majority element found
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 2, 1, 1, 2};
+        System.out.println("Majority Element: " + findMajorityElement(nums)); // Output: 2
+    }
+}
+```
+
+### 2. HashMap Approach
+This approach uses a `HashMap` to count the occurrences of each element. The time complexity is \( O(n) \), and the space complexity is \( O(n) \).
+
+```java
+import java.util.HashMap;
+
+public class MajorityElementHashMap {
+    public static Integer findMajorityElement(int[] nums) {
+        HashMap<Integer, Integer> counts = new HashMap<>();
+        for (int num : nums) {
+            counts.put(num, counts.getOrDefault(num, 0) + 1);
+        }
+        for (Integer key : counts.keySet()) {
+            if (counts.get(key) > nums.length / 2) {
+                return key;
+            }
+        }
+        return null; // No majority element found
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 2, 1, 1, 2};
+        System.out.println("Majority Element: " + findMajorityElement(nums)); // Output: 2
+    }
+}
+```
+
+### 3. Sorting Approach
+This approach sorts the array and then checks the middle element. The time complexity is \( O(n \log n) \).
+
+```java
+import java.util.Arrays;
+
+public class MajorityElementSorting {
+    public static Integer findMajorityElement(int[] nums) {
+        Arrays.sort(nums);
+        int candidate = nums[nums.length / 2];
+        int count = 0;
+        for (int num : nums) {
+            if (num == candidate) {
+                count++;
+            }
+        }
+        return count > nums.length / 2 ? candidate : null;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 2, 1, 1, 2};
+        System.out.println("Majority Element: " + findMajorityElement(nums)); // Output: 2
+    }
+}
+```
+
+### 4. Moore's Voting Algorithm
+This is an optimal approach with a time complexity of \( O(n) \) and space complexity of \( O(1) \).
+
+```java
+public class MajorityElementMooreVoting {
+    public static Integer findMajorityElement(int[] nums) {
+        int candidate = -1;
+        int count = 0;
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            count += (num == candidate) ? 1 : -1;
+        }
+        // Verification step
+        count = 0;
+        for (int num : nums) {
+            if (num == candidate) {
+                count++;
+            }
+        }
+        return count > nums.length / 2 ? candidate : null;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 2, 1, 1, 2};
+        System.out.println("Majority Element: " + findMajorityElement(nums)); // Output: 2
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Majority Element" problem. Moore's Voting Algorithm is generally preferred due to its efficiency[1](https://www.baeldung.com/java-array-find-majority-element)[2](https://javanexus.com/blog/solving-majority-element-java-arrays).
+
+Would you like more details on any specific approach?
+[1](https://www.baeldung.com/java-array-find-majority-element): [1](https://www.baeldung.com/java-array-find-majority-element)
+[2](https://javanexus.com/blog/solving-majority-element-java-arrays): [2](https://javanexus.com/blog/solving-majority-element-java-arrays)
+
+
+## Rotate Array
+
+Rotating an array involves shifting its elements by a specified number of positions. Here are different approaches to solve the "Rotate Array" problem in Java:
+
+### 1. Brute Force Approach
+This approach rotates the array one step at a time. The time complexity is \(O(n \times k)\), where \(n\) is the length of the array and \(k\) is the number of rotations.
+
+```java
+public class RotateArrayBruteForce {
+    public void rotate(int[] nums, int k) {
+        k = k % nums.length;
+        for (int i = 0; i < k; i++) {
+            int previous = nums[nums.length - 1];
+            for (int j = 0; j < nums.length; j++) {
+                int temp = nums[j];
+                nums[j] = previous;
+                previous = temp;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        int k = 3;
+        RotateArrayBruteForce solution = new RotateArrayBruteForce();
+        solution.rotate(nums, k);
+        System.out.println("Rotated array: " + Arrays.toString(nums)); // Output: [5, 6, 7, 1, 2, 3, 4]
+    }
+}
+```
+
+### 2. Using Extra Array
+This approach uses an extra array to store the rotated elements. The time complexity is \(O(n)\), but it requires \(O(n)\) extra space.
+
+```java
+public class RotateArrayExtraArray {
+    public void rotate(int[] nums, int k) {
+        int[] rotated = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            rotated[(i + k) % nums.length] = nums[i];
+        }
+        System.arraycopy(rotated, 0, nums, 0, nums.length);
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        int k = 3;
+        RotateArrayExtraArray solution = new RotateArrayExtraArray();
+        solution.rotate(nums, k);
+        System.out.println("Rotated array: " + Arrays.toString(nums)); // Output: [5, 6, 7, 1, 2, 3, 4]
+    }
+}
+```
+
+### 3. Reverse Approach
+This approach reverses parts of the array to achieve the rotation. The time complexity is \(O(n)\) and it requires \(O(1)\) extra space.
+
+```java
+public class RotateArrayReverse {
+    public void rotate(int[] nums, int k) {
+        k = k % nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+    }
+
+    private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        int k = 3;
+        RotateArrayReverse solution = new RotateArrayReverse();
+        solution.rotate(nums, k);
+        System.out.println("Rotated array: " + Arrays.toString(nums)); // Output: [5, 6, 7, 1, 2, 3, 4]
+    }
+}
+```
+
+### 4. Cyclic Replacements
+This approach uses cyclic replacements to rotate the array. The time complexity is \(O(n)\) and it requires \(O(1)\) extra space.
+
+```java
+public class RotateArrayCyclic {
+    public void rotate(int[] nums, int k) {
+        k = k % nums.length;
+        int count = 0;
+        for (int start = 0; count < nums.length; start++) {
+            int current = start;
+            int prev = nums[start];
+            do {
+                int next = (current + k) % nums.length;
+                int temp = nums[next];
+                nums[next] = prev;
+                prev = temp;
+                current = next;
+                count++;
+            } while (start != current);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        int k = 3;
+        RotateArrayCyclic solution = new RotateArrayCyclic();
+        solution.rotate(nums, k);
+        System.out.println("Rotated array: " + Arrays.toString(nums)); // Output: [5, 6, 7, 1, 2, 3, 4]
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Rotate Array" problem. The reverse method is generally preferred due to its efficiency and in-place rotation[1](https://www.baeldung.com/java-rotate-arrays)[2](https://examples.javacodegeeks.com/rotate-arrays-in-java/).
+
+Would you like more details on any specific approach?
+[1](https://www.baeldung.com/java-rotate-arrays): [1](https://www.baeldung.com/java-rotate-arrays)
+[2](https://examples.javacodegeeks.com/rotate-arrays-in-java/): [2](https://examples.javacodegeeks.com/rotate-arrays-in-java/)
+
+
+## Jump Game
+
+The "Jump Game" problem on LeetCode involves determining if you can reach the last index of an array given the maximum jumps at each element. Here are different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This approach tries all possible jumps from each index. The time complexity is \(O(2^n)\), which is inefficient for large arrays.
+
+```java
+public class JumpGameBruteForce {
+    public boolean canJump(int[] nums) {
+        return canJumpFromPosition(0, nums);
+    }
+
+    private boolean canJumpFromPosition(int position, int[] nums) {
+        if (position == nums.length - 1) {
+            return true;
+        }
+        int furthestJump = Math.min(position + nums[position], nums.length - 1);
+        for (int nextPosition = position + 1; nextPosition <= furthestJump; nextPosition++) {
+            if (canJumpFromPosition(nextPosition, nums)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 1, 1, 4};
+        JumpGameBruteForce solution = new JumpGameBruteForce();
+        System.out.println("Can jump: " + solution.canJump(nums)); // Output: true
+    }
+}
+```
+
+### 2. Dynamic Programming Approach
+This approach uses a memoization table to store the results of subproblems. The time complexity is \(O(n^2)\).
+
+```java
+public class JumpGameDP {
+    public boolean canJump(int[] nums) {
+        int[] memo = new int[nums.length];
+        Arrays.fill(memo, -1);
+        memo[nums.length - 1] = 1;
+        return canJumpFromPosition(0, nums, memo);
+    }
+
+    private boolean canJumpFromPosition(int position, int[] nums, int[] memo) {
+        if (memo[position] != -1) {
+            return memo[position] == 1;
+        }
+        int furthestJump = Math.min(position + nums[position], nums.length - 1);
+        for (int nextPosition = position + 1; nextPosition <= furthestJump; nextPosition++) {
+            if (canJumpFromPosition(nextPosition, nums, memo)) {
+                memo[position] = 1;
+                return true;
+            }
+        }
+        memo[position] = 0;
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 1, 1, 4};
+        JumpGameDP solution = new JumpGameDP();
+        System.out.println("Can jump: " + solution.canJump(nums)); // Output: true
+    }
+}
+```
+
+### 3. Greedy Approach
+This approach keeps track of the furthest index that can be reached. The time complexity is \(O(n)\).
+
+```java
+public class JumpGameGreedy {
+    public boolean canJump(int[] nums) {
+        int maxReach = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i > maxReach) {
+                return false;
+            }
+            maxReach = Math.max(maxReach, i + nums[i]);
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 1, 1, 4};
+        JumpGameGreedy solution = new JumpGameGreedy();
+        System.out.println("Can jump: " + solution.canJump(nums)); // Output: true
+    }
+}
+```
+
+### 4. Backtracking Approach
+This approach explores all possible paths using backtracking. The time complexity is \(O(2^n)\), similar to the brute force approach.
+
+```java
+public class JumpGameBacktracking {
+    public boolean canJump(int[] nums) {
+        return canJumpFromPosition(0, nums);
+    }
+
+    private boolean canJumpFromPosition(int position, int[] nums) {
+        if (position == nums.length - 1) {
+            return true;
+        }
+        int furthestJump = Math.min(position + nums[position], nums.length - 1);
+        for (int nextPosition = furthestJump; nextPosition > position; nextPosition--) {
+            if (canJumpFromPosition(nextPosition, nums)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 1, 1, 4};
+        JumpGameBacktracking solution = new JumpGameBacktracking();
+        System.out.println("Can jump: " + solution.canJump(nums)); // Output: true
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Jump Game" problem. The greedy method is generally preferred due to its efficiency[1](https://www.youtube.com/watch?v=Gtugy3mRV-A)[2](https://www.youtube.com/watch?v=XlR0ytsj9JQ).
+
+Would you like more details on any specific approach?
+[1](https://www.youtube.com/watch?v=Gtugy3mRV-A): [4](https://www.programcreek.com/2014/03/leetcode-jump-game-java/)
+[2](https://www.youtube.com/watch?v=XlR0ytsj9JQ): [5](https://algo.monster/liteproblems/55)
+
+## Jump Game II
+
+The "Jump Game II" problem on LeetCode requires finding the minimum number of jumps to reach the last index of an array. Here are different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This approach tries all possible jumps from each index. The time complexity is \(O(2^n)\), which is inefficient for large arrays.
+
+```java
+public class JumpGameIIBruteForce {
+    public int jump(int[] nums) {
+        return jumpFromPosition(0, nums);
+    }
+
+    private int jumpFromPosition(int position, int[] nums) {
+        if (position >= nums.length - 1) {
+            return 0;
+        }
+        int furthestJump = Math.min(position + nums[position], nums.length - 1);
+        int minJumps = Integer.MAX_VALUE;
+        for (int nextPosition = position + 1; nextPosition <= furthestJump; nextPosition++) {
+            int jumps = jumpFromPosition(nextPosition, nums);
+            if (jumps != Integer.MAX_VALUE) {
+                minJumps = Math.min(minJumps, jumps + 1);
+            }
+        }
+        return minJumps;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 1, 1, 4};
+        JumpGameIIBruteForce solution = new JumpGameIIBruteForce();
+        System.out.println("Minimum jumps: " + solution.jump(nums)); // Output: 2
+    }
+}
+```
+
+### 2. Dynamic Programming Approach
+This approach uses a memoization table to store the results of subproblems. The time complexity is \(O(n^2)\).
+
+```java
+public class JumpGameIIDP {
+    public int jump(int[] nums) {
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 1; j <= nums[i] && i + j < nums.length; j++) {
+                dp[i + j] = Math.min(dp[i + j], dp[i] + 1);
+            }
+        }
+        return dp[nums.length - 1];
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 1, 1, 4};
+        JumpGameIIDP solution = new JumpGameIIDP();
+        System.out.println("Minimum jumps: " + solution.jump(nums)); // Output: 2
+    }
+}
+```
+
+### 3. Greedy Approach
+This approach keeps track of the furthest index that can be reached and the end of the current jump range. The time complexity is \(O(n)\).
+
+```java
+public class JumpGameIIGreedy {
+    public int jump(int[] nums) {
+        int jumps = 0, currentEnd = 0, farthest = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            farthest = Math.max(farthest, i + nums[i]);
+            if (i == currentEnd) {
+                jumps++;
+                currentEnd = farthest;
+            }
+        }
+        return jumps;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 1, 1, 4};
+        JumpGameIIGreedy solution = new JumpGameIIGreedy();
+        System.out.println("Minimum jumps: " + solution.jump(nums)); // Output: 2
+    }
+}
+```
+
+### 4. Backtracking Approach
+This approach explores all possible paths using backtracking. The time complexity is \(O(2^n)\), similar to the brute force approach.
+
+```java
+public class JumpGameIIBacktracking {
+    public int jump(int[] nums) {
+        return jumpFromPosition(0, nums);
+    }
+
+    private int jumpFromPosition(int position, int[] nums) {
+        if (position >= nums.length - 1) {
+            return 0;
+        }
+        int furthestJump = Math.min(position + nums[position], nums.length - 1);
+        int minJumps = Integer.MAX_VALUE;
+        for (int nextPosition = furthestJump; nextPosition > position; nextPosition--) {
+            int jumps = jumpFromPosition(nextPosition, nums);
+            if (jumps != Integer.MAX_VALUE) {
+                minJumps = Math.min(minJumps, jumps + 1);
+            }
+        }
+        return minJumps;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 1, 1, 4};
+        JumpGameIIBacktracking solution = new JumpGameIIBacktracking();
+        System.out.println("Minimum jumps: " + solution.jump(nums)); // Output: 2
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Jump Game II" problem. The greedy method is generally preferred due to its efficiency[1](https://algo.monster/liteproblems/45)[2](https://dev.to/dhanush9952/jump-game-ii-a-deep-dive-into-leetcodes-classic-algorithm-problem-45i3).
+
+Would you like more details on any specific approach?
+
+## H-Index
+
+The H-Index is a metric used to quantify the productivity and citation impact of a researcher. It measures how many papers (h) have received at least h citations. Here are different approaches to solve the H-Index problem in Java:
+
+### 1. Sorting Approach
+This approach sorts the array in descending order and then iterates to find the H-Index. The time complexity is \(O(n \log n)\).
+
+```java
+import java.util.Arrays;
+
+public class HIndexSorting {
+    public int hIndex(int[] citations) {
+        Arrays.sort(citations);
+        int n = citations.length;
+        for (int i = 0; i < n; i++) {
+            if (citations[i] >= n - i) {
+                return n - i;
+            }
+        }
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        int[] citations = {3, 0, 6, 1, 5};
+        HIndexSorting solution = new HIndexSorting();
+        System.out.println("H-Index: " + solution.hIndex(citations)); // Output: 3
+    }
+}
+```
+
+### 2. Bucket Sort Approach
+This approach uses a bucket sorting technique to count the number of papers with a certain number of citations. The time complexity is \(O(n)\).
+
+```java
+public class HIndexBucketSort {
+    public int hIndex(int[] citations) {
+        int n = citations.length;
+        int[] buckets = new int[n + 1];
+        for (int citation : citations) {
+            if (citation >= n) {
+                buckets[n]++;
+            } else {
+                buckets[citation]++;
+            }
+        }
+        int count = 0;
+        for (int i = n; i >= 0; i--) {
+            count += buckets[i];
+            if (count >= i) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        int[] citations = {3, 0, 6, 1, 5};
+        HIndexBucketSort solution = new HIndexBucketSort();
+        System.out.println("H-Index: " + solution.hIndex(citations)); // Output: 3
+    }
+}
+```
+
+### 3. Binary Search Approach
+This approach uses binary search to find the H-Index. The time complexity is \(O(n \log n)\).
+
+```java
+import java.util.Arrays;
+
+public class HIndexBinarySearch {
+    public int hIndex(int[] citations) {
+        Arrays.sort(citations);
+        int n = citations.length;
+        int left = 0, right = n - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (citations[mid] >= n - mid) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return n - left;
+    }
+
+    public static void main(String[] args) {
+        int[] citations = {3, 0, 6, 1, 5};
+        HIndexBinarySearch solution = new HIndexBinarySearch();
+        System.out.println("H-Index: " + solution.hIndex(citations)); // Output: 3
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the H-Index problem. The bucket sort method is generally preferred due to its efficiency[1](https://codencofe.blogspot.com/2024/09/finding-h-index-in-java-simple-vs.html)[2](https://algo.monster/liteproblems/274).
+
+Would you like more details on any specific approach?
+[1](https://codencofe.blogspot.com/2024/09/finding-h-index-in-java-simple-vs.html): [1](https://codencofe.blogspot.com/2024/09/finding-h-index-in-java-simple-vs.html)
+[2](https://algo.monster/liteproblems/274): [2](https://algo.monster/liteproblems/274)
+
+## Insert Delete GetRandom O(1)
+
+The "Insert Delete GetRandom O(1)" problem on LeetCode requires designing a data structure that supports inserting, deleting, and getting a random element in constant time. Here are different approaches to solve this problem in Java:
+
+### 1. Using HashMap and ArrayList
+This approach uses a `HashMap` to store the value-to-index mapping and an `ArrayList` to store the values. The time complexity for all operations is \(O(1)\).
+
+```java
+import java.util.*;
+
+public class RandomizedSet {
+    private Map<Integer, Integer> valueToIndex;
+    private List<Integer> values;
+    private Random random;
+
+    /** Initialize your data structure here. */
+    public RandomizedSet() {
+        valueToIndex = new HashMap<>();
+        values = new ArrayList<>();
+        random = new Random();
+    }
+
+    /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+    public boolean insert(int val) {
+        if (valueToIndex.containsKey(val)) {
+            return false;
+        }
+        valueToIndex.put(val, values.size());
+        values.add(val);
+        return true;
+    }
+
+    /** Removes a value from the set. Returns true if the set contained the specified element. */
+    public boolean remove(int val) {
+        if (!valueToIndex.containsKey(val)) {
+            return false;
+        }
+        int index = valueToIndex.get(val);
+        int lastElement = values.get(values.size() - 1);
+        values.set(index, lastElement);
+        valueToIndex.put(lastElement, index);
+        values.remove(values.size() - 1);
+        valueToIndex.remove(val);
+        return true;
+    }
+
+    /** Get a random element from the set. */
+    public int getRandom() {
+        return values.get(random.nextInt(values.size()));
+    }
+
+    public static void main(String[] args) {
+        RandomizedSet randomizedSet = new RandomizedSet();
+        System.out.println(randomizedSet.insert(1)); // true
+        System.out.println(randomizedSet.remove(2)); // false
+        System.out.println(randomizedSet.insert(2)); // true
+        System.out.println(randomizedSet.getRandom()); // 1 or 2
+        System.out.println(randomizedSet.remove(1)); // true
+        System.out.println(randomizedSet.insert(2)); // false
+        System.out.println(randomizedSet.getRandom()); // 2
+    }
+}
+```
+
+### 2. Using Two HashMaps
+This approach uses two `HashMaps` to store the value-to-index and index-to-value mappings. The time complexity for all operations is \(O(1)\).
+
+```java
+import java.util.*;
+
+public class RandomizedSetTwoMaps {
+    private Map<Integer, Integer> valueToIndex;
+    private Map<Integer, Integer> indexToValue;
+    private Random random;
+
+    /** Initialize your data structure here. */
+    public RandomizedSetTwoMaps() {
+        valueToIndex = new HashMap<>();
+        indexToValue = new HashMap<>();
+        random = new Random();
+    }
+
+    /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+    public boolean insert(int val) {
+        if (valueToIndex.containsKey(val)) {
+            return false;
+        }
+        int index = valueToIndex.size();
+        valueToIndex.put(val, index);
+        indexToValue.put(index, val);
+        return true;
+    }
+
+    /** Removes a value from the set. Returns true if the set contained the specified element. */
+    public boolean remove(int val) {
+        if (!valueToIndex.containsKey(val)) {
+            return false;
+        }
+        int index = valueToIndex.get(val);
+        int lastIndex = valueToIndex.size() - 1;
+        int lastValue = indexToValue.get(lastIndex);
+
+        valueToIndex.put(lastValue, index);
+        indexToValue.put(index, lastValue);
+
+        valueToIndex.remove(val);
+        indexToValue.remove(lastIndex);
+        return true;
+    }
+
+    /** Get a random element from the set. */
+    public int getRandom() {
+        int randomIndex = random.nextInt(valueToIndex.size());
+        return indexToValue.get(randomIndex);
+    }
+
+    public static void main(String[] args) {
+        RandomizedSetTwoMaps randomizedSet = new RandomizedSetTwoMaps();
+        System.out.println(randomizedSet.insert(1)); // true
+        System.out.println(randomizedSet.remove(2)); // false
+        System.out.println(randomizedSet.insert(2)); // true
+        System.out.println(randomizedSet.getRandom()); // 1 or 2
+        System.out.println(randomizedSet.remove(1)); // true
+        System.out.println(randomizedSet.insert(2)); // false
+        System.out.println(randomizedSet.getRandom()); // 2
+    }
+}
+```
+
+### 3. Using HashMap and LinkedList
+This approach uses a `HashMap` to store the value-to-index mapping and a `LinkedList` to store the values. The time complexity for all operations is \(O(1)\).
+
+```java
+import java.util.*;
+
+public class RandomizedSetLinkedList {
+    private Map<Integer, Integer> valueToIndex;
+    private List<Integer> values;
+    private Random random;
+
+    /** Initialize your data structure here. */
+    public RandomizedSetLinkedList() {
+        valueToIndex = new HashMap<>();
+        values = new LinkedList<>();
+        random = new Random();
+    }
+
+    /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+    public boolean insert(int val) {
+        if (valueToIndex.containsKey(val)) {
+            return false;
+        }
+        valueToIndex.put(val, values.size());
+        values.add(val);
+        return true;
+    }
+
+    /** Removes a value from the set. Returns true if the set contained the specified element. */
+    public boolean remove(int val) {
+        if (!valueToIndex.containsKey(val)) {
+            return false;
+        }
+        int index = valueToIndex.get(val);
+        int lastElement = values.get(values.size() - 1);
+        values.set(index, lastElement);
+        valueToIndex.put(lastElement, index);
+        values.remove(values.size() - 1);
+        valueToIndex.remove(val);
+        return true;
+    }
+
+    /** Get a random element from the set. */
+    public int getRandom() {
+        return values.get(random.nextInt(values.size()));
+    }
+
+    public static void main(String[] args) {
+        RandomizedSetLinkedList randomizedSet = new RandomizedSetLinkedList();
+        System.out.println(randomizedSet.insert(1)); // true
+        System.out.println(randomizedSet.remove(2)); // false
+        System.out.println(randomizedSet.insert(2)); // true
+        System.out.println(randomizedSet.getRandom()); // 1 or 2
+        System.out.println(randomizedSet.remove(1)); // true
+        System.out.println(randomizedSet.insert(2)); // false
+        System.out.println(randomizedSet.getRandom()); // 2
+    }
+}
+```
+
+These approaches cover the basic and more optimized ways to solve the "Insert Delete GetRandom O(1)" problem. The HashMap and ArrayList method is generally preferred due to its efficiency[1](https://www.programcreek.com/2014/08/leetcode-insert-delete-getrandom-o1-java/)[2](https://www.programcreek.com/2014/08/leetcode-insert-delete-getrandom-o1-duplicates-allowed-java/).
+
+Would you like more details on any specific approach?
+[1](https://www.programcreek.com/2014/08/leetcode-insert-delete-getrandom-o1-java/): [1](https://www.programcreek.com/2014/08/leetcode-insert-delete-getrandom-o1-java/)
+[2](https://www.programcreek.com/2014/08/leetcode-insert-delete-getrandom-o1-duplicates-allowed-java/): [2](https://tutorialcup.com/leetcode-solutions/insert-delete-getrandom-o1-leetcode-solution.htm)
+
+
+## Sort 0 1 2 (DNF - Dutch National Flag)
+
+Sure! Sorting an array containing only 0s, 1s, and 2s can be done using several approaches in Java. Here are a few methods:
+
+### 1. Counting Sort
+This approach counts the number of 0s, 1s, and 2s, and then reconstructs the array.
+
+```java
+public void sortColors(int[] nums) {
+    int count0 = 0, count1 = 0, count2 = 0;
+    for (int num : nums) {
+        if (num == 0) count0++;
+        else if (num == 1) count1++;
+        else count2++;
+    }
+    int index = 0;
+    while (count0-- > 0) nums[index++] = 0;
+    while (count1-- > 0) nums[index++] = 1;
+    while (count2-- > 0) nums[index++] = 2;
+}
+```
+
+### 2. Dutch National Flag Algorithm
+This is a single-pass algorithm with constant space complexity.
+
+```java
+public void sortColors(int[] nums) {
+    int low = 0, mid = 0, high = nums.length - 1;
+    while (mid <= high) {
+        switch (nums[mid]) {
+            case 0:
+                swap(nums, low++, mid++);
+                break;
+            case 1:
+                mid++;
+                break;
+            case 2:
+                swap(nums, mid, high--);
+                break;
+        }
+    }
+}
+
+private void swap(int[] nums, int i, int j) {
+    int temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+}
+```
+
+### 3. Two-Pass Algorithm
+This approach first moves all 0s to the beginning and then all 2s to the end.
+
+```java
+public void sortColors(int[] nums) {
+    int n = nums.length;
+    int index = 0;
+    for (int i = 0; i < n; i++) {
+        if (nums[i] == 0) {
+            nums[index++] = 0;
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        if (nums[i] == 1) {
+            nums[index++] = 1;
+        }
+    }
+    while (index < n) {
+        nums[index++] = 2;
+    }
+}
+```
+
+Each of these methods has its own advantages. The Counting Sort is simple and easy to understand, the Dutch National Flag Algorithm is efficient with a single pass, and the Two-Pass Algorithm is straightforward but requires two passes through the array.
+
+Which approach do you find most interesting?
+
+
+## Move all the negative elements to one side of the array
+
+Certainly! Moving all negative elements to one side of an array can be done using several approaches in Java. Here are a few methods:
+
+### 1. Two-Pointer Approach
+This approach uses two pointers to partition the array in a single pass.
+
+```java
+public void moveNegativesToOneSide(int[] nums) {
+    int left = 0, right = nums.length - 1;
+    while (left <= right) {
+        if (nums[left] < 0) {
+            left++;
+        } else if (nums[right] >= 0) {
+            right--;
+        } else {
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+            left++;
+            right--;
+        }
+    }
+}
+```
+
+### 2. Partition Process of QuickSort
+This method is similar to the partition process of the QuickSort algorithm.
+
+```java
+public void moveNegativesToOneSide(int[] nums) {
+    int j = 0;
+    for (int i = 0; i < nums.length; i++) {
+        if (nums[i] < 0) {
+            if (i != j) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+            }
+            j++;
+        }
+    }
+}
+```
+
+### 3. Using Extra Space
+This approach uses an additional array to store the result.
+
+```java
+public void moveNegativesToOneSide(int[] nums) {
+    int[] result = new int[nums.length];
+    int index = 0;
+    for (int num : nums) {
+        if (num < 0) {
+            result[index++] = num;
+        }
+    }
+    for (int num : nums) {
+        if (num >= 0) {
+            result[index++] = num;
+        }
+    }
+    System.arraycopy(result, 0, nums, 0, nums.length);
+}
+```
+
+### 4. Using Collections
+This approach leverages Java Collections to achieve the same result.
+
+```java
+import java.util.*;
+
+public void moveNegativesToOneSide(int[] nums) {
+    List<Integer> negatives = new ArrayList<>();
+    List<Integer> nonNegatives = new ArrayList<>();
+    for (int num : nums) {
+        if (num < 0) {
+            negatives.add(num);
+        } else {
+            nonNegatives.add(num);
+        }
+    }
+    int index = 0;
+    for (int num : negatives) {
+        nums[index++] = num;
+    }
+    for (int num : nonNegatives) {
+        nums[index++] = num;
+    }
+}
+```
+
+Each of these methods has its own advantages. The Two-Pointer Approach is efficient with a single pass, the QuickSort Partition Process is straightforward, the Extra Space method is simple but uses additional memory, and the Collections method is easy to understand and implement.
+
+Which approach do you find most suitable for your needs?
+
+## Rearrange Postive and Negative alternatively element in array
+
+Certainly! Placing positive and negative elements alternately in an array can be done using several approaches in Java. Here are a few methods:
+
+### 1. Using Extra Space
+This approach uses two separate arrays to store positive and negative numbers and then merges them alternately.
+
+```java
+public void rearrangeAlternately(int[] nums) {
+    int[] positives = Arrays.stream(nums).filter(x -> x >= 0).toArray();
+    int[] negatives = Arrays.stream(nums).filter(x -> x < 0).toArray();
+    
+    int posIndex = 0, negIndex = 0, index = 0;
+    while (posIndex < positives.length && negIndex < negatives.length) {
+        nums[index++] = positives[posIndex++];
+        nums[index++] = negatives[negIndex++];
+    }
+    while (posIndex < positives.length) {
+        nums[index++] = positives[posIndex++];
+    }
+    while (negIndex < negatives.length) {
+        nums[index++] = negatives[negIndex++];
+    }
+}
+```
+
+### 2. In-Place Rearrangement
+This approach rearranges the elements in place without using extra space.
+
+```java
+public void rearrangeAlternately(int[] nums) {
+    int n = nums.length;
+    int i = -1, temp = 0;
+    for (int j = 0; j < n; j++) {
+        if (nums[j] < 0) {
+            i++;
+            temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+        }
+    }
+    
+    int pos = i + 1, neg = 0;
+    while (pos < n && neg < pos && nums[neg] < 0) {
+        temp = nums[neg];
+        nums[neg] = nums[pos];
+        nums[pos] = temp;
+        pos++;
+        neg += 2;
+    }
+}
+```
+
+### 3. Using Collections
+This approach leverages Java Collections to achieve the same result.
+
+```java
+import java.util.*;
+
+public void rearrangeAlternately(int[] nums) {
+    List<Integer> positives = new ArrayList<>();
+    List<Integer> negatives = new ArrayList<>();
+    for (int num : nums) {
+        if (num >= 0) {
+            positives.add(num);
+        } else {
+            negatives.add(num);
+        }
+    }
+    
+    int posIndex = 0, negIndex = 0, index = 0;
+    while (posIndex < positives.size() && negIndex < negatives.size()) {
+        nums[index++] = positives.get(posIndex++);
+        nums[index++] = negatives.get(negIndex++);
+    }
+    while (posIndex < positives.size()) {
+        nums[index++] = positives.get(posIndex++);
+    }
+    while (negIndex < negatives.size()) {
+        nums[index++] = negatives.get(negIndex++);
+    }
+}
+```
+
+### 4. Two-Pointer Approach
+This approach uses two pointers to rearrange the elements alternately.
+
+```java
+public void rearrangeAlternately(int[] nums) {
+    int n = nums.length;
+    int[] result = new int[n];
+    int posIndex = 0, negIndex = 1;
+    
+    for (int num : nums) {
+        if (num >= 0 && posIndex < n) {
+            result[posIndex] = num;
+            posIndex += 2;
+        } else if (num < 0 && negIndex < n) {
+            result[negIndex] = num;
+            negIndex += 2;
+        }
+    }
+    
+    for (int i = 0; i < n; i++) {
+        nums[i] = result[i];
+    }
+}
+```
+
+Each of these methods has its own advantages. The Extra Space method is simple but uses additional memory, the In-Place Rearrangement is efficient with no extra space, the Collections method is easy to understand, and the Two-Pointer Approach is straightforward and efficient.
+
+Which approach do you find most suitable for your needs?
+
+# Median of 2 sorted arrays of equal size
+
+Finding the median of two sorted arrays of equal size can be done using several approaches in Java. Here are a few methods:
+
+### 1. Merge and Find Median
+This approach merges the two arrays and then finds the median.
+
+```java
+public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    int[] merged = new int[nums1.length + nums2.length];
+    int i = 0, j = 0, k = 0;
+    
+    while (i < nums1.length && j < nums2.length) {
+        if (nums1[i] < nums2[j]) {
+            merged[k++] = nums1[i++];
+        } else {
+            merged[k++] = nums2[j++];
+        }
+    }
+    
+    while (i < nums1.length) {
+        merged[k++] = nums1[i++];
+    }
+    
+    while (j < nums2.length) {
+        merged[k++] = nums2[j++];
+    }
+    
+    int n = merged.length;
+    return (merged[n / 2 - 1] + merged[n / 2]) / 2.0;
+}
+```
+
+### 2. Binary Search Approach
+This approach uses binary search to find the median in logarithmic time complexity.
+
+```java
+public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    int n = nums1.length;
+    return findMedianUtil(nums1, nums2, 0, n - 1, 0, n - 1);
+}
+
+private double findMedianUtil(int[] nums1, int[] nums2, int startA, int endA, int startB, int endB) {
+    if (endA - startA == 1) {
+        return (Math.max(nums1[startA], nums2[startB]) + Math.min(nums1[endA], nums2[endB])) / 2.0;
+    }
+    
+    int m1 = median(nums1, startA, endA);
+    int m2 = median(nums2, startB, endB);
+    
+    if (m1 == m2) {
+        return m1;
+    }
+    
+    if (m1 < m2) {
+        return findMedianUtil(nums1, nums2, (endA + startA + 1) / 2, endA, startB, (endB + startB + 1) / 2);
+    } else {
+        return findMedianUtil(nums1, nums2, startA, (endA + startA + 1) / 2, (endB + startB + 1) / 2, endB);
+    }
+}
+
+private int median(int[] nums, int start, int end) {
+    int n = end - start + 1;
+    if (n % 2 == 0) {
+        return (nums[start + n / 2] + nums[start + n / 2 - 1]) / 2;
+    } else {
+        return nums[start + n / 2];
+    }
+}
+```
+
+### 3. Using Two Pointers
+This approach uses two pointers to find the median without merging the arrays.
+
+```java
+public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    int n = nums1.length;
+    int medianIndex1 = n - 1;
+    int medianIndex2 = n;
+    
+    int i = 0, j = 0, count = 0;
+    int median1 = 0, median2 = 0;
+    
+    while (count <= medianIndex2) {
+        int num;
+        if (i < n && (j >= n || nums1[i] < nums2[j])) {
+            num = nums1[i++];
+        } else {
+            num = nums2[j++];
+        }
+        
+        if (count == medianIndex1) {
+            median1 = num;
+        }
+        if (count == medianIndex2) {
+            median2 = num;
+        }
+        count++;
+    }
+    
+    return (median1 + median2) / 2.0;
+}
+```
+
+Each of these methods has its own advantages. The Merge and Find Median approach is simple but has a higher time complexity, the Binary Search approach is efficient with logarithmic time complexity, and the Two Pointers approach is straightforward and avoids merging the arrays.
+
+Which approach do you find most suitable for your needs?
+
+## Median of 2 sorted arrays of different size
+
+Finding the median of two sorted arrays of different sizes can be done using several approaches in Java. Here are a few methods:
+
+### 1. Merge and Find Median
+This approach merges the two arrays and then finds the median.
+
+```java
+public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    int[] merged = new int[nums1.length + nums2.length];
+    int i = 0, j = 0, k = 0;
+    
+    while (i < nums1.length && j < nums2.length) {
+        if (nums1[i] < nums2[j]) {
+            merged[k++] = nums1[i++];
+        } else {
+            merged[k++] = nums2[j++];
+        }
+    }
+    
+    while (i < nums1.length) {
+        merged[k++] = nums1[i++];
+    }
+    
+    while (j < nums2.length) {
+        merged[k++] = nums2[j++];
+    }
+    
+    int n = merged.length;
+    if (n % 2 == 0) {
+        return (merged[n / 2 - 1] + merged[n / 2]) / 2.0;
+    } else {
+        return merged[n / 2];
+    }
+}
+```
+
+### 2. Binary Search Approach
+This approach uses binary search to find the median in logarithmic time complexity.
+
+```java
+public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    if (nums1.length > nums2.length) {
+        return findMedianSortedArrays(nums2, nums1);
+    }
+    
+    int x = nums1.length;
+    int y = nums2.length;
+    int low = 0, high = x;
+    
+    while (low <= high) {
+        int partitionX = (low + high) / 2;
+        int partitionY = (x + y + 1) / 2 - partitionX;
+        
+        int maxX = (partitionX == 0) ? Integer.MIN_VALUE : nums1[partitionX - 1];
+        int maxY = (partitionY == 0) ? Integer.MIN_VALUE : nums2[partitionY - 1];
+        
+        int minX = (partitionX == x) ? Integer.MAX_VALUE : nums1[partitionX];
+        int minY = (partitionY == y) ? Integer.MAX_VALUE : nums2[partitionY];
+        
+        if (maxX <= minY && maxY <= minX) {
+            if ((x + y) % 2 == 0) {
+                return (Math.max(maxX, maxY) + Math.min(minX, minY)) / 2.0;
+            } else {
+                return Math.max(maxX, maxY);
+            }
+        } else if (maxX > minY) {
+            high = partitionX - 1;
+        } else {
+            low = partitionX + 1;
+        }
+    }
+    
+    throw new IllegalArgumentException();
+}
+```
+
+### 3. Using Two Pointers
+This approach uses two pointers to find the median without merging the arrays.
+
+```java
+public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    int m = nums1.length;
+    int n = nums2.length;
+    int totalLength = m + n;
+    int medianIndex1 = (totalLength - 1) / 2;
+    int medianIndex2 = totalLength / 2;
+    
+    int i = 0, j = 0, count = 0;
+    int median1 = 0, median2 = 0;
+    
+    while (count <= medianIndex2) {
+        int num;
+        if (i < m && (j >= n || nums1[i] < nums2[j])) {
+            num = nums1[i++];
+        } else {
+            num = nums2[j++];
+        }
+        
+        if (count == medianIndex1) {
+            median1 = num;
+        }
+        if (count == medianIndex2) {
+            median2 = num;
+        }
+        count++;
+    }
+    
+    return (median1 + median2) / 2.0;
+}
+```
+
+Each of these methods has its own advantages. The Merge and Find Median approach is simple but has a higher time complexity, the Binary Search approach is efficient with logarithmic time complexity, and the Two Pointers approach is straightforward and avoids merging the arrays.
+
+Which approach do you find most suitable for your needs?
+
+## Minimum no. of operations required to make an array palindrome
+
+Making an array a palindrome involves ensuring that the array reads the same forwards and backwards. Here are a few approaches to find the minimum number of operations required to achieve this in Java:
+
+### 1. Two-Pointer Approach
+This approach uses two pointers to compare elements from both ends of the array and counts the necessary operations.
+
+```java
+public int minOperationsToMakePalindrome(int[] nums) {
+    int left = 0, right = nums.length - 1;
+    int operations = 0;
+    
+    while (left < right) {
+        if (nums[left] != nums[right]) {
+            operations++;
+        }
+        left++;
+        right--;
+    }
+    
+    return operations;
+}
+```
+
+### 2. Dynamic Programming
+This approach uses dynamic programming to find the minimum number of operations.
+
+```java
+public int minOperationsToMakePalindrome(int[] nums) {
+    int n = nums.length;
+    int[][] dp = new int[n][n];
+    
+    for (int len = 2; len <= n; len++) {
+        for (int i = 0; i <= n - len; i++) {
+            int j = i + len - 1;
+            if (nums[i] == nums[j]) {
+                dp[i][j] = dp[i + 1][j - 1];
+            } else {
+                dp[i][j] = Math.min(dp[i + 1][j], dp[i][j - 1]) + 1;
+            }
+        }
+    }
+    
+    return dp[0][n - 1];
+}
+```
+
+### 3. Recursive Approach
+This approach uses recursion to find the minimum number of operations.
+
+```java
+public int minOperationsToMakePalindrome(int[] nums) {
+    return minOperations(nums, 0, nums.length - 1);
+}
+
+private int minOperations(int[] nums, int left, int right) {
+    if (left >= right) {
+        return 0;
+    }
+    if (nums[left] == nums[right]) {
+        return minOperations(nums, left + 1, right - 1);
+    }
+    return Math.min(minOperations(nums, left + 1, right), minOperations(nums, left, right - 1)) + 1;
+}
+```
+
+### 4. Greedy Approach
+This approach uses a greedy algorithm to minimize the number of operations.
+
+```java
+public int minOperationsToMakePalindrome(int[] nums) {
+    int left = 0, right = nums.length - 1;
+    int operations = 0;
+    
+    while (left < right) {
+        if (nums[left] != nums[right]) {
+            if (nums[left] < nums[right]) {
+                nums[left + 1] += nums[left];
+                left++;
+            } else {
+                nums[right - 1] += nums[right];
+                right--;
+            }
+            operations++;
+        } else {
+            left++;
+            right--;
+        }
+    }
+    
+    return operations;
+}
+```
+
+Each of these methods has its own advantages. The Two-Pointer Approach is simple and efficient, the Dynamic Programming approach is more comprehensive but uses extra space, the Recursive Approach is elegant but may have higher time complexity, and the Greedy Approach is straightforward and efficient.
+
+Which approach do you find most suitable for your needs?
+
+## Three-way partitioning of an array around a given value
+
+Three-way partitioning of an array around a given value involves rearranging the array such that all elements less than the given value come first, followed by elements equal to the value, and then elements greater than the value. Here are a few approaches in Java:
+
+### 1. Dutch National Flag Algorithm
+This approach is efficient and uses a single pass through the array.
+
+```java
+public void threeWayPartition(int[] nums, int pivot) {
+    int low = 0, mid = 0, high = nums.length - 1;
+    while (mid <= high) {
+        if (nums[mid] < pivot) {
+            swap(nums, low++, mid++);
+        } else if (nums[mid] > pivot) {
+            swap(nums, mid, high--);
+        } else {
+            mid++;
+        }
+    }
+}
+
+private void swap(int[] nums, int i, int j) {
+    int temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+}
+```
+
+### 2. Two-Pass Approach
+This approach uses two passes to partition the array.
+
+```java
+public void threeWayPartition(int[] nums, int pivot) {
+    int n = nums.length;
+    int[] temp = new int[n];
+    int index = 0;
+    
+    // First pass: elements less than pivot
+    for (int num : nums) {
+        if (num < pivot) {
+            temp[index++] = num;
+        }
+    }
+    
+    // Second pass: elements equal to pivot
+    for (int num : nums) {
+        if (num == pivot) {
+            temp[index++] = num;
+        }
+    }
+    
+    // Third pass: elements greater than pivot
+    for (int num : nums) {
+        if (num > pivot) {
+            temp[index++] = num;
+        }
+    }
+    
+    // Copy back to original array
+    System.arraycopy(temp, 0, nums, 0, n);
+}
+```
+
+### 3. Using Collections
+This approach leverages Java Collections to achieve the same result.
+
+```java
+import java.util.*;
+
+public void threeWayPartition(int[] nums, int pivot) {
+    List<Integer> less = new ArrayList<>();
+    List<Integer> equal = new ArrayList<>();
+    List<Integer> greater = new ArrayList<>();
+    
+    for (int num : nums) {
+        if (num < pivot) {
+            less.add(num);
+        } else if (num == pivot) {
+            equal.add(num);
+        } else {
+            greater.add(num);
+        }
+    }
+    
+    int index = 0;
+    for (int num : less) {
+        nums[index++] = num;
+    }
+    for (int num : equal) {
+        nums[index++] = num;
+    }
+    for (int num : greater) {
+        nums[index++] = num;
+    }
+}
+```
+
+### 4. In-Place Partitioning
+This approach partitions the array in place without using extra space.
+
+```java
+public void threeWayPartition(int[] nums, int pivot) {
+    int start = 0, end = nums.length - 1;
+    
+    for (int i = 0; i <= end;) {
+        if (nums[i] < pivot) {
+            swap(nums, i++, start++);
+        } else if (nums[i] > pivot) {
+            swap(nums, i, end--);
+        } else {
+            i++;
+        }
+    }
+}
+
+private void swap(int[] nums, int i, int j) {
+    int temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+}
+```
+
+Each of these methods has its own advantages. The Dutch National Flag Algorithm is efficient with a single pass, the Two-Pass Approach is straightforward but uses extra space, the Collections method is easy to understand, and the In-Place Partitioning is efficient and uses no extra space.
+
+Which approach do you find most suitable for your needs?
+
+## Smallest Subarray with sum greater than a given value
+
+Finding the smallest subarray with a sum greater than a given value can be done using several approaches in Java. Here are a few methods:
+
+### 1. Sliding Window Approach
+This approach uses a sliding window to find the smallest subarray.
+
+```java
+public int smallestSubarrayWithSum(int[] nums, int target) {
+    int n = nums.length;
+    int minLength = n + 1;
+    int start = 0, end = 0, currentSum = 0;
+    
+    while (end < n) {
+        while (currentSum <= target && end < n) {
+            currentSum += nums[end++];
+        }
+        
+        while (currentSum > target && start < n) {
+            minLength = Math.min(minLength, end - start);
+            currentSum -= nums[start++];
+        }
+    }
+    
+    return (minLength == n + 1) ? 0 : minLength;
+}
+```
+
+### 2. Brute Force Approach
+This approach checks all possible subarrays to find the smallest one.
+
+```java
+public int smallestSubarrayWithSum(int[] nums, int target) {
+    int n = nums.length;
+    int minLength = n + 1;
+    
+    for (int start = 0; start < n; start++) {
+        int currentSum = nums[start];
+        if (currentSum > target) {
+            return 1;
+        }
+        
+        for (int end = start + 1; end < n; end++) {
+            currentSum += nums[end];
+            if (currentSum > target && (end - start + 1) < minLength) {
+                minLength = end - start + 1;
+            }
+        }
+    }
+    
+    return (minLength == n + 1) ? 0 : minLength;
+}
+```
+
+### 3. Prefix Sum and Binary Search
+This approach uses prefix sums and binary search to find the smallest subarray.
+
+```java
+import java.util.*;
+
+public int smallestSubarrayWithSum(int[] nums, int target) {
+    int n = nums.length;
+    int[] prefixSums = new int[n + 1];
+    for (int i = 0; i < n; i++) {
+        prefixSums[i + 1] = prefixSums[i] + nums[i];
+    }
+    
+    int minLength = n + 1;
+    for (int i = 0; i <= n; i++) {
+        int toFind = prefixSums[i] + target;
+        int bound = Arrays.binarySearch(prefixSums, toFind);
+        if (bound < 0) {
+            bound = -bound - 1;
+        }
+        if (bound <= n) {
+            minLength = Math.min(minLength, bound - i);
+        }
+    }
+    
+    return (minLength == n + 1) ? 0 : minLength;
+}
+```
+
+### 4. Deque Approach
+This approach uses a deque to maintain a window of indices.
+
+```java
+import java.util.*;
+
+public int smallestSubarrayWithSum(int[] nums, int target) {
+    int n = nums.length;
+    int[] prefixSums = new int[n + 1];
+    for (int i = 0; i < n; i++) {
+        prefixSums[i + 1] = prefixSums[i] + nums[i];
+    }
+    
+    int minLength = n + 1;
+    Deque<Integer> deque = new LinkedList<>();
+    
+    for (int i = 0; i <= n; i++) {
+        while (!deque.isEmpty() && prefixSums[i] - prefixSums[deque.peekFirst()] > target) {
+            minLength = Math.min(minLength, i - deque.pollFirst());
+        }
+        while (!deque.isEmpty() && prefixSums[i] <= prefixSums[deque.peekLast()]) {
+            deque.pollLast();
+        }
+        deque.offerLast(i);
+    }
+    
+    return (minLength == n + 1) ? 0 : minLength;
+}
+```
+
+Each of these methods has its own advantages. The Sliding Window Approach is efficient and straightforward, the Brute Force Approach is simple but less efficient, the Prefix Sum and Binary Search approach is more advanced and efficient, and the Deque Approach is also efficient and handles the problem well.
+
+Which approach do you find most suitable for your needs?
+
+## Find whether an array is a subset of another array
+
+Determining whether one array is a subset of another can be done using several approaches in Java. Here are a few methods:
+
+### 1. Using HashSet
+This approach uses a HashSet to check for the presence of elements.
+
+```java
+import java.util.HashSet;
+
+public boolean isSubset(int[] arr1, int[] arr2) {
+    HashSet<Integer> set = new HashSet<>();
+    for (int num : arr1) {
+        set.add(num);
+    }
+    for (int num : arr2) {
+        if (!set.contains(num)) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+### 2. Sorting and Merging
+This approach sorts both arrays and then uses a merging technique to check for subset.
+
+```java
+import java.util.Arrays;
+
+public boolean isSubset(int[] arr1, int[] arr2) {
+    Arrays.sort(arr1);
+    Arrays.sort(arr2);
+    int i = 0, j = 0;
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            i++;
+        } else if (arr1[i] == arr2[j]) {
+            i++;
+            j++;
+        } else {
+            return false;
+        }
+    }
+    return j == arr2.length;
+}
+```
+
+### 3. Using Frequency Count
+This approach uses frequency counts to check for the presence of elements.
+
+```java
+import java.util.HashMap;
+
+public boolean isSubset(int[] arr1, int[] arr2) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    for (int num : arr1) {
+        map.put(num, map.getOrDefault(num, 0) + 1);
+    }
+    for (int num : arr2) {
+        if (!map.containsKey(num) || map.get(num) == 0) {
+            return false;
+        }
+        map.put(num, map.get(num) - 1);
+    }
+    return true;
+}
+```
+
+### 4. Using Binary Search
+This approach uses binary search after sorting the larger array.
+
+```java
+import java.util.Arrays;
+
+public boolean isSubset(int[] arr1, int[] arr2) {
+    Arrays.sort(arr1);
+    for (int num : arr2) {
+        if (Arrays.binarySearch(arr1, num) < 0) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+Each of these methods has its own advantages. The HashSet approach is efficient and straightforward, the Sorting and Merging approach is intuitive, the Frequency Count approach is useful for handling duplicates, and the Binary Search approach is efficient for large arrays.
+
+Which approach do you find most suitable for your needs?
+
+## Given an array of size n and a number k, find all elements that appear more than " n/k " times. - Majority Element II
+
+Finding the majority element in an array where the element appears more than ⌊n/3⌋ times can be done using several approaches in Java. Here are a few methods:
+
+### 1. Using HashMap
+This approach uses a HashMap to count the frequency of each element.
+
+```java
+import java.util.*;
+
+public List<Integer> majorityElement(int[] nums) {
+    List<Integer> result = new ArrayList<>();
+    Map<Integer, Integer> map = new HashMap<>();
+    int n = nums.length;
+    
+    for (int num : nums) {
+        map.put(num, map.getOrDefault(num, 0) + 1);
+    }
+    
+    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+        if (entry.getValue() > n / 3) {
+            result.add(entry.getKey());
+        }
+    }
+    
+    return result;
+}
+```
+
+### 2. Boyer-Moore Voting Algorithm
+This approach uses the Boyer-Moore Voting Algorithm to find the majority elements.
+
+```java
+import java.util.*;
+
+public List<Integer> majorityElement(int[] nums) {
+    List<Integer> result = new ArrayList<>();
+    if (nums == null || nums.length == 0) return result;
+    
+    int candidate1 = 0, candidate2 = 0, count1 = 0, count2 = 0;
+    
+    for (int num : nums) {
+        if (num == candidate1) {
+            count1++;
+        } else if (num == candidate2) {
+            count2++;
+        } else if (count1 == 0) {
+            candidate1 = num;
+            count1 = 1;
+        } else if (count2 == 0) {
+            candidate2 = num;
+            count2 = 1;
+        } else {
+            count1--;
+            count2--;
+        }
+    }
+    
+    count1 = 0;
+    count2 = 0;
+    
+    for (int num : nums) {
+        if (num == candidate1) {
+            count1++;
+        } else if (num == candidate2) {
+            count2++;
+        }
+    }
+    
+    if (count1 > nums.length / 3) result.add(candidate1);
+    if (count2 > nums.length / 3) result.add(candidate2);
+    
+    return result;
+}
+```
+
+### 3. Sorting and Counting
+This approach sorts the array and then counts the frequency of each element.
+
+```java
+import java.util.*;
+
+public List<Integer> majorityElement(int[] nums) {
+    List<Integer> result = new ArrayList<>();
+    Arrays.sort(nums);
+    int n = nums.length;
+    int count = 1;
+    
+    for (int i = 1; i < n; i++) {
+        if (nums[i] == nums[i - 1]) {
+            count++;
+        } else {
+            if (count > n / 3) {
+                result.add(nums[i - 1]);
+            }
+            count = 1;
+        }
+    }
+    
+    if (count > n / 3) {
+        result.add(nums[n - 1]);
+    }
+    
+    return result;
+}
+```
+
+### 4. Using Frequency Array
+This approach uses a frequency array to count the occurrences of each element.
+
+```java
+import java.util.*;
+
+public List<Integer> majorityElement(int[] nums) {
+    List<Integer> result = new ArrayList<>();
+    int n = nums.length;
+    int[] freq = new int[200001];
+    
+    for (int num : nums) {
+        freq[num + 100000]++;
+    }
+    
+    for (int i = 0; i < freq.length; i++) {
+        if (freq[i] > n / 3) {
+            result.add(i - 100000);
+        }
+    }
+    
+    return result;
+}
+```
+
+Each of these methods has its own advantages. The HashMap approach is straightforward and easy to implement, the Boyer-Moore Voting Algorithm is efficient with linear time complexity, the Sorting and Counting approach is intuitive, and the Frequency Array approach is simple but uses extra space.
+
+Which approach do you find most suitable for your needs?
+
+## 4 Sum
+
+Finding all unique quadruplets in an array that sum up to a given target can be done using several approaches in Java. Here are a few methods:
+
+### 1. Using HashMap
+This approach uses a HashMap to store pairs of numbers and their sums.
+
+```java
+import java.util.*;
+
+public List<List<Integer>> fourSum(int[] nums, int target) {
+    List<List<Integer>> result = new ArrayList<>();
+    if (nums == null || nums.length < 4) return result;
+    
+    Arrays.sort(nums);
+    Map<Integer, List<int[]>> map = new HashMap<>();
+    
+    for (int i = 0; i < nums.length - 1; i++) {
+        for (int j = i + 1; j < nums.length; j++) {
+            int sum = nums[i] + nums[j];
+            if (!map.containsKey(sum)) {
+                map.put(sum, new ArrayList<>());
+            }
+            map.get(sum).add(new int[]{i, j});
+        }
+    }
+    
+    for (int i = 0; i < nums.length - 1; i++) {
+        for (int j = i + 1; j < nums.length; j++) {
+            int sum = target - nums[i] - nums[j];
+            if (map.containsKey(sum)) {
+                for (int[] pair : map.get(sum)) {
+                    if (pair[0] > j) {
+                        List<Integer> quad = Arrays.asList(nums[i], nums[j], nums[pair[0]], nums[pair[1]]);
+                        if (!result.contains(quad)) {
+                            result.add(quad);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    return result;
+}
+```
+
+### 2. Two-Pointer Approach
+This approach uses sorting and two pointers to find the quadruplets.
+
+```java
+import java.util.*;
+
+public List<List<Integer>> fourSum(int[] nums, int target) {
+    List<List<Integer>> result = new ArrayList<>();
+    if (nums == null || nums.length < 4) return result;
+    
+    Arrays.sort(nums);
+    
+    for (int i = 0; i < nums.length - 3; i++) {
+        if (i > 0 && nums[i] == nums[i - 1]) continue;
+        for (int j = i + 1; j < nums.length - 2; j++) {
+            if (j > i + 1 && nums[j] == nums[j - 1]) continue;
+            int left = j + 1, right = nums.length - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[j] + nums[left] + nums[right];
+                if (sum == target) {
+                    result.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
+                    while (left < right && nums[left] == nums[left + 1]) left++;
+                    while (left < right && nums[right] == nums[right - 1]) right--;
+                    left++;
+                    right--;
+                } else if (sum < target) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+    }
+    
+    return result;
+}
+```
+
+### 3. Recursive Approach
+This approach uses recursion to find the quadruplets.
+
+```java
+import java.util.*;
+
+public List<List<Integer>> fourSum(int[] nums, int target) {
+    Arrays.sort(nums);
+    return kSum(nums, target, 4, 0);
+}
+
+private List<List<Integer>> kSum(int[] nums, int target, int k, int start) {
+    List<List<Integer>> result = new ArrayList<>();
+    if (start == nums.length || nums[start] * k > target || target > nums[nums.length - 1] * k) {
+        return result;
+    }
+    if (k == 2) {
+        return twoSum(nums, target, start);
+    }
+    for (int i = start; i < nums.length; i++) {
+        if (i == start || nums[i] != nums[i - 1]) {
+            for (List<Integer> subset : kSum(nums, target - nums[i], k - 1, i + 1)) {
+                result.add(new ArrayList<>(Arrays.asList(nums[i])));
+                result.get(result.size() - 1).addAll(subset);
+            }
+        }
+    }
+    return result;
+}
+
+private List<List<Integer>> twoSum(int[] nums, int target, int start) {
+    List<List<Integer>> result = new ArrayList<>();
+    int left = start, right = nums.length - 1;
+    while (left < right) {
+        int sum = nums[left] + nums[right];
+        if (sum == target) {
+            result.add(Arrays.asList(nums[left], nums[right]));
+            while (left < right && nums[left] == nums[left + 1]) left++;
+            while (left < right && nums[right] == nums[right - 1]) right--;
+            left++;
+            right--;
+        } else if (sum < target) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    return result;
+}
+```
+
+### 4. Using HashSet
+This approach uses a HashSet to avoid duplicate quadruplets.
+
+```java
+import java.util.*;
+
+public List<List<Integer>> fourSum(int[] nums, int target) {
+    Set<List<Integer>> result = new HashSet<>();
+    if (nums == null || nums.length < 4) return new ArrayList<>(result);
+    
+    Arrays.sort(nums);
+    
+    for (int i = 0; i < nums.length - 3; i++) {
+        for (int j = i + 1; j < nums.length - 2; j++) {
+            int left = j + 1, right = nums.length - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[j] + nums[left] + nums[right];
+                if (sum == target) {
+                    result.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
+                    left++;
+                    right--;
+                } else if (sum < target) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+    }
+    
+    return new ArrayList<>(result);
+}
+```
+
+Each of these methods has its own advantages. The HashMap approach is efficient and avoids duplicates, the Two-Pointer approach is straightforward and efficient, the Recursive approach is flexible and handles different values of k, and the HashSet approach ensures unique quadruplets.
+
+Which approach do you find most suitable for your needs?
 
 
 
