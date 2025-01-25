@@ -7535,3 +7535,202 @@ Would you like more details on configuring these parameters or any other aspect 
 
 [1](https://docs.oracle.com/database/timesten-18.1/TTREF/limit.htm): [Oracle System Limits](https://docs.oracle.com/database/timesten-18.1/TTREF/limit.htm)
 
+# Difference between Sharding and Partitioning in Oracle
+
+Sharding and partitioning are both techniques used to manage large datasets in Oracle databases, but they serve different purposes and are implemented differently. Here's a comparison of the two:
+
+### Sharding
+- **Definition**: Sharding is a method of horizontally partitioning data across multiple databases, each known as a shard. Each shard operates independently and can be located on different servers or even in different geographic locations[1](https://www.baeldung.com/cs/database-sharding-vs-partitioning).
+- **Architecture**: Sharding uses a shared-nothing architecture, meaning each shard is self-contained and does not share resources with other shards[2](https://docs.oracle.com/en/database/oracle/oracle-database/21/shard/overview1.html).
+- **Use Case**: Ideal for large-scale, distributed systems where data needs to be spread across multiple locations to improve performance, scalability, and availability[1](https://www.baeldung.com/cs/database-sharding-vs-partitioning).
+- **Management**: Sharding requires more complex management as it involves multiple databases. Tools like Oracle Sharding help manage and automate this process[2](https://docs.oracle.com/en/database/oracle/oracle-database/21/shard/overview1.html).
+- **Example**: An e-commerce platform distributing its product catalog, orders, and customer information across multiple servers to handle high traffic and large datasets[1](https://www.baeldung.com/cs/database-sharding-vs-partitioning).
+
+### Partitioning
+- **Definition**: Partitioning is a method of dividing a single database table into smaller, more manageable pieces called partitions. Each partition is stored within the same database but can be managed independently[3](https://www.singlestore.com/blog/database-sharding-vs-partitioning-whats-the-difference/).
+- **Architecture**: Partitioning is done within a single database instance, and all partitions share the same database resources[3](https://www.singlestore.com/blog/database-sharding-vs-partitioning-whats-the-difference/).
+- **Use Case**: Suitable for improving query performance and manageability within a single database, especially for large tables[3](https://www.singlestore.com/blog/database-sharding-vs-partitioning-whats-the-difference/).
+- **Management**: Easier to manage compared to sharding, as it involves a single database instance. Oracle provides various partitioning strategies like range, list, hash, and composite partitioning[3](https://www.singlestore.com/blog/database-sharding-vs-partitioning-whats-the-difference/).
+- **Example**: A sales table partitioned by month to improve query performance and manageability for reporting and analysis[3](https://www.singlestore.com/blog/database-sharding-vs-partitioning-whats-the-difference/).
+
+### Key Differences
+- **Scope**: Sharding distributes data across multiple databases, while partitioning divides data within a single database.
+- **Complexity**: Sharding is more complex to implement and manage due to the involvement of multiple databases.
+- **Resource Sharing**: Sharding uses a shared-nothing architecture, whereas partitioning shares resources within a single database instance.
+- **Use Cases**: Sharding is used for large-scale, distributed systems, while partitioning is used to improve performance and manageability within a single database.
+
+By understanding these differences, you can choose the appropriate technique based on your specific requirements and infrastructure[1](https://www.baeldung.com/cs/database-sharding-vs-partitioning)[2](https://docs.oracle.com/en/database/oracle/oracle-database/21/shard/overview1.html)[3](https://www.singlestore.com/blog/database-sharding-vs-partitioning-whats-the-difference/).
+
+Would you like more details on any specific aspect of sharding or partitioning?
+
+[1](https://www.baeldung.com/cs/database-sharding-vs-partitioning): [Database Sharding vs. Partitioning - Baeldung](https://www.baeldung.com/cs/database-sharding-vs-partitioning)
+[2](https://docs.oracle.com/en/database/oracle/oracle-database/21/shard/overview1.html): [Oracle Sharding Overview - Oracle Help Center](https://docs.oracle.com/en/database/oracle/oracle-database/21/shard/overview1.html)
+[3](https://www.singlestore.com/blog/database-sharding-vs-partitioning-whats-the-difference/): [Database Partitioning vs. Sharding: What’s the Difference? - SingleStore](https://www.singlestore.com/blog/database-sharding-vs-partitioning-whats-the-difference/)
+
+
+## Oracle PLS SQL Interview Questions
+
+**1. Triggers**
+
+1.  **What is a trigger in PL/SQL?**
+2.  **What are the different types of triggers?** (e.g., DML triggers: INSERT, UPDATE, DELETE; DDL triggers: CREATE, ALTER, DROP)
+3.  **How do you create a trigger in PL/SQL?**
+4.  **How do you disable and enable a trigger?**
+5.  **What are the limitations of triggers?**
+6.  **How to debug a trigger?**
+7.  **How to write a trigger to audit table modifications?**
+8.  **How to write a trigger to enforce referential integrity?**
+9.  **What are the best practices for writing triggers?**
+10. **Can a trigger call a stored procedure?**
+
+**2. Joins**
+
+11. **What are different types of joins in SQL?** (e.g., INNER JOIN, OUTER JOIN (LEFT, RIGHT, FULL), SELF JOIN, CROSS JOIN)
+12. **Explain the difference between INNER JOIN and OUTER JOIN.**
+13. **How to write a SQL query to join two tables?**
+14. **What is a self-join and when is it used?**
+15. **How to optimize join queries for better performance?**
+16. **What is the difference between INNER JOIN and WHERE clause?**
+17. **Explain the concept of equi-join and non-equi-join.**
+18. **How to write a SQL query to join three or more tables?**
+19. **What is a subquery join?**
+20. **How to use join with aggregate functions?**
+
+**3. Cursors**
+
+21. **What is a cursor in PL/SQL?**
+22. **What are the different types of cursors?** (e.g., implicit cursor, explicit cursor)
+23. **How to declare and open a cursor?**
+24. **How to fetch data from a cursor?**
+25. **How to close a cursor?**
+26. **What is the difference between implicit and explicit cursors?**
+27. **How to handle exceptions within a cursor?**
+28. **What are cursor variables?**
+29. **How to use cursor variables in stored procedures?**
+30. **What are the performance implications of using cursors?**
+
+**4. Stored Procedures**
+
+31. **What is a stored procedure?**
+32. **How to create a stored procedure in PL/SQL?**
+33. **How to execute a stored procedure?**
+34. **What are the advantages of using stored procedures?**
+35. **How to pass parameters to a stored procedure?**
+36. **How to return values from a stored procedure?**
+37. **What are the different types of parameters in stored procedures?** (e.g., IN, OUT, IN OUT)
+38. **How to handle exceptions within a stored procedure?**
+39. **What are the best practices for writing stored procedures?**
+40. **How to debug a stored procedure?**
+
+**5. Functions**
+
+41. **What is a function in PL/SQL?**
+42. **How to create a function in PL/SQL?**
+43. **How to call a function?**
+44. **What are the differences between functions and procedures?**
+45. **How to return a value from a function?**
+46. **Can a function have OUT parameters?**
+47. **What are the best practices for writing functions?**
+48. **How to use functions in SQL queries?**
+49. **What are the advantages of using functions?**
+50. **How to debug a function?**
+
+**6. Packages**
+
+51. **What is a package in PL/SQL?**
+52. **How to create a package in PL/SQL?**
+53. **What are the components of a package?** (e.g., package specification, package body)
+54. **What are the advantages of using packages?**
+55. **How to access objects within a package?**
+56. **How to use public and private objects within a package?**
+57. **How to overload procedures and functions within a package?**
+58. **What are the best practices for designing packages?**
+59. **How to debug a package?**
+60. **What are the different types of package objects?**
+
+**7. Locks**
+
+61. **What are different types of locks in Oracle?** (e.g., row lock, table lock, DML lock)
+62. **How do locks help in maintaining data integrity?**
+63. **What is a deadlock and how to prevent it?**
+64. **What are lock modes in Oracle?** (e.g., share mode, exclusive mode)
+65. **How to monitor locks in Oracle?**
+66. **What are the implications of excessive locking?**
+67. **How to optimize lock usage in your applications?**
+
+**8. Transactions**
+
+68. **What is a transaction in Oracle?**
+69. **What are the ACID properties of transactions?**
+70. **How to start and commit a transaction in PL/SQL?**
+71. **How to rollback a transaction?**
+72. **What are savepoints and how to use them?**
+73. **How to handle exceptions within a transaction?**
+74. **What is transaction isolation and why is it important?**
+75. **What are different transaction isolation levels in Oracle?**
+
+**9. Exception Handling**
+
+76. **What is exception handling in PL/SQL?**
+77. **How to handle exceptions using the `EXCEPTION` block?**
+78. **What are predefined exceptions in PL/SQL?**
+79. **How to raise user-defined exceptions?**
+80. **How to handle multiple exceptions?**
+81. **What is the difference between `RAISE` and `RAISE_APPLICATION_ERROR`?**
+82. **How to log exceptions?**
+83. **What are the best practices for exception handling?**
+
+**10. Optimization**
+
+84. **How to optimize PL/SQL code for performance?**
+85. **What are the different indexing techniques in Oracle?**
+86. **How to write efficient SQL queries?**
+87. **How to avoid cursor overuse?**
+88. **How to use bind variables to improve performance?**
+89. **How to optimize stored procedures?**
+90. **How to use materialized views for performance improvement?**
+91. **How to analyze SQL performance using explain plan?**
+92. **How to use partitioning to improve query performance?**
+
+**11. Security**
+
+93. **How to secure PL/SQL objects?**
+94. **What are database roles and how are they used?**
+95. **How to grant and revoke privileges to users?**
+96. **What are the security implications of using public synonyms?**
+97. **How to audit database activities?**
+98. **How to prevent SQL injection?**
+99. **What are the security best practices for PL/SQL development?**
+100. **How to implement fine-grained access control in PL/SQL?**
+
+**12. Advanced Topics**
+
+101. **What is object-relational programming in Oracle?**
+102. **What are collections in PL/SQL?** (e.g., varray, nested table)
+103. **How to use collections in PL/SQL?**
+104. **What is dynamic SQL?**
+105. **How to execute dynamic SQL in PL/SQL?**
+106. **What are autonomous transactions?**
+107. **How to use autonomous transactions in PL/SQL?**
+108. **What is parallel execution in Oracle?**
+109. **How to implement parallel execution in PL/SQL?**
+110. **What are materialized views and how are they used?**
+
+**13. Database Administration**
+
+111. **How to perform database backups and recovery?**
+112. **How to monitor database performance?**
+113. **How to troubleshoot database issues?**
+114. **How to manage database users and roles?**
+115. **How to apply database patches?**
+116. **How to perform database upgrades?**
+117. **How to manage space in an Oracle database?**
+118. **How to configure database parameters?**
+119. **How to use Oracle Enterprise Manager?**
+120. **How to implement data guard?**
+
+**14. PL/SQL and Java**
+
+121. **How to call PL/SQL procedures and functions from Java?**
+122. **How to use JDBC to connect to an Oracle database from Java?**
+123. **What are the benefits of using PL/SQL with

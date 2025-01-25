@@ -6205,11 +6205,63 @@ Would you like to know more about any other sorting algorithms?
 [2](https://www.altcademy.com/blog/odd-even-sort-or-brick-sort/): [2](https://www.altcademy.com/blog/odd-even-sort-or-brick-sort/)
 
 
-
-
-
-
 # Most asked Algorithms
+
+Here are some of the most commonly asked algorithms in coding interviews by companies:
+
+### 1. Sorting Algorithms
+- **Quick Sort**
+- **Merge Sort**
+- **Heap Sort**
+
+### 2. Searching Algorithms
+- **Binary Search**
+- **Depth-First Search (DFS)**
+- **Breadth-First Search (BFS)**
+
+### 3. Dynamic Programming
+- **Longest Common Subsequence**
+- **Knapsack Problem**
+- **Fibonacci Sequence**
+
+### 4. Greedy Algorithms
+- **Activity Selection**
+- **Huffman Coding**
+- **Dijkstra's Algorithm**
+
+### 5. Graph Algorithms
+- **Kruskal's Algorithm**
+- **Prim's Algorithm**
+- **Bellman-Ford Algorithm**
+
+### 6. Backtracking
+- **N-Queens Problem**
+- **Sudoku Solver**
+- **Subset Sum Problem**
+
+### 7. Divide and Conquer
+- **Merge Sort**
+- **Quick Sort**
+- **Binary Search**
+
+### 8. String Algorithms
+- **KMP Algorithm**
+- **Rabin-Karp Algorithm**
+- **Longest Palindromic Substring**
+
+### 9. Tree and Binary Tree Algorithms
+- **Inorder, Preorder, Postorder Traversal**
+- **Lowest Common Ancestor**
+- **Binary Search Tree Operations**
+
+### 10. Miscellaneous
+- **Two-Pointer Technique**
+- **Sliding Window Technique**
+- **Union-Find Algorithm**
+
+These algorithms cover a wide range of problem-solving techniques and are frequently encountered in coding interviews[1](https://igotanoffer.com/blogs/tech/algorithms-interview-questions)[2](https://www.nucamp.co/blog/coding-bootcamp-job-hunting-cracking-coding-interviews-top-algorithm-questions-explained)[3](https://www.educative.io/blog/ace-top-15-java-algorithm-questions). Preparing for these will help you tackle a variety of questions effectively.
+
+Is there a specific algorithm or problem you'd like to dive deeper into?
 
 
 
@@ -9971,5 +10023,3490 @@ Each of these methods has its own advantages. The HashMap approach is efficient 
 Which approach do you find most suitable for your needs?
 
 
+# Tpoic - String
+
+## Valid Parenthesis
+
+Sure! The "Valid Parentheses" problem can be approached in several ways. Here are a few different methods to solve this problem in Java:
+
+### 1. Using a Stack (Common Approach)
+This is the most common and efficient approach to solve the "Valid Parentheses" problem. The idea is to use a stack to keep track of opening brackets and ensure they are closed in the correct order.
+
+#### Steps:
+1. Initialize an empty stack.
+2. Traverse the input string character by character.
+3. Push opening brackets ('(', '{', '[') onto the stack.
+4. For closing brackets (')', '}', ']'), check if the stack is empty or if the top of the stack does not match the corresponding opening bracket. If so, return false.
+5. After processing all characters, if the stack is empty, return true; otherwise, return false.
+
+#### Code:
+```java
+import java.util.Stack;
+
+public class ValidParentheses {
+    public static boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') {
+                stack.push(c);
+            } else {
+                if (stack.isEmpty()) return false;
+                char top = stack.pop();
+                if ((c == ')' && top != '(') ||
+                    (c == '}' && top != '{') ||
+                    (c == ']' && top != '[')) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        String s = "{[]}";
+        System.out.println(isValid(s)); // Output: true
+    }
+}
+```
+
+### 2. Using a HashMap and Stack
+This approach is similar to the stack method but uses a `HashMap` to store the mapping of opening and closing brackets. This can make the code cleaner and more readable.
+
+#### Steps:
+1. Create a `HashMap` to store the mappings of opening and closing brackets.
+2. Initialize an empty stack.
+3. Traverse the input string character by character.
+4. Push opening brackets onto the stack.
+5. For closing brackets, check if the stack is empty or if the top of the stack does not match the corresponding opening bracket using the `HashMap`. If so, return false.
+6. After processing all characters, if the stack is empty, return true; otherwise, return false.
+
+#### Code:
+```java
+import java.util.HashMap;
+import java.util.Stack;
+
+public class ValidParentheses {
+    public static boolean isValid(String s) {
+        HashMap<Character, Character> map = new HashMap<>();
+        map.put(')', '(');
+        map.put('}', '{');
+        map.put(']', '[');
+
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (map.containsKey(c)) {
+                char topElement = stack.isEmpty() ? '#' : stack.pop();
+                if (topElement != map.get(c)) {
+                    return false;
+                }
+            } else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        String s = "{[]}";
+        System.out.println(isValid(s)); // Output: true
+    }
+}
+```
+
+### 3. Using Counters (Limited to Parentheses Only)
+This approach uses counters and is limited to handling only parentheses ('(' and ')'). It does not work for curly braces or square brackets.
+
+#### Steps:
+1. Initialize a counter to zero.
+2. Traverse the input string character by character.
+3. Increment the counter for each opening parenthesis '('.
+4. Decrement the counter for each closing parenthesis ')'.
+5. If the counter becomes negative at any point, return false.
+6. After processing all characters, if the counter is zero, return true; otherwise, return false.
+
+#### Code:
+```java
+public class ValidParentheses {
+    public static boolean isValid(String s) {
+        int counter = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                counter++;
+            } else if (c == ')') {
+                counter--;
+                if (counter < 0) {
+                    return false;
+                }
+            }
+        }
+        return counter == 0;
+    }
+
+    public static void main(String[] args) {
+        String s = "()()";
+        System.out.println(isValid(s)); // Output: true
+    }
+}
+```
+
+### Conclusion
+The stack-based approach is the most versatile and commonly used method for solving the "Valid Parentheses" problem, as it can handle all types of brackets and ensures they are properly nested and ordered[1](https://www.javatpoint.com/valid-parentheses-problem-in-java)[2](https://algo.monster/liteproblems/20)[3](https://www.javaguides.net/2023/12/valid-parentheses-problem-java-solution.html). The HashMap and stack combination can make the code cleaner, while the counter approach is a simpler but limited solution.
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+
+## Wildcard pattern Matching
+
+Wildcard pattern matching is a common problem where you need to determine if a given string matches a pattern that includes wildcard characters. The two wildcard characters typically used are:
+- `?` which matches any single character.
+- `*` which matches any sequence of characters (including the empty sequence).
+
+Here are different approaches to solve the wildcard pattern matching problem in Java:
+
+### 1. Recursive Approach
+This approach uses recursion to match the pattern with the string. It checks each character and handles the wildcards accordingly.
+
+#### Steps:
+1. If both the string and pattern are empty, return true.
+2. If the pattern is empty but the string is not, return false.
+3. If the string is empty but the pattern is not, return true only if the remaining characters in the pattern are all `*`.
+4. If the current character in the pattern is `*`, it can match zero or more characters in the string.
+5. If the current character in the pattern is `?`, it matches any single character in the string.
+6. If the current character in the pattern is not a wildcard, it must match the current character in the string.
+
+#### Code:
+```java
+public class WildcardMatching {
+    public static boolean isMatch(String s, String p) {
+        return isMatchHelper(s, p, 0, 0);
+    }
+
+    private static boolean isMatchHelper(String s, String p, int i, int j) {
+        if (j == p.length()) {
+            return i == s.length();
+        }
+        if (i < s.length() && (p.charAt(j) == '?' || p.charAt(j) == s.charAt(i))) {
+            return isMatchHelper(s, p, i + 1, j + 1);
+        }
+        if (p.charAt(j) == '*') {
+            return isMatchHelper(s, p, i, j + 1) || (i < s.length() && isMatchHelper(s, p, i + 1, j));
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        String s = "adceb";
+        String p = "*a*b";
+        System.out.println(isMatch(s, p)); // Output: true
+    }
+}
+```
+
+### 2. Dynamic Programming Approach
+This approach uses dynamic programming to store the results of subproblems and avoid redundant calculations.
+
+#### Steps:
+1. Create a 2D boolean array `dp` where `dp[i][j]` represents if the first `i` characters of the string match the first `j` characters of the pattern.
+2. Initialize `dp[0][0]` to true since an empty string matches an empty pattern.
+3. Fill the first row where the pattern contains only `*`.
+4. Iterate through the string and pattern, filling the `dp` table based on the current characters and wildcards.
+
+#### Code:
+```java
+public class WildcardMatching {
+    public static boolean isMatch(String s, String p) {
+        int m = s.length();
+        int n = p.length();
+        boolean[][] dp = new boolean[m + 1][n + 1];
+        dp[0][0] = true;
+
+        for (int j = 1; j <= n; j++) {
+            if (p.charAt(j - 1) == '*') {
+                dp[0][j] = dp[0][j - 1];
+            }
+        }
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (p.charAt(j - 1) == '*') {
+                    dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
+                } else if (p.charAt(j - 1) == '?' || p.charAt(j - 1) == s.charAt(i - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                }
+            }
+        }
+
+        return dp[m][n];
+    }
+
+    public static void main(String[] args) {
+        String s = "adceb";
+        String p = "*a*b";
+        System.out.println(isMatch(s, p)); // Output: true
+    }
+}
+```
+
+### 3. Greedy Approach
+This approach uses two pointers to traverse the string and pattern, and a backtracking mechanism to handle `*`.
+
+#### Steps:
+1. Use two pointers to traverse the string and pattern.
+2. Track the positions of the last `*` in the pattern and the corresponding position in the string.
+3. If a mismatch occurs, backtrack to the last `*` and try to match the remaining characters.
+
+#### Code:
+```java
+public class WildcardMatching {
+    public static boolean isMatch(String s, String p) {
+        int sLen = s.length();
+        int pLen = p.length();
+        int sIdx = 0, pIdx = 0;
+        int starIdx = -1, sTmpIdx = -1;
+
+        while (sIdx < sLen) {
+            if (pIdx < pLen && (p.charAt(pIdx) == '?' || p.charAt(pIdx) == s.charAt(sIdx))) {
+                sIdx++;
+                pIdx++;
+            } else if (pIdx < pLen && p.charAt(pIdx) == '*') {
+                starIdx = pIdx;
+                sTmpIdx = sIdx;
+                pIdx++;
+            } else if (starIdx == -1) {
+                return false;
+            } else {
+                pIdx = starIdx + 1;
+                sIdx = sTmpIdx + 1;
+                sTmpIdx++;
+            }
+        }
+
+        while (pIdx < pLen && p.charAt(pIdx) == '*') {
+            pIdx++;
+        }
+
+        return pIdx == pLen;
+    }
+
+    public static void main(String[] args) {
+        String s = "adceb";
+        String p = "*a*b";
+        System.out.println(isMatch(s, p)); // Output: true
+    }
+}
+```
+
+### Conclusion
+Each approach has its own advantages and trade-offs. The recursive approach is simple but can be inefficient for large inputs. The dynamic programming approach is more efficient but uses extra space. The greedy approach is efficient and uses less space but can be more complex to implement[1](https://www.javatpoint.com/wildcard-pattern-matching)[2](https://www.techiedelight.com/wildcard-pattern-matching/)[3](https://algo.monster/liteproblems/44).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Longest common subsequence
+
+The Longest Common Subsequence (LCS) problem is a classic problem in computer science. It involves finding the longest subsequence common to two sequences. A subsequence is a sequence derived from another sequence by deleting some or no elements without changing the order of the remaining elements.
+
+### Problem Statement
+Given two strings, find the length of their longest common subsequence.
+
+### Example
+```java
+Input: s1 = "abcde", s2 = "ace"
+Output: 3
+Explanation: The longest common subsequence is "ace" which has length 3.
+```
+
+### Different Approaches to Solve LCS
+
+#### 1. Recursive Approach
+This approach uses recursion to solve the problem by comparing characters from the end of both strings.
+
+#### Steps:
+1. If either string is empty, return 0.
+2. If the last characters of both strings match, the LCS includes this character.
+3. If the last characters do not match, the LCS is the maximum of the LCS obtained by removing the last character from either string.
+
+#### Code:
+```java
+public class LCS {
+    public static int lcs(String s1, String s2) {
+        return lcsHelper(s1, s2, s1.length(), s2.length());
+    }
+
+    private static int lcsHelper(String s1, String s2, int m, int n) {
+        if (m == 0 || n == 0) {
+            return 0;
+        }
+        if (s1.charAt(m - 1) == s2.charAt(n - 1)) {
+            return 1 + lcsHelper(s1, s2, m - 1, n - 1);
+        } else {
+            return Math.max(lcsHelper(s1, s2, m, n - 1), lcsHelper(s1, s2, m - 1, n));
+        }
+    }
+
+    public static void main(String[] args) {
+        String s1 = "abcde";
+        String s2 = "ace";
+        System.out.println("Length of LCS: " + lcs(s1, s2)); // Output: 3
+    }
+}
+```
+
+#### 2. Dynamic Programming Approach
+This approach uses a 2D table to store the lengths of LCS for substrings of both strings, avoiding redundant calculations.
+
+#### Steps:
+1. Create a 2D array `dp` where `dp[i][j]` represents the length of LCS of the first `i` characters of `s1` and the first `j` characters of `s2`.
+2. Initialize the first row and first column to 0.
+3. Fill the table using the following rules:
+   - If `s1[i-1] == s2[j-1]`, then `dp[i][j] = dp[i-1][j-1] + 1`.
+   - Otherwise, `dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1])`.
+
+#### Code:
+```java
+public class LCS {
+    public static int lcs(String s1, String s2) {
+        int m = s1.length();
+        int n = s2.length();
+        int[][] dp = new int[m + 1][n + 1];
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        return dp[m][n];
+    }
+
+    public static void main(String[] args) {
+        String s1 = "abcde";
+        String s2 = "ace";
+        System.out.println("Length of LCS: " + lcs(s1, s2)); // Output: 3
+    }
+}
+```
+
+#### 3. Space Optimized Dynamic Programming
+This approach optimizes the space complexity of the dynamic programming solution by using two 1D arrays instead of a 2D array.
+
+#### Steps:
+1. Use two 1D arrays `previous` and `current` to store the LCS lengths for the previous and current rows.
+2. Update the arrays as you iterate through the characters of the strings.
+
+#### Code:
+```java
+public class LCS {
+    public static int lcs(String s1, String s2) {
+        int m = s1.length();
+        int n = s2.length();
+        int[] previous = new int[n + 1];
+        int[] current = new int[n + 1];
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+                    current[j] = previous[j - 1] + 1;
+                } else {
+                    current[j] = Math.max(previous[j], current[j - 1]);
+                }
+            }
+            int[] temp = previous;
+            previous = current;
+            current = temp;
+        }
+        return previous[n];
+    }
+
+    public static void main(String[] args) {
+        String s1 = "abcde";
+        String s2 = "ace";
+        System.out.println("Length of LCS: " + lcs(s1, s2)); // Output: 3
+    }
+}
+```
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is simple but can be inefficient for large inputs due to its exponential time complexity.
+- The **dynamic programming approach** is more efficient with a time complexity of \(O(m \times n)\) and space complexity of \(O(m \times n)\).
+- The **space-optimized dynamic programming approach** reduces the space complexity to \(O(n)\) while maintaining the same time complexity[1](https://www.javatpoint.com/longest-common-subsequence-in-java)[2](https://www.javatpoint.com/longest-common-subsequence)[3](https://www.programiz.com/dsa/longest-common-subsequence).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+
+## Longest Pallindromic Subsequence
+
+The Longest Palindromic Subsequence (LPS) problem involves finding the longest subsequence in a given string that is also a palindrome. A subsequence is a sequence derived from another sequence by deleting some or no elements without changing the order of the remaining elements.
+
+### Problem Statement
+Given a string `s`, find the length of the longest palindromic subsequence in `s`.
+
+### Example
+```java
+Input: s = "bbbab"
+Output: 4
+Explanation: One possible longest palindromic subsequence is "bbbb".
+```
+
+### Different Approaches to Solve LPS
+
+#### 1. Recursive Approach
+This approach uses recursion to solve the problem by comparing characters from both ends of the string.
+
+#### Steps:
+1. If the string is empty or has one character, return its length.
+2. If the first and last characters of the string are the same, the LPS includes these characters.
+3. If the first and last characters are different, the LPS is the maximum of the LPS obtained by removing either the first or the last character.
+
+#### Code:
+```java
+public class LongestPalindromicSubsequence {
+    public static int lps(String s) {
+        return lpsHelper(s, 0, s.length() - 1);
+    }
+
+    private static int lpsHelper(String s, int start, int end) {
+        if (start > end) {
+            return 0;
+        }
+        if (start == end) {
+            return 1;
+        }
+        if (s.charAt(start) == s.charAt(end)) {
+            return 2 + lpsHelper(s, start + 1, end - 1);
+        } else {
+            return Math.max(lpsHelper(s, start + 1, end), lpsHelper(s, start, end - 1));
+        }
+    }
+
+    public static void main(String[] args) {
+        String s = "bbbab";
+        System.out.println("Length of LPS: " + lps(s)); // Output: 4
+    }
+}
+```
+
+#### 2. Dynamic Programming Approach
+This approach uses a 2D table to store the lengths of LPS for substrings of the given string, avoiding redundant calculations.
+
+#### Steps:
+1. Create a 2D array `dp` where `dp[i][j]` represents the length of LPS of the substring `s[i...j]`.
+2. Initialize the diagonal elements `dp[i][i]` to 1 since a single character is a palindrome of length 1.
+3. Fill the table using the following rules:
+   - If `s[i] == s[j]`, then `dp[i][j] = dp[i+1][j-1] + 2`.
+   - Otherwise, `dp[i][j] = Math.max(dp[i+1][j], dp[i][j-1])`.
+
+#### Code:
+```java
+public class LongestPalindromicSubsequence {
+    public static int lps(String s) {
+        int n = s.length();
+        int[][] dp = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = 1;
+        }
+
+        for (int length = 2; length <= n; length++) {
+            for (int i = 0; i <= n - length; i++) {
+                int j = i + length - 1;
+                if (s.charAt(i) == s.charAt(j)) {
+                    dp[i][j] = dp[i + 1][j - 1] + 2;
+                } else {
+                    dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+
+        return dp[0][n - 1];
+    }
+
+    public static void main(String[] args) {
+        String s = "bbbab";
+        System.out.println("Length of LPS: " + lps(s)); // Output: 4
+    }
+}
+```
+
+#### 3. Space Optimized Dynamic Programming
+This approach optimizes the space complexity of the dynamic programming solution by using two 1D arrays instead of a 2D array.
+
+#### Steps:
+1. Use two 1D arrays `previous` and `current` to store the LPS lengths for the previous and current rows.
+2. Update the arrays as you iterate through the characters of the string.
+
+#### Code:
+```java
+public class LongestPalindromicSubsequence {
+    public static int lps(String s) {
+        int n = s.length();
+        int[] previous = new int[n];
+        int[] current = new int[n];
+
+        for (int i = n - 1; i >= 0; i--) {
+            current[i] = 1;
+            for (int j = i + 1; j < n; j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    current[j] = previous[j - 1] + 2;
+                } else {
+                    current[j] = Math.max(previous[j], current[j - 1]);
+                }
+            }
+            int[] temp = previous;
+            previous = current;
+            current = temp;
+        }
+
+        return previous[n - 1];
+    }
+
+    public static void main(String[] args) {
+        String s = "bbbab";
+        System.out.println("Length of LPS: " + lps(s)); // Output: 4
+    }
+}
+```
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is simple but can be inefficient for large inputs due to its exponential time complexity.
+- The **dynamic programming approach** is more efficient with a time complexity of \(O(n^2)\) and space complexity of \(O(n^2)\).
+- The **space-optimized dynamic programming approach** reduces the space complexity to \(O(n)\) while maintaining the same time complexity[1](https://www.mastercoding.org/java-programs/java-solution-for-longest-palindromic-subsequence/)[2](https://www.interviewbit.com/blog/longest-palindromic-subsequence/)[3](https://www.upgrad.com/tutorials/software-engineering/software-key-tutorial/longest-palindromic-subsequence/).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Longest Palindromic Substring
+
+The Longest Palindromic Substring (LPS) problem involves finding the longest contiguous substring within a given string that reads the same forwards and backwards.
+
+### Problem Statement
+Given a string `s`, find the longest palindromic substring in `s`.
+
+### Example
+```java
+Input: s = "babad"
+Output: "bab" or "aba"
+Explanation: Both "bab" and "aba" are valid answers.
+```
+
+### Different Approaches to Solve LPS
+
+#### 1. Brute Force Approach
+This approach involves generating all possible substrings of the given string and checking each one to see if it is a palindrome.
+
+#### Steps:
+1. Generate all possible substrings.
+2. Check each substring to see if it is a palindrome.
+3. Keep track of the longest palindromic substring found.
+
+#### Code:
+```java
+public class LongestPalindromicSubstring {
+    public static String longestPalindrome(String s) {
+        int n = s.length();
+        if (n == 0) return "";
+        String longest = s.substring(0, 1);
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                String substr = s.substring(i, j + 1);
+                if (isPalindrome(substr) && substr.length() > longest.length()) {
+                    longest = substr;
+                }
+            }
+        }
+        return longest;
+    }
+
+    private static boolean isPalindrome(String s) {
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String s = "babad";
+        System.out.println("Longest Palindromic Substring: " + longestPalindrome(s)); // Output: "bab" or "aba"
+    }
+}
+```
+#### Time Complexity: \(O(n^3)\)
+
+#### 2. Dynamic Programming Approach
+This approach uses a 2D table to store whether substrings are palindromes, avoiding redundant calculations.
+
+#### Steps:
+1. Create a 2D array `dp` where `dp[i][j]` is true if the substring `s[i...j]` is a palindrome.
+2. Initialize the table for substrings of length 1 and 2.
+3. Fill the table for substrings of length greater than 2.
+4. Keep track of the longest palindromic substring found.
+
+#### Code:
+```java
+public class LongestPalindromicSubstring {
+    public static String longestPalindrome(String s) {
+        int n = s.length();
+        if (n == 0) return "";
+        boolean[][] dp = new boolean[n][n];
+        String longest = s.substring(0, 1);
+
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = true;
+        }
+
+        for (int i = 0; i < n - 1; i++) {
+            if (s.charAt(i) == s.charAt(i + 1)) {
+                dp[i][i + 1] = true;
+                longest = s.substring(i, i + 2);
+            }
+        }
+
+        for (int length = 3; length <= n; length++) {
+            for (int i = 0; i <= n - length; i++) {
+                int j = i + length - 1;
+                if (s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1]) {
+                    dp[i][j] = true;
+                    longest = s.substring(i, j + 1);
+                }
+            }
+        }
+
+        return longest;
+    }
+
+    public static void main(String[] args) {
+        String s = "babad";
+        System.out.println("Longest Palindromic Substring: " + longestPalindrome(s)); // Output: "bab" or "aba"
+    }
+}
+```
+#### Time Complexity: \(O(n^2)\)
+
+#### 3. Expand Around Center Approach
+This approach considers each character (and each pair of characters) as the center of a palindrome and expands outwards to find the longest palindromic substring.
+
+#### Steps:
+1. Iterate through each character and each pair of characters in the string.
+2. Expand outwards from each center to find the longest palindromic substring.
+3. Keep track of the longest palindromic substring found.
+
+#### Code:
+```java
+public class LongestPalindromicSubstring {
+    public static String longestPalindrome(String s) {
+        if (s == null || s.length() < 1) return "";
+        int start = 0, end = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = expandAroundCenter(s, i, i);
+            int len2 = expandAroundCenter(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
+            }
+        }
+        return s.substring(start, end + 1);
+    }
+
+    private static int expandAroundCenter(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+        return right - left - 1;
+    }
+
+    public static void main(String[] args) {
+        String s = "babad";
+        System.out.println("Longest Palindromic Substring: " + longestPalindrome(s)); // Output: "bab" or "aba"
+    }
+}
+```
+#### Time Complexity: \(O(n^2)\)
+
+#### 4. Manacher's Algorithm
+This approach finds the longest palindromic substring in linear time. It transforms the string to handle even-length palindromes and uses a clever technique to avoid redundant comparisons.
+
+#### Steps:
+1. Transform the string to handle even-length palindromes.
+2. Use an array to store the lengths of palindromes centered at each character.
+3. Use a center and right boundary to avoid redundant comparisons.
+4. Find the longest palindromic substring from the array.
+
+#### Code:
+```java
+public class LongestPalindromicSubstring {
+    public static String longestPalindrome(String s) {
+        if (s == null || s.length() == 0) return "";
+        char[] t = preprocess(s);
+        int[] p = new int[t.length];
+        int center = 0, right = 0;
+        for (int i = 1; i < t.length - 1; i++) {
+            int mirror = 2 * center - i;
+            if (right > i) {
+                p[i] = Math.min(right - i, p[mirror]);
+            }
+            while (t[i + 1 + p[i]] == t[i - 1 - p[i]]) {
+                p[i]++;
+            }
+            if (i + p[i] > right) {
+                center = i;
+                right = i + p[i];
+            }
+        }
+        int maxLen = 0;
+        int centerIndex = 0;
+        for (int i = 1; i < t.length - 1; i++) {
+            if (p[i] > maxLen) {
+                maxLen = p[i];
+                centerIndex = i;
+            }
+        }
+        int start = (centerIndex - maxLen) / 2;
+        return s.substring(start, start + maxLen);
+    }
+
+    private static char[] preprocess(String s) {
+        char[] t = new char[s.length() * 2 + 3];
+        t[0] = '^';
+        for (int i = 0; i < s.length(); i++) {
+            t[2 * i + 1] = '#';
+            t[2 * i + 2] = s.charAt(i);
+        }
+        t[t.length - 2] = '#';
+        t[t.length - 1] = '$';
+        return t;
+    }
+
+    public static void main(String[] args) {
+        String s = "babad";
+        System.out.println("Longest Palindromic Substring: " + longestPalindrome(s)); // Output: "bab" or "aba"
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **brute force approach** is simple but inefficient for large inputs due to its cubic time complexity.
+- The **dynamic programming approach** is more efficient with a quadratic time complexity but uses extra space.
+- The **expand around center approach** is efficient and easy to implement with a quadratic time complexity.
+- **Manacher's algorithm** is the most efficient with a linear time complexity but is more complex to implement[1](https://www.javatpoint.com/longest-palindrome-substring)[2](https://www.baeldung.com/java-palindrome-substrings)[3](https://favtutor.com/blogs/longest-palindromic-substring).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Longest substring without repeating characters
+
+The "Longest Substring Without Repeating Characters" problem involves finding the length of the longest substring in a given string where all characters are unique.
+
+### Problem Statement
+Given a string `s`, find the length of the longest substring without repeating characters.
+
+### Example
+```java
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+```
+
+### Different Approaches to Solve the Problem
+
+#### 1. Brute Force Approach
+This approach involves generating all possible substrings and checking each one to see if it contains all unique characters.
+
+#### Steps:
+1. Generate all possible substrings.
+2. Check each substring to see if it contains all unique characters.
+3. Keep track of the length of the longest substring found.
+
+#### Code:
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class LongestSubstringWithoutRepeatingCharacters {
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        int maxLength = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j <= n; j++) {
+                if (allUnique(s, i, j)) {
+                    maxLength = Math.max(maxLength, j - i);
+                }
+            }
+        }
+        return maxLength;
+    }
+
+    private static boolean allUnique(String s, int start, int end) {
+        Set<Character> set = new HashSet<>();
+        for (int i = start; i < end; i++) {
+            char ch = s.charAt(i);
+            if (set.contains(ch)) {
+                return false;
+            }
+            set.add(ch);
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        System.out.println("Length of Longest Substring Without Repeating Characters: " + lengthOfLongestSubstring(s)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(n^3)\)
+
+#### 2. Sliding Window Approach
+This approach uses a sliding window to maintain a window of unique characters and expands or contracts the window as needed.
+
+#### Steps:
+1. Use two pointers to represent the window's start and end.
+2. Expand the window by moving the end pointer and adding characters to a set.
+3. If a duplicate character is found, move the start pointer to the right until the duplicate is removed.
+4. Keep track of the maximum length of the window.
+
+#### Code:
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class LongestSubstringWithoutRepeatingCharacters {
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int maxLength = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
+                maxLength = Math.max(maxLength, j - i);
+            } else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        System.out.println("Length of Longest Substring Without Repeating Characters: " + lengthOfLongestSubstring(s)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+#### 3. Optimized Sliding Window Using HashMap
+This approach optimizes the sliding window by using a `HashMap` to store the characters and their indices, allowing for faster updates of the start pointer.
+
+#### Steps:
+1. Use a `HashMap` to store the characters and their latest indices.
+2. Use two pointers to represent the window's start and end.
+3. Expand the window by moving the end pointer and updating the `HashMap`.
+4. If a duplicate character is found, update the start pointer to the maximum of its current value and the index of the duplicate character plus one.
+5. Keep track of the maximum length of the window.
+
+#### Code:
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class LongestSubstringWithoutRepeatingCharacters {
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        Map<Character, Integer> map = new HashMap<>();
+        int maxLength = 0;
+        for (int j = 0, i = 0; j < n; j++) {
+            if (map.containsKey(s.charAt(j))) {
+                i = Math.max(map.get(s.charAt(j)) + 1, i);
+            }
+            map.put(s.charAt(j), j);
+            maxLength = Math.max(maxLength, j - i + 1);
+        }
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        System.out.println("Length of Longest Substring Without Repeating Characters: " + lengthOfLongestSubstring(s)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **brute force approach** is simple but inefficient for large inputs due to its cubic time complexity.
+- The **sliding window approach** is more efficient with a linear time complexity and is easy to implement.
+- The **optimized sliding window using HashMap** further improves efficiency by reducing the time complexity to linear while maintaining constant space complexity[1](https://www.javatpoint.com/length-of-the-longest-substring-without-repeating-characters-in-java)[2](https://www.baeldung.com/java-longest-substring-without-repeated-characters)[3](https://examples.javacodegeeks.com/longest-substring-without-repeating-characters/).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Group Anagram Together
+
+The "Longest Substring Without Repeating Characters" problem involves finding the length of the longest substring in a given string where all characters are unique.
+
+### Problem Statement
+Given a string `s`, find the length of the longest substring without repeating characters.
+
+### Example
+```java
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+```
+
+### Different Approaches to Solve the Problem
+
+#### 1. Brute Force Approach
+This approach involves generating all possible substrings and checking each one to see if it contains all unique characters.
+
+#### Steps:
+1. Generate all possible substrings.
+2. Check each substring to see if it contains all unique characters.
+3. Keep track of the length of the longest substring found.
+
+#### Code:
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class LongestSubstringWithoutRepeatingCharacters {
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        int maxLength = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j <= n; j++) {
+                if (allUnique(s, i, j)) {
+                    maxLength = Math.max(maxLength, j - i);
+                }
+            }
+        }
+        return maxLength;
+    }
+
+    private static boolean allUnique(String s, int start, int end) {
+        Set<Character> set = new HashSet<>();
+        for (int i = start; i < end; i++) {
+            char ch = s.charAt(i);
+            if (set.contains(ch)) {
+                return false;
+            }
+            set.add(ch);
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        System.out.println("Length of Longest Substring Without Repeating Characters: " + lengthOfLongestSubstring(s)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(n^3)\)
+
+#### 2. Sliding Window Approach
+This approach uses a sliding window to maintain a window of unique characters and expands or contracts the window as needed.
+
+#### Steps:
+1. Use two pointers to represent the window's start and end.
+2. Expand the window by moving the end pointer and adding characters to a set.
+3. If a duplicate character is found, move the start pointer to the right until the duplicate is removed.
+4. Keep track of the maximum length of the window.
+
+#### Code:
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class LongestSubstringWithoutRepeatingCharacters {
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int maxLength = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
+                maxLength = Math.max(maxLength, j - i);
+            } else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        System.out.println("Length of Longest Substring Without Repeating Characters: " + lengthOfLongestSubstring(s)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+#### 3. Optimized Sliding Window Using HashMap
+This approach optimizes the sliding window by using a `HashMap` to store the characters and their indices, allowing for faster updates of the start pointer.
+
+#### Steps:
+1. Use a `HashMap` to store the characters and their latest indices.
+2. Use two pointers to represent the window's start and end.
+3. Expand the window by moving the end pointer and updating the `HashMap`.
+4. If a duplicate character is found, update the start pointer to the maximum of its current value and the index of the duplicate character plus one.
+5. Keep track of the maximum length of the window.
+
+#### Code:
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class LongestSubstringWithoutRepeatingCharacters {
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        Map<Character, Integer> map = new HashMap<>();
+        int maxLength = 0;
+        for (int j = 0, i = 0; j < n; j++) {
+            if (map.containsKey(s.charAt(j))) {
+                i = Math.max(map.get(s.charAt(j)) + 1, i);
+            }
+            map.put(s.charAt(j), j);
+            maxLength = Math.max(maxLength, j - i + 1);
+        }
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        System.out.println("Length of Longest Substring Without Repeating Characters: " + lengthOfLongestSubstring(s)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **brute force approach** is simple but inefficient for large inputs due to its cubic time complexity.
+- The **sliding window approach** is more efficient with a linear time complexity and is easy to implement.
+- The **optimized sliding window using HashMap** further improves efficiency by reducing the time complexity to linear while maintaining constant space complexity[1](https://www.javatpoint.com/length-of-the-longest-substring-without-repeating-characters-in-java)[2](https://www.baeldung.com/java-longest-substring-without-repeated-characters)[3](https://examples.javacodegeeks.com/longest-substring-without-repeating-characters/).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Palindromic Partitioning
+
+Palindrome partitioning involves dividing a string into substrings such that each substring is a palindrome. There are different approaches to solve this problem in Java, including recursive, dynamic programming, and backtracking methods.
+
+### Problem Statement
+Given a string `s`, partition `s` such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of `s`.
+
+### Example
+```java
+Input: s = "aab"
+Output: [["a","a","b"], ["aa","b"]]
+```
+
+### Different Approaches to Solve Palindromic Partitioning
+
+#### 1. Recursive Approach
+This approach uses recursion to explore all possible partitions and checks if each partition is a palindrome.
+
+#### Steps:
+1. Define a recursive function that partitions the string.
+2. For each substring, check if it is a palindrome.
+3. If it is, recursively partition the remaining string.
+4. Collect all valid partitions.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class PalindromePartitioning {
+    public static List<List<String>> partition(String s) {
+        List<List<String>> result = new ArrayList<>();
+        backtrack(result, new ArrayList<>(), s, 0);
+        return result;
+    }
+
+    private static void backtrack(List<List<String>> result, List<String> tempList, String s, int start) {
+        if (start == s.length()) {
+            result.add(new ArrayList<>(tempList));
+        } else {
+            for (int i = start; i < s.length(); i++) {
+                if (isPalindrome(s, start, i)) {
+                    tempList.add(s.substring(start, i + 1));
+                    backtrack(result, tempList, s, i + 1);
+                    tempList.remove(tempList.size() - 1);
+                }
+            }
+        }
+    }
+
+    private static boolean isPalindrome(String s, int low, int high) {
+        while (low < high) {
+            if (s.charAt(low++) != s.charAt(high--)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String s = "aab";
+        System.out.println(partition(s)); // Output: [["a","a","b"], ["aa","b"]]
+    }
+}
+```
+
+#### 2. Dynamic Programming Approach
+This approach uses dynamic programming to store whether substrings are palindromes and minimizes the number of cuts needed.
+
+#### Steps:
+1. Create a 2D array `dp` where `dp[i][j]` is true if the substring `s[i...j]` is a palindrome.
+2. Use another array `cuts` to store the minimum cuts needed for the substring `s[0...i]`.
+3. Fill the `dp` table and update the `cuts` array accordingly.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class PalindromePartitioning {
+    public static List<List<String>> partition(String s) {
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
+        List<List<String>>[] result = new List[n + 1];
+        result[0] = new ArrayList<>();
+        result[0].add(new ArrayList<>());
+
+        for (int i = 0; i < n; i++) {
+            result[i + 1] = new ArrayList<>();
+            for (int j = 0; j <= i; j++) {
+                if (s.charAt(i) == s.charAt(j) && (i - j <= 2 || dp[j + 1][i - 1])) {
+                    dp[j][i] = true;
+                    String sub = s.substring(j, i + 1);
+                    for (List<String> l : result[j]) {
+                        List<String> newList = new ArrayList<>(l);
+                        newList.add(sub);
+                        result[i + 1].add(newList);
+                    }
+                }
+            }
+        }
+        return result[n];
+    }
+
+    public static void main(String[] args) {
+        String s = "aab";
+        System.out.println(partition(s)); // Output: [["a","a","b"], ["aa","b"]]
+    }
+}
+```
+
+#### 3. Backtracking Approach
+This approach uses backtracking to explore all possible partitions and checks if each partition is a palindrome.
+
+#### Steps:
+1. Use a helper function to perform backtracking.
+2. For each substring, check if it is a palindrome.
+3. If it is, add it to the current partition and recursively partition the remaining string.
+4. Backtrack by removing the last added substring and trying different partitions.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class PalindromePartitioning {
+    public static List<List<String>> partition(String s) {
+        List<List<String>> result = new ArrayList<>();
+        backtrack(result, new ArrayList<>(), s, 0);
+        return result;
+    }
+
+    private static void backtrack(List<List<String>> result, List<String> tempList, String s, int start) {
+        if (start == s.length()) {
+            result.add(new ArrayList<>(tempList));
+        } else {
+            for (int i = start; i < s.length(); i++) {
+                if (isPalindrome(s, start, i)) {
+                    tempList.add(s.substring(start, i + 1));
+                    backtrack(result, tempList, s, i + 1);
+                    tempList.remove(tempList.size() - 1);
+                }
+            }
+        }
+    }
+
+    private static boolean isPalindrome(String s, int low, int high) {
+        while (low < high) {
+            if (s.charAt(low++) != s.charAt(high--)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String s = "aab";
+        System.out.println(partition(s)); // Output: [["a","a","b"], ["aa","b"]]
+    }
+}
+```
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is simple but can be inefficient for large inputs due to its exponential time complexity.
+- The **dynamic programming approach** is more efficient with a time complexity of \(O(n^2)\) and space complexity of \(O(n^2)\).
+- The **backtracking approach** is efficient and easy to implement, leveraging the recursive nature of the problem[1](https://www.javatpoint.com/palindrome-partitioning-problem-in-java)[2](https://www.sourcecodeexamples.net/2023/12/palindrome-partitioning-java-solution.html)[3](https://algo.monster/liteproblems/131).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Palindromic Substring
+
+Finding the longest palindromic substring in a given string is a common problem in computer science. Here are different approaches to solve this problem in Java:
+
+### 1. Brute Force Approach
+This approach involves generating all possible substrings and checking each one to see if it is a palindrome.
+
+#### Steps:
+1. Generate all possible substrings.
+2. Check each substring to see if it is a palindrome.
+3. Keep track of the longest palindromic substring found.
+
+#### Code:
+```java
+public class LongestPalindromicSubstring {
+    public static String longestPalindrome(String s) {
+        int n = s.length();
+        if (n == 0) return "";
+        String longest = s.substring(0, 1);
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                String substr = s.substring(i, j + 1);
+                if (isPalindrome(substr) && substr.length() > longest.length()) {
+                    longest = substr;
+                }
+            }
+        }
+        return longest;
+    }
+
+    private static boolean isPalindrome(String s) {
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String s = "babad";
+        System.out.println("Longest Palindromic Substring: " + longestPalindrome(s)); // Output: "bab" or "aba"
+    }
+}
+```
+#### Time Complexity: \(O(n^3)\)
+
+### 2. Dynamic Programming Approach
+This approach uses a 2D table to store whether substrings are palindromes, avoiding redundant calculations.
+
+#### Steps:
+1. Create a 2D array `dp` where `dp[i][j]` is true if the substring `s[i...j]` is a palindrome.
+2. Initialize the table for substrings of length 1 and 2.
+3. Fill the table for substrings of length greater than 2.
+4. Keep track of the longest palindromic substring found.
+
+#### Code:
+```java
+public class LongestPalindromicSubstring {
+    public static String longestPalindrome(String s) {
+        int n = s.length();
+        if (n == 0) return "";
+        boolean[][] dp = new boolean[n][n];
+        String longest = s.substring(0, 1);
+
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = true;
+        }
+
+        for (int i = 0; i < n - 1; i++) {
+            if (s.charAt(i) == s.charAt(i + 1)) {
+                dp[i][i + 1] = true;
+                longest = s.substring(i, i + 2);
+            }
+        }
+
+        for (int length = 3; length <= n; length++) {
+            for (int i = 0; i <= n - length; i++) {
+                int j = i + length - 1;
+                if (s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1]) {
+                    dp[i][j] = true;
+                    longest = s.substring(i, j + 1);
+                }
+            }
+        }
+
+        return longest;
+    }
+
+    public static void main(String[] args) {
+        String s = "babad";
+        System.out.println("Longest Palindromic Substring: " + longestPalindrome(s)); // Output: "bab" or "aba"
+    }
+}
+```
+#### Time Complexity: \(O(n^2)\)
+
+### 3. Expand Around Center Approach
+This approach considers each character (and each pair of characters) as the center of a palindrome and expands outwards to find the longest palindromic substring.
+
+#### Steps:
+1. Iterate through each character and each pair of characters in the string.
+2. Expand outwards from each center to find the longest palindromic substring.
+3. Keep track of the longest palindromic substring found.
+
+#### Code:
+```java
+public class LongestPalindromicSubstring {
+    public static String longestPalindrome(String s) {
+        if (s == null || s.length() < 1) return "";
+        int start = 0, end = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = expandAroundCenter(s, i, i);
+            int len2 = expandAroundCenter(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
+            }
+        }
+        return s.substring(start, end + 1);
+    }
+
+    private static int expandAroundCenter(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+        return right - left - 1;
+    }
+
+    public static void main(String[] args) {
+        String s = "babad";
+        System.out.println("Longest Palindromic Substring: " + longestPalindrome(s)); // Output: "bab" or "aba"
+    }
+}
+```
+#### Time Complexity: \(O(n^2)\)
+
+### 4. Manacher's Algorithm
+This approach finds the longest palindromic substring in linear time. It transforms the string to handle even-length palindromes and uses a clever technique to avoid redundant comparisons.
+
+#### Steps:
+1. Transform the string to handle even-length palindromes.
+2. Use an array to store the lengths of palindromes centered at each character.
+3. Use a center and right boundary to avoid redundant comparisons.
+4. Find the longest palindromic substring from the array.
+
+#### Code:
+```java
+public class LongestPalindromicSubstring {
+    public static String longestPalindrome(String s) {
+        if (s == null || s.length() == 0) return "";
+        char[] t = preprocess(s);
+        int[] p = new int[t.length];
+        int center = 0, right = 0;
+        for (int i = 1; i < t.length - 1; i++) {
+            int mirror = 2 * center - i;
+            if (right > i) {
+                p[i] = Math.min(right - i, p[mirror]);
+            }
+            while (t[i + 1 + p[i]] == t[i - 1 - p[i]]) {
+                p[i]++;
+            }
+            if (i + p[i] > right) {
+                center = i;
+                right = i + p[i];
+            }
+        }
+        int maxLen = 0;
+        int centerIndex = 0;
+        for (int i = 1; i < t.length - 1; i++) {
+            if (p[i] > maxLen) {
+                maxLen = p[i];
+                centerIndex = i;
+            }
+        }
+        int start = (centerIndex - maxLen) / 2;
+        return s.substring(start, start + maxLen);
+    }
+
+    private static char[] preprocess(String s) {
+        char[] t = new char[s.length() * 2 + 3];
+        t[0] = '^';
+        for (int i = 0; i < s.length(); i++) {
+            t[2 * i + 1] = '#';
+            t[2 * i + 2] = s.charAt(i);
+        }
+        t[t.length - 2] = '#';
+        t[t.length - 1] = '$';
+        return t;
+    }
+
+    public static void main(String[] args) {
+        String s = "babad";
+        System.out.println("Longest Palindromic Substring: " + longestPalindrome(s)); // Output: "bab" or "aba"
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **brute force approach** is simple but inefficient for large inputs due to its cubic time complexity.
+- The **dynamic programming approach** is more efficient with a quadratic time complexity but uses extra space.
+- The **expand around center approach** is efficient and easy to implement with a quadratic time complexity.
+- **Manacher's algorithm** is the most efficient with a linear time complexity but is more complex to implement[1](https://www.baeldung.com/java-palindrome-substrings)[2](https://www.javatpoint.com/find-all-palindromic-sub-strings-of-a-given-string-in-java)[3](https://bing.com/search?q=Pallindromic+substring+with+different+approaches+in+Java).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Edit Distance
+
+The Edit Distance problem, also known as Levenshtein Distance, measures the minimum number of operations required to transform one string into another. The allowed operations are:
+1. **Insert a character**
+2. **Delete a character**
+3. **Replace a character**
+
+### Problem Statement
+Given two strings `word1` and `word2`, find the minimum number of operations required to convert `word1` to `word2`.
+
+### Example
+```java
+Input: word1 = "horse", word2 = "ros"
+Output: 3
+Explanation: 
+horse -> rorse (replace 'h' with 'r')
+rorse -> rose (remove 'r')
+rose -> ros (remove 'e')
+```
+
+### Different Approaches to Solve Edit Distance
+
+#### 1. Recursive Approach
+This approach uses recursion to explore all possible operations and find the minimum number of operations required.
+
+#### Steps:
+1. If either string is empty, return the length of the other string.
+2. If the last characters of both strings match, recursively compute the edit distance for the remaining substrings.
+3. If the last characters do not match, consider all three operations (insert, delete, replace) and recursively compute the edit distance for each case.
+4. Return the minimum of the three computed values.
+
+#### Code:
+```java
+public class EditDistance {
+    public static int minDistance(String word1, String word2) {
+        return minDistanceHelper(word1, word2, word1.length(), word2.length());
+    }
+
+    private static int minDistanceHelper(String word1, String word2, int m, int n) {
+        if (m == 0) return n;
+        if (n == 0) return m;
+        if (word1.charAt(m - 1) == word2.charAt(n - 1)) {
+            return minDistanceHelper(word1, word2, m - 1, n - 1);
+        }
+        return 1 + Math.min(minDistanceHelper(word1, word2, m, n - 1), // Insert
+                            Math.min(minDistanceHelper(word1, word2, m - 1, n), // Remove
+                                     minDistanceHelper(word1, word2, m - 1, n - 1))); // Replace
+    }
+
+    public static void main(String[] args) {
+        String word1 = "horse";
+        String word2 = "ros";
+        System.out.println("Minimum Edit Distance: " + minDistance(word1, word2)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(3^{\min(m, n)})\)
+
+#### 2. Dynamic Programming Approach
+This approach uses a 2D table to store the minimum edit distances for substrings of the given strings, avoiding redundant calculations.
+
+#### Steps:
+1. Create a 2D array `dp` where `dp[i][j]` represents the minimum edit distance between the first `i` characters of `word1` and the first `j` characters of `word2`.
+2. Initialize the first row and first column of the table.
+3. Fill the table using the following rules:
+   - If the characters match, `dp[i][j] = dp[i-1][j-1]`.
+   - Otherwise, `dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])`.
+
+#### Code:
+```java
+public class EditDistance {
+    public static int minDistance(String word1, String word2) {
+        int m = word1.length();
+        int n = word2.length();
+        int[][] dp = new int[m + 1][n + 1];
+
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
+                if (i == 0) {
+                    dp[i][j] = j;
+                } else if (j == 0) {
+                    dp[i][j] = i;
+                } else if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = 1 + Math.min(dp[i - 1][j], Math.min(dp[i][j - 1], dp[i - 1][j - 1]));
+                }
+            }
+        }
+        return dp[m][n];
+    }
+
+    public static void main(String[] args) {
+        String word1 = "horse";
+        String word2 = "ros";
+        System.out.println("Minimum Edit Distance: " + minDistance(word1, word2)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(m \times n)\)
+
+#### 3. Space Optimized Dynamic Programming
+This approach optimizes the space complexity of the dynamic programming solution by using two 1D arrays instead of a 2D array.
+
+#### Steps:
+1. Use two 1D arrays `previous` and `current` to store the minimum edit distances for the previous and current rows.
+2. Update the arrays as you iterate through the characters of the strings.
+
+#### Code:
+```java
+public class EditDistance {
+    public static int minDistance(String word1, String word2) {
+        int m = word1.length();
+        int n = word2.length();
+        int[] previous = new int[n + 1];
+        int[] current = new int[n + 1];
+
+        for (int j = 0; j <= n; j++) {
+            previous[j] = j;
+        }
+
+        for (int i = 1; i <= m; i++) {
+            current[0] = i;
+            for (int j = 1; j <= n; j++) {
+                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    current[j] = previous[j - 1];
+                } else {
+                    current[j] = 1 + Math.min(previous[j], Math.min(current[j - 1], previous[j - 1]));
+                }
+            }
+            int[] temp = previous;
+            previous = current;
+            current = temp;
+        }
+
+        return previous[n];
+    }
+
+    public static void main(String[] args) {
+        String word1 = "horse";
+        String word2 = "ros";
+        System.out.println("Minimum Edit Distance: " + minDistance(word1, word2)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(m \times n)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is simple but can be inefficient for large inputs due to its exponential time complexity.
+- The **dynamic programming approach** is more efficient with a time complexity of \(O(m \times n)\) and space complexity of \(O(m \times n)\).
+- The **space-optimized dynamic programming approach** reduces the space complexity to \(O(n)\) while maintaining the same time complexity[1](https://www.programcreek.com/2013/12/edit-distance-in-java/)[2](https://www.javacodegeeks.com/2014/03/easy-to-understand-dynamic-programming-edit-distance.html)[3](https://www.baeldung.com/java-levenshtein-distance).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Find all Anagram in String
+
+Finding all anagrams of a given string within another string is a common problem. Here are different approaches to solve this problem in Java:
+
+### Problem Statement
+Given a string `s` and a non-empty string `p`, find all the start indices of `p`'s anagrams in `s`.
+
+### Example
+```java
+Input: s = "cbaebabacd", p = "abc"
+Output: [0, 6]
+Explanation: The substring starting at index 0 ("cba") and the substring starting at index 6 ("bac") are anagrams of "abc".
+```
+
+### Different Approaches to Solve the Problem
+
+#### 1. Sorting Approach
+This approach involves sorting each substring of length `p` in `s` and comparing it with the sorted version of `p`.
+
+#### Steps:
+1. Sort the string `p`.
+2. Iterate through each substring of length `p` in `s`.
+3. Sort each substring and compare it with the sorted `p`.
+4. If they match, record the starting index.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class FindAllAnagrams {
+    public static List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+        if (s == null || p == null || s.length() < p.length()) return result;
+
+        char[] pArray = p.toCharArray();
+        Arrays.sort(pArray);
+        String pSorted = new String(pArray);
+
+        for (int i = 0; i <= s.length() - p.length(); i++) {
+            String sub = s.substring(i, i + p.length());
+            char[] subArray = sub.toCharArray();
+            Arrays.sort(subArray);
+            if (new String(subArray).equals(pSorted)) {
+                result.add(i);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String s = "cbaebabacd";
+        String p = "abc";
+        System.out.println(findAnagrams(s, p)); // Output: [0, 6]
+    }
+}
+```
+#### Time Complexity: \(O((n - m + 1) \cdot m \log m)\), where \(n\) is the length of `s` and \(m\) is the length of `p`.
+
+#### 2. Sliding Window with Character Count
+This approach uses a sliding window to maintain a count of characters and compares it with the count of characters in `p`.
+
+#### Steps:
+1. Create a frequency array for `p`.
+2. Use a sliding window of length `p` to traverse `s`.
+3. Maintain a frequency array for the current window in `s`.
+4. Compare the frequency arrays to check for anagrams.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class FindAllAnagrams {
+    public static List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+        if (s == null || p == null || s.length() < p.length()) return result;
+
+        int[] pCount = new int[26];
+        int[] sCount = new int[26];
+
+        for (char c : p.toCharArray()) {
+            pCount[c - 'a']++;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            sCount[s.charAt(i) - 'a']++;
+            if (i >= p.length()) {
+                sCount[s.charAt(i - p.length()) - 'a']--;
+            }
+            if (Arrays.equals(sCount, pCount)) {
+                result.add(i - p.length() + 1);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String s = "cbaebabacd";
+        String p = "abc";
+        System.out.println(findAnagrams(s, p)); // Output: [0, 6]
+    }
+}
+```
+#### Time Complexity: \(O(n)\), where \(n\) is the length of `s`.
+
+#### 3. Optimized Sliding Window with HashMap
+This approach uses a sliding window and a `HashMap` to maintain the count of characters, allowing for efficient updates.
+
+#### Steps:
+1. Create a `HashMap` for the frequency of characters in `p`.
+2. Use a sliding window of length `p` to traverse `s`.
+3. Maintain a `HashMap` for the current window in `s`.
+4. Compare the `HashMap`s to check for anagrams.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class FindAllAnagrams {
+    public static List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+        if (s == null || p == null || s.length() < p.length()) return result;
+
+        Map<Character, Integer> pMap = new HashMap<>();
+        for (char c : p.toCharArray()) {
+            pMap.put(c, pMap.getOrDefault(c, 0) + 1);
+        }
+
+        Map<Character, Integer> sMap = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            sMap.put(c, sMap.getOrDefault(c, 0) + 1);
+
+            if (i >= p.length()) {
+                char leftChar = s.charAt(i - p.length());
+                if (sMap.get(leftChar) == 1) {
+                    sMap.remove(leftChar);
+                } else {
+                    sMap.put(leftChar, sMap.get(leftChar) - 1);
+                }
+            }
+
+            if (sMap.equals(pMap)) {
+                result.add(i - p.length() + 1);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String s = "cbaebabacd";
+        String p = "abc";
+        System.out.println(findAnagrams(s, p)); // Output: [0, 6]
+    }
+}
+```
+#### Time Complexity: \(O(n)\), where \(n\) is the length of `s`.
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **sorting approach** is straightforward but can be inefficient for long strings due to the sorting step.
+- The **sliding window with character count** approach is efficient and easy to implement with linear time complexity.
+- The **optimized sliding window with HashMap** approach is also efficient and handles character counts dynamically[1](https://www.youtube.com/watch?v=YKx-Lj0xlKk)[2](https://www.youtube.com/watch?v=-c0hUQHIkSY)[3](https://www.youtube.com/watch?v=4rAc8Oo0kpo).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Word Break
+
+The Word Break problem involves determining if a given string can be segmented into a space-separated sequence of one or more dictionary words.
+
+### Problem Statement
+Given a string `s` and a dictionary of words `wordDict`, determine if `s` can be segmented into a space-separated sequence of one or more dictionary words.
+
+### Example
+```java
+Input: s = "leetcode", wordDict = ["leet", "code"]
+Output: true
+Explanation: "leetcode" can be segmented as "leet code".
+```
+
+### Different Approaches to Solve Word Break
+
+#### 1. Recursive Approach
+This approach uses recursion and backtracking to explore all possible segmentations of the string.
+
+#### Steps:
+1. Check every possible prefix of the string.
+2. If the prefix is found in the dictionary, recursively check the remaining substring.
+3. If the entire string can be segmented, return true.
+
+#### Code:
+```java
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class WordBreak {
+    public static boolean wordBreak(String s, List<String> wordDict) {
+        return wordBreakRecur(s, new HashSet<>(wordDict), 0);
+    }
+
+    private static boolean wordBreakRecur(String s, Set<String> wordDict, int start) {
+        if (start == s.length()) {
+            return true;
+        }
+        for (int end = start + 1; end <= s.length(); end++) {
+            if (wordDict.contains(s.substring(start, end)) && wordBreakRecur(s, wordDict, end)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        String s = "leetcode";
+        List<String> wordDict = List.of("leet", "code");
+        System.out.println(wordBreak(s, wordDict)); // Output: true
+    }
+}
+```
+#### Time Complexity: \(O(2^n)\)
+
+#### 2. Dynamic Programming Approach
+This approach uses dynamic programming to store the results of subproblems and avoid redundant calculations.
+
+#### Steps:
+1. Create a boolean array `dp` where `dp[i]` indicates if the substring `s[0...i-1]` can be segmented.
+2. Initialize `dp[0]` to true since an empty string can be segmented.
+3. Iterate through the string and update the `dp` array based on the dictionary words.
+
+#### Code:
+```java
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class WordBreak {
+    public static boolean wordBreak(String s, List<String> wordDict) {
+        Set<String> wordSet = new HashSet<>(wordDict);
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
+
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 0; j < i; j++) {
+                if (dp[j] && wordSet.contains(s.substring(j, i))) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[s.length()];
+    }
+
+    public static void main(String[] args) {
+        String s = "leetcode";
+        List<String> wordDict = List.of("leet", "code");
+        System.out.println(wordBreak(s, wordDict)); // Output: true
+    }
+}
+```
+#### Time Complexity: \(O(n^2)\)
+
+#### 3. Breadth-First Search (BFS) Approach
+This approach uses BFS to explore all possible segmentations of the string.
+
+#### Steps:
+1. Use a queue to store the starting indices of substrings.
+2. Use a set to store visited indices to avoid redundant calculations.
+3. For each index, check all possible substrings and add the end index to the queue if the substring is in the dictionary.
+
+#### Code:
+```java
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
+
+public class WordBreak {
+    public static boolean wordBreak(String s, List<String> wordDict) {
+        Set<String> wordSet = new HashSet<>(wordDict);
+        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+        queue.add(0);
+
+        while (!queue.isEmpty()) {
+            int start = queue.poll();
+            if (visited.contains(start)) {
+                continue;
+            }
+            visited.add(start);
+            for (int end = start + 1; end <= s.length(); end++) {
+                if (wordSet.contains(s.substring(start, end))) {
+                    if (end == s.length()) {
+                        return true;
+                    }
+                    queue.add(end);
+                }
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        String s = "leetcode";
+        List<String> wordDict = List.of("leet", "code");
+        System.out.println(wordBreak(s, wordDict)); // Output: true
+    }
+}
+```
+#### Time Complexity: \(O(n^2)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is simple but can be inefficient for large inputs due to its exponential time complexity.
+- The **dynamic programming approach** is more efficient with a quadratic time complexity and is commonly used.
+- The **BFS approach** is also efficient and can be easier to understand and implement[1](https://www.interviewbit.com/blog/word-break-problem/)[2](https://www.programcreek.com/2012/12/leetcode-solution-word-break/)[3](https://favtutor.com/articles/word-break-problem/).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Letter combination of phone number
+
+The "Letter Combinations of a Phone Number" problem involves generating all possible letter combinations that a given string of digits could represent on a phone keypad. Each digit maps to a set of letters, similar to the old T9 text input on mobile phones.
+
+### Problem Statement
+Given a string containing digits from 2 to 9, return all possible letter combinations that the number could represent.
+
+### Example
+```java
+Input: digits = "23"
+Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+```
+
+### Different Approaches to Solve the Problem
+
+#### 1. Recursive Approach (Depth-First Search)
+This approach uses recursion to explore all possible combinations by treating each digit as a node and each letter as a branch.
+
+#### Steps:
+1. Define a mapping of digits to letters.
+2. Use a recursive function to build combinations.
+3. For each digit, append each corresponding letter to the current combination and recursively call the function for the next digit.
+4. When the end of the digit string is reached, add the current combination to the result list.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class LetterCombinations {
+    private static final String[] KEYPAD = {
+        "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
+    };
+
+    public static List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<>();
+        if (digits == null || digits.length() == 0) {
+            return result;
+        }
+        dfs(digits, 0, new StringBuilder(), result);
+        return result;
+    }
+
+    private static void dfs(String digits, int index, StringBuilder path, List<String> result) {
+        if (index == digits.length()) {
+            result.add(path.toString());
+            return;
+        }
+        String letters = KEYPAD[digits.charAt(index) - '0'];
+        for (char letter : letters.toCharArray()) {
+            path.append(letter);
+            dfs(digits, index + 1, path, result);
+            path.deleteCharAt(path.length() - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        String digits = "23";
+        System.out.println(letterCombinations(digits)); // Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+    }
+}
+```
+#### Time Complexity: \(O(4^n)\), where \(n\) is the length of the input string.
+
+#### 2. Iterative Approach
+This approach uses an iterative method to build combinations by processing each digit and adding the corresponding letters to the existing combinations.
+
+#### Steps:
+1. Define a mapping of digits to letters.
+2. Initialize a list with an empty string.
+3. For each digit, iterate through the current list of combinations and append each corresponding letter to each combination.
+4. Update the list with the new combinations.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class LetterCombinations {
+    private static final String[] KEYPAD = {
+        "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
+    };
+
+    public static List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<>();
+        if (digits == null || digits.length() == 0) {
+            return result;
+        }
+        result.add("");
+        for (char digit : digits.toCharArray()) {
+            List<String> temp = new ArrayList<>();
+            String letters = KEYPAD[digit - '0'];
+            for (String combination : result) {
+                for (char letter : letters.toCharArray()) {
+                    temp.add(combination + letter);
+                }
+            }
+            result = temp;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String digits = "23";
+        System.out.println(letterCombinations(digits)); // Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+    }
+}
+```
+#### Time Complexity: \(O(4^n)\), where \(n\) is the length of the input string.
+
+#### 3. Breadth-First Search (BFS) Approach
+This approach uses a queue to perform a breadth-first search, generating combinations level by level.
+
+#### Steps:
+1. Define a mapping of digits to letters.
+2. Initialize a queue with an empty string.
+3. For each digit, dequeue the current combinations and enqueue new combinations by appending each corresponding letter.
+4. Continue until all digits are processed.
+
+#### Code:
+```java
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+
+public class LetterCombinations {
+    private static final String[] KEYPAD = {
+        "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
+    };
+
+    public static List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<>();
+        if (digits == null || digits.length() == 0) {
+            return result;
+        }
+        Deque<String> queue = new ArrayDeque<>();
+        queue.add("");
+        for (char digit : digits.toCharArray()) {
+            int size = queue.size();
+            String letters = KEYPAD[digit - '0'];
+            for (int i = 0; i < size; i++) {
+                String combination = queue.poll();
+                for (char letter : letters.toCharArray()) {
+                    queue.add(combination + letter);
+                }
+            }
+        }
+        result.addAll(queue);
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String digits = "23";
+        System.out.println(letterCombinations(digits)); // Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+    }
+}
+```
+#### Time Complexity: \(O(4^n)\), where \(n\) is the length of the input string.
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is intuitive and easy to implement but can be less efficient for large inputs.
+- The **iterative approach** is straightforward and avoids the overhead of recursion.
+- The **BFS approach** is efficient and processes combinations level by level[1](https://www.javatpoint.com/iterative-letter-combinations-of-a-phone-number)[2](https://blog.heycoach.in/letter-combinations-of-a-phone-number-solution-in-java/)[3](https://algo.monster/liteproblems/17).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Check Permutation
+
+Checking if two strings are permutations of each other means determining if one string can be rearranged to form the other. Here are different approaches to solve this problem in Java:
+
+### 1. Sorting Approach
+This approach involves sorting both strings and comparing them. If the sorted versions of the strings are equal, then the strings are permutations of each other.
+
+#### Steps:
+1. Check if the lengths of the two strings are equal. If not, they cannot be permutations.
+2. Convert both strings to character arrays and sort them.
+3. Compare the sorted character arrays.
+
+#### Code:
+```java
+import java.util.Arrays;
+
+public class PermutationCheck {
+    public static boolean arePermutations(String str1, String str2) {
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+        return Arrays.equals(charArray1, charArray2);
+    }
+
+    public static void main(String[] args) {
+        String str1 = "listen";
+        String str2 = "silent";
+        System.out.println("Are the two strings permutations of each other? " + arePermutations(str1, str2)); // Output: true
+    }
+}
+```
+#### Time Complexity: \(O(n \log n)\) for sorting.
+
+### 2. Character Count Approach
+This approach involves counting the frequency of each character in both strings and comparing these counts.
+
+#### Steps:
+1. Check if the lengths of the two strings are equal. If not, they cannot be permutations.
+2. Use a `HashMap` to count the frequency of each character in the first string.
+3. Decrement the count for each character in the second string.
+4. If all counts are zero at the end, the strings are permutations of each other.
+
+#### Code:
+```java
+import java.util.HashMap;
+
+public class PermutationCheck {
+    public static boolean arePermutations(String str1, String str2) {
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+        HashMap<Character, Integer> charCountMap = new HashMap<>();
+        for (char c : str1.toCharArray()) {
+            charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+        }
+        for (char c : str2.toCharArray()) {
+            if (!charCountMap.containsKey(c)) {
+                return false;
+            }
+            charCountMap.put(c, charCountMap.get(c) - 1);
+            if (charCountMap.get(c) == 0) {
+                charCountMap.remove(c);
+            }
+        }
+        return charCountMap.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        String str1 = "apple";
+        String str2 = "papel";
+        System.out.println("Are the two strings permutations of each other? " + arePermutations(str1, str2)); // Output: true
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### 3. Array Count Approach
+This approach uses an array to count the frequency of each character, assuming the character set is fixed (e.g., ASCII).
+
+#### Steps:
+1. Check if the lengths of the two strings are equal. If not, they cannot be permutations.
+2. Use an integer array to count the frequency of each character in the first string.
+3. Decrement the count for each character in the second string.
+4. If all counts are zero at the end, the strings are permutations of each other.
+
+#### Code:
+```java
+public class PermutationCheck {
+    public static boolean arePermutations(String str1, String str2) {
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+        int[] charCount = new int[128]; // Assuming ASCII
+        for (char c : str1.toCharArray()) {
+            charCount[c]++;
+        }
+        for (char c : str2.toCharArray()) {
+            charCount[c]--;
+            if (charCount[c] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String str1 = "abc";
+        String str2 = "bca";
+        System.out.println("Are the two strings permutations of each other? " + arePermutations(str1, str2)); // Output: true
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **sorting approach** is straightforward but involves sorting, which can be less efficient for large strings.
+- The **character count approach** is efficient and works well for any character set.
+- The **array count approach** is highly efficient but assumes a fixed character set (e.g., ASCII)[1](https://www.javacodegeeks.com/check-if-two-strings-are-permutations-of-each-other-in-java.html)[2](https://www.baeldung.com/java-check-permutations-two-strings)[3](https://www.javatpoint.com/check-string-are-permutation-of-each-other-in-java).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Minimum insertion to make Palindrome
+
+To transform a given string into a palindrome by inserting the minimum number of characters, we can use several approaches. Here are different methods to solve this problem in Java:
+
+### 1. Recursive Approach
+This approach uses recursion to explore all possible ways to make the string a palindrome by inserting characters.
+
+#### Steps:
+1. If the string is empty or has one character, it is already a palindrome.
+2. If the first and last characters of the string are the same, recursively check the substring excluding these characters.
+3. If the first and last characters are different, consider two cases:
+   - Insert the last character at the beginning.
+   - Insert the first character at the end.
+4. Return the minimum of the two cases plus one.
+
+#### Code:
+```java
+public class MinInsertionPalindrome {
+    public static int minInsertions(String s) {
+        return minInsertionsHelper(s, 0, s.length() - 1);
+    }
+
+    private static int minInsertionsHelper(String s, int left, int right) {
+        if (left >= right) {
+            return 0;
+        }
+        if (s.charAt(left) == s.charAt(right)) {
+            return minInsertionsHelper(s, left + 1, right - 1);
+        } else {
+            return 1 + Math.min(minInsertionsHelper(s, left + 1, right), minInsertionsHelper(s, left, right - 1));
+        }
+    }
+
+    public static void main(String[] args) {
+        String s = "abc";
+        System.out.println("Minimum insertions to make palindrome: " + minInsertions(s)); // Output: 2
+    }
+}
+```
+#### Time Complexity: \(O(2^n)\)
+
+### 2. Dynamic Programming Approach
+This approach uses a 2D table to store the results of subproblems and avoid redundant calculations.
+
+#### Steps:
+1. Create a 2D array `dp` where `dp[i][j]` represents the minimum insertions needed to make the substring `s[i...j]` a palindrome.
+2. Initialize the table for substrings of length 1 (which are already palindromes).
+3. Fill the table for substrings of increasing lengths.
+4. Use the results of smaller subproblems to solve larger subproblems.
+
+#### Code:
+```java
+public class MinInsertionPalindrome {
+    public static int minInsertions(String s) {
+        int n = s.length();
+        int[][] dp = new int[n][n];
+
+        for (int length = 2; length <= n; length++) {
+            for (int i = 0; i <= n - length; i++) {
+                int j = i + length - 1;
+                if (s.charAt(i) == s.charAt(j)) {
+                    dp[i][j] = dp[i + 1][j - 1];
+                } else {
+                    dp[i][j] = 1 + Math.min(dp[i + 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+
+        return dp[0][n - 1];
+    }
+
+    public static void main(String[] args) {
+        String s = "abc";
+        System.out.println("Minimum insertions to make palindrome: " + minInsertions(s)); // Output: 2
+    }
+}
+```
+#### Time Complexity: \(O(n^2)\)
+
+### 3. Longest Palindromic Subsequence Approach
+This approach leverages the fact that the minimum number of insertions needed to make a string a palindrome is equal to the length of the string minus the length of its longest palindromic subsequence (LPS).
+
+#### Steps:
+1. Find the length of the longest palindromic subsequence in the string.
+2. Subtract the length of the LPS from the length of the string to get the minimum insertions needed.
+
+#### Code:
+```java
+public class MinInsertionPalindrome {
+    public static int minInsertions(String s) {
+        int n = s.length();
+        int lpsLength = longestPalindromicSubsequence(s);
+        return n - lpsLength;
+    }
+
+    private static int longestPalindromicSubsequence(String s) {
+        int n = s.length();
+        int[][] dp = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = 1;
+        }
+
+        for (int length = 2; length <= n; length++) {
+            for (int i = 0; i <= n - length; i++) {
+                int j = i + length - 1;
+                if (s.charAt(i) == s.charAt(j)) {
+                    dp[i][j] = dp[i + 1][j - 1] + 2;
+                } else {
+                    dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+
+        return dp[0][n - 1];
+    }
+
+    public static void main(String[] args) {
+        String s = "abc";
+        System.out.println("Minimum insertions to make palindrome: " + minInsertions(s)); // Output: 2
+    }
+}
+```
+#### Time Complexity: \(O(n^2)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is simple but can be inefficient for large inputs due to its exponential time complexity.
+- The **dynamic programming approach** is more efficient with a quadratic time complexity and is commonly used.
+- The **longest palindromic subsequence approach** leverages the LPS to find the minimum insertions efficiently[1](https://www.javatpoint.com/minimum-insertion-to-form-a-palindrome-in-java)[2](https://www.javatpoint.com/minimum-insertions-to-form-a-palindrome)[3](https://algo.monster/liteproblems/1312).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Longest Valid Parenthesis
+
+The "Longest Valid Parentheses" problem involves finding the length of the longest substring of well-formed parentheses in a given string. Here are different approaches to solve this problem in Java:
+
+### Problem Statement
+Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses substring.
+
+### Example
+```java
+Input: s = "(()"
+Output: 2
+Explanation: The longest valid parentheses substring is "()".
+
+Input: s = ")()())"
+Output: 4
+Explanation: The longest valid parentheses substring is "()()".
+```
+
+### Different Approaches to Solve Longest Valid Parentheses
+
+#### 1. Brute Force Approach
+This approach involves generating all possible substrings and checking each one to see if it is a valid parentheses substring.
+
+#### Steps:
+1. Generate all possible substrings.
+2. Check each substring to see if it is valid.
+3. Keep track of the length of the longest valid substring found.
+
+#### Code:
+```java
+public class LongestValidParentheses {
+    public static int longestValidParentheses(String s) {
+        int maxLength = 0;
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i + 2; j <= s.length(); j += 2) {
+                if (isValid(s.substring(i, j))) {
+                    maxLength = Math.max(maxLength, j - i);
+                }
+            }
+        }
+        return maxLength;
+    }
+
+    private static boolean isValid(String s) {
+        int balance = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                balance++;
+            } else {
+                balance--;
+            }
+            if (balance < 0) {
+                return false;
+            }
+        }
+        return balance == 0;
+    }
+
+    public static void main(String[] args) {
+        String s = "(()";
+        System.out.println("Longest Valid Parentheses: " + longestValidParentheses(s)); // Output: 2
+    }
+}
+```
+#### Time Complexity: \(O(n^3)\)
+
+#### 2. Dynamic Programming Approach
+This approach uses a dynamic programming table to store the lengths of the longest valid parentheses substrings ending at each index.
+
+#### Steps:
+1. Create a `dp` array where `dp[i]` represents the length of the longest valid parentheses substring ending at index `i`.
+2. Iterate through the string and update the `dp` array based on the characters and previous values in the array.
+3. Keep track of the maximum value in the `dp` array.
+
+#### Code:
+```java
+public class LongestValidParentheses {
+    public static int longestValidParentheses(String s) {
+        int maxLength = 0;
+        int[] dp = new int[s.length()];
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == ')') {
+                if (s.charAt(i - 1) == '(') {
+                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
+                } else if (i - dp[i - 1] > 0 && s.charAt(i - dp[i - 1] - 1) == '(') {
+                    dp[i] = dp[i - 1] + ((i - dp[i - 1]) >= 2 ? dp[i - dp[i - 1] - 2] : 0) + 2;
+                }
+                maxLength = Math.max(maxLength, dp[i]);
+            }
+        }
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String s = ")()())";
+        System.out.println("Longest Valid Parentheses: " + longestValidParentheses(s)); // Output: 4
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+#### 3. Stack Approach
+This approach uses a stack to keep track of the indices of the characters and helps in finding the longest valid parentheses substring.
+
+#### Steps:
+1. Initialize a stack and push `-1` onto it to handle the base case.
+2. Iterate through the string and push the index of each '(' onto the stack.
+3. For each ')', pop the top of the stack and calculate the length of the valid substring.
+4. Keep track of the maximum length found.
+
+#### Code:
+```java
+import java.util.Stack;
+
+public class LongestValidParentheses {
+    public static int longestValidParentheses(String s) {
+        int maxLength = 0;
+        Stack<Integer> stack = new Stack<>();
+        stack.push(-1);
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                stack.push(i);
+            } else {
+                stack.pop();
+                if (stack.isEmpty()) {
+                    stack.push(i);
+                } else {
+                    maxLength = Math.max(maxLength, i - stack.peek());
+                }
+            }
+        }
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String s = ")()())";
+        System.out.println("Longest Valid Parentheses: " + longestValidParentheses(s)); // Output: 4
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+#### 4. Two-Pointer Approach
+This approach uses two pointers to traverse the string from left to right and right to left, counting the number of '(' and ')' characters.
+
+#### Steps:
+1. Initialize two pointers and two counters for left-to-right and right-to-left traversals.
+2. Traverse the string from left to right, counting the number of '(' and ')' characters.
+3. If the counts are equal, update the maximum length.
+4. If the count of ')' exceeds '(', reset the counters.
+5. Repeat the process from right to left.
+
+#### Code:
+```java
+public class LongestValidParentheses {
+    public static int longestValidParentheses(String s) {
+        int maxLength = 0;
+        int left = 0, right = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                left++;
+            } else {
+                right++;
+            }
+            if (left == right) {
+                maxLength = Math.max(maxLength, 2 * right);
+            } else if (right > left) {
+                left = right = 0;
+            }
+        }
+        left = right = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == '(') {
+                left++;
+            } else {
+                right++;
+            }
+            if (left == right) {
+                maxLength = Math.max(maxLength, 2 * left);
+            } else if (left > right) {
+                left = right = 0;
+            }
+        }
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String s = ")()())";
+        System.out.println("Longest Valid Parentheses: " + longestValidParentheses(s)); // Output: 4
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **brute force approach** is simple but inefficient for large inputs due to its cubic time complexity.
+- The **dynamic programming approach** is efficient with a linear time complexity and uses extra space.
+- The **stack approach** is efficient and easy to implement with a linear time complexity.
+- The **two-pointer approach** is also efficient with a linear time complexity and uses constant space[1](https://leetcode.com/problems/longest-valid-parentheses/)[2](https://github.com/cherryljr/LeetCode/blob/master/Longest%20Valid%20Parentheses.java)[3](https://kodeao.com/longest-valid-parentheses-leetcode-32-solution/).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Implement strStr
+
+The `strStr` function, also known as `indexOf`, finds the first occurrence of a substring (needle) within another string (haystack). Here are different approaches to implement this function in Java:
+
+### 1. Naive Approach
+This approach involves checking each substring of the haystack to see if it matches the needle.
+
+#### Steps:
+1. Iterate through the haystack.
+2. For each position, check if the substring starting at that position matches the needle.
+3. If a match is found, return the starting index.
+4. If no match is found, return -1.
+
+#### Code:
+```java
+public class StrStr {
+    public static int strStr(String haystack, String needle) {
+        if (needle.isEmpty()) return 0;
+        int haystackLength = haystack.length();
+        int needleLength = needle.length();
+        for (int i = 0; i <= haystackLength - needleLength; i++) {
+            int j;
+            for (j = 0; j < needleLength; j++) {
+                if (haystack.charAt(i + j) != needle.charAt(j)) {
+                    break;
+                }
+            }
+            if (j == needleLength) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        String haystack = "hello";
+        String needle = "ll";
+        System.out.println("Index of first occurrence: " + strStr(haystack, needle)); // Output: 2
+    }
+}
+```
+#### Time Complexity: \(O((n - m + 1) \cdot m)\), where \(n\) is the length of the haystack and \(m\) is the length of the needle.
+
+### 2. Knuth-Morris-Pratt (KMP) Algorithm
+The KMP algorithm improves the naive approach by using a partial match table to skip unnecessary comparisons.
+
+#### Steps:
+1. Build the partial match table (also known as the "longest prefix suffix" table) for the needle.
+2. Use the table to skip characters in the haystack when a mismatch occurs.
+
+#### Code:
+```java
+public class StrStr {
+    public static int strStr(String haystack, String needle) {
+        if (needle.isEmpty()) return 0;
+        int[] lps = buildLPS(needle);
+        int i = 0, j = 0;
+        while (i < haystack.length()) {
+            if (haystack.charAt(i) == needle.charAt(j)) {
+                i++;
+                j++;
+                if (j == needle.length()) {
+                    return i - j;
+                }
+            } else if (j > 0) {
+                j = lps[j - 1];
+            } else {
+                i++;
+            }
+        }
+        return -1;
+    }
+
+    private static int[] buildLPS(String needle) {
+        int[] lps = new int[needle.length()];
+        int length = 0;
+        int i = 1;
+        while (i < needle.length()) {
+            if (needle.charAt(i) == needle.charAt(length)) {
+                length++;
+                lps[i] = length;
+                i++;
+            } else if (length > 0) {
+                length = lps[length - 1];
+            } else {
+                lps[i] = 0;
+                i++;
+            }
+        }
+        return lps;
+    }
+
+    public static void main(String[] args) {
+        String haystack = "hello";
+        String needle = "ll";
+        System.out.println("Index of first occurrence: " + strStr(haystack, needle)); // Output: 2
+    }
+}
+```
+#### Time Complexity: \(O(n + m)\)
+
+### 3. Rabin-Karp Algorithm
+This approach uses hashing to find the needle in the haystack. It computes a hash for the needle and compares it with the hash of substrings in the haystack.
+
+#### Steps:
+1. Compute the hash of the needle.
+2. Compute the hash of each substring of the haystack of the same length as the needle.
+3. Compare the hashes, and if they match, compare the actual substrings to confirm.
+
+#### Code:
+```java
+public class StrStr {
+    public static int strStr(String haystack, String needle) {
+        if (needle.isEmpty()) return 0;
+        int m = needle.length();
+        int n = haystack.length();
+        if (m > n) return -1;
+
+        int base = 256;
+        int mod = 101;
+        int needleHash = 0, haystackHash = 0, h = 1;
+
+        for (int i = 0; i < m - 1; i++) {
+            h = (h * base) % mod;
+        }
+
+        for (int i = 0; i < m; i++) {
+            needleHash = (base * needleHash + needle.charAt(i)) % mod;
+            haystackHash = (base * haystackHash + haystack.charAt(i)) % mod;
+        }
+
+        for (int i = 0; i <= n - m; i++) {
+            if (needleHash == haystackHash) {
+                int j;
+                for (j = 0; j < m; j++) {
+                    if (haystack.charAt(i + j) != needle.charAt(j)) {
+                        break;
+                    }
+                }
+                if (j == m) {
+                    return i;
+                }
+            }
+            if (i < n - m) {
+                haystackHash = (base * (haystackHash - haystack.charAt(i) * h) + haystack.charAt(i + m)) % mod;
+                if (haystackHash < 0) {
+                    haystackHash += mod;
+                }
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        String haystack = "hello";
+        String needle = "ll";
+        System.out.println("Index of first occurrence: " + strStr(haystack, needle)); // Output: 2
+    }
+}
+```
+#### Time Complexity: \(O(n + m)\) on average, but can degrade to \(O(n \cdot m)\) in the worst case due to hash collisions.
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **naive approach** is simple but can be inefficient for large inputs due to its quadratic time complexity.
+- The **KMP algorithm** is efficient with linear time complexity and is commonly used for string matching.
+- The **Rabin-Karp algorithm** is efficient on average but can degrade in the worst case due to hash collisions[1](https://www.techiedelight.com/implement-strstr-function-java/)[2](https://www.thecodingshala.com/2019/08/implement-strstr-or-indexof-java.html)[3](https://dev.to/rohan2596/leetcode-implement-strstr-with-solution-474a).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Decode String
+
+The "Decode String" problem involves decoding a string that contains encoded patterns. The encoded pattern follows the format `k[encoded_string]`, where the `encoded_string` inside the square brackets is repeated exactly `k` times. Here are different approaches to solve this problem in Java:
+
+### 1. Recursive Approach
+This approach uses recursion to decode the string by processing each encoded pattern from the innermost to the outermost.
+
+#### Steps:
+1. Define a recursive function to decode the string.
+2. Iterate through the string and build the decoded result.
+3. When encountering a digit, determine the repeat count.
+4. When encountering a '[', recursively decode the substring inside the brackets.
+5. Append the decoded substring repeated `k` times to the result.
+
+#### Code:
+```java
+public class DecodeString {
+    public static String decodeString(String s) {
+        return decodeHelper(s, new int[]{0});
+    }
+
+    private static String decodeHelper(String s, int[] index) {
+        StringBuilder result = new StringBuilder();
+        int num = 0;
+        while (index[0] < s.length()) {
+            char c = s.charAt(index[0]);
+            if (Character.isDigit(c)) {
+                num = num * 10 + (c - '0');
+                index[0]++;
+            } else if (c == '[') {
+                index[0]++;
+                String decodedString = decodeHelper(s, index);
+                for (int i = 0; i < num; i++) {
+                    result.append(decodedString);
+                }
+                num = 0;
+            } else if (c == ']') {
+                index[0]++;
+                return result.toString();
+            } else {
+                result.append(c);
+                index[0]++;
+            }
+        }
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        String s = "3[a2[c]]";
+        System.out.println("Decoded String: " + decodeString(s)); // Output: "accaccacc"
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### 2. Stack Approach
+This approach uses a stack to decode the string iteratively by processing each character and managing the encoded patterns.
+
+#### Steps:
+1. Initialize two stacks: one for numbers and one for strings.
+2. Iterate through the string and build the decoded result.
+3. When encountering a digit, determine the repeat count.
+4. When encountering a '[', push the current result and repeat count onto the stacks.
+5. When encountering a ']', pop from the stacks and append the decoded substring repeated `k` times to the result.
+
+#### Code:
+```java
+import java.util.Stack;
+
+public class DecodeString {
+    public static String decodeString(String s) {
+        Stack<Integer> countStack = new Stack<>();
+        Stack<StringBuilder> resultStack = new Stack<>();
+        StringBuilder current = new StringBuilder();
+        int k = 0;
+
+        for (char c : s.toCharArray()) {
+            if (Character.isDigit(c)) {
+                k = k * 10 + (c - '0');
+            } else if (c == '[') {
+                countStack.push(k);
+                resultStack.push(current);
+                current = new StringBuilder();
+                k = 0;
+            } else if (c == ']') {
+                StringBuilder decodedString = current;
+                current = resultStack.pop();
+                for (int i = countStack.pop(); i > 0; i--) {
+                    current.append(decodedString);
+                }
+            } else {
+                current.append(c);
+            }
+        }
+        return current.toString();
+    }
+
+    public static void main(String[] args) {
+        String s = "3[a2[c]]";
+        System.out.println("Decoded String: " + decodeString(s)); // Output: "accaccacc"
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### 3. Iterative Approach
+This approach uses an iterative method to decode the string by processing each character and managing the encoded patterns without recursion or explicit stacks.
+
+#### Steps:
+1. Initialize a result string and a repeat count.
+2. Iterate through the string and build the decoded result.
+3. When encountering a digit, determine the repeat count.
+4. When encountering a '[', push the current result and repeat count onto temporary storage.
+5. When encountering a ']', pop from the temporary storage and append the decoded substring repeated `k` times to the result.
+
+#### Code:
+```java
+public class DecodeString {
+    public static String decodeString(String s) {
+        StringBuilder result = new StringBuilder();
+        int k = 0;
+        Stack<Integer> countStack = new Stack<>();
+        Stack<StringBuilder> resultStack = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+            if (Character.isDigit(c)) {
+                k = k * 10 + (c - '0');
+            } else if (c == '[') {
+                countStack.push(k);
+                resultStack.push(result);
+                result = new StringBuilder();
+                k = 0;
+            } else if (c == ']') {
+                StringBuilder temp = result;
+                result = resultStack.pop();
+                for (int i = countStack.pop(); i > 0; i--) {
+                    result.append(temp);
+                }
+            } else {
+                result.append(c);
+            }
+        }
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        String s = "3[a2[c]]";
+        System.out.println("Decoded String: " + decodeString(s)); // Output: "accaccacc"
+    }
+}
+```
+#### Time Complexity: \(O(n)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is intuitive and easy to implement but can be less efficient for deeply nested patterns.
+- The **stack approach** is efficient and handles nested patterns well with linear time complexity.
+- The **iterative approach** is also efficient and avoids the overhead of recursion[1](https://labex.io/tutorials/java-how-to-safely-decode-string-values-418194)[2](https://www.javaprogramto.com/2020/08/java-base64-encode-and-decode.html)[3](https://www.geeksforgeeks.org/java-string-manipulation-best-practices-for-clean-code/).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask
+
+## Regular Expression Matching
+
+Regular expression matching is a common problem that involves determining if a given string matches a pattern that includes special characters like `.` and `*`. Here are different approaches to solve this problem in Java:
+
+### Problem Statement
+Implement regular expression matching with support for `.` and `*`.
+- `.` matches any single character.
+- `*` matches zero or more of the preceding element.
+
+### Example
+```java
+Input: s = "aab", p = "c*a*b"
+Output: true
+Explanation: The pattern "c*a*b" matches the string "aab" because "c*" can be ignored, and "a*" matches "aa".
+```
+
+### Different Approaches to Solve Regular Expression Matching
+
+#### 1. Recursive Approach
+This approach uses recursion to match the string with the pattern by handling different cases for `.` and `*`.
+
+#### Steps:
+1. If the pattern is empty, return true if the string is also empty.
+2. Check if the first character of the string matches the first character of the pattern or if the pattern starts with `.`.
+3. If the pattern contains `*`, handle two cases:
+   - The `*` matches zero characters.
+   - The `*` matches one or more characters.
+4. Recursively check the remaining string and pattern.
+
+#### Code:
+```java
+public class RegexMatching {
+    public static boolean isMatch(String s, String p) {
+        if (p.isEmpty()) return s.isEmpty();
+        boolean firstMatch = (!s.isEmpty() && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.'));
+        if (p.length() >= 2 && p.charAt(1) == '*') {
+            return (isMatch(s, p.substring(2)) || (firstMatch && isMatch(s.substring(1), p)));
+        } else {
+            return firstMatch && isMatch(s.substring(1), p.substring(1));
+        }
+    }
+
+    public static void main(String[] args) {
+        String s = "aab";
+        String p = "c*a*b";
+        System.out.println("Is Match: " + isMatch(s, p)); // Output: true
+    }
+}
+```
+#### Time Complexity: \(O(2^n)\)
+
+#### 2. Dynamic Programming Approach
+This approach uses a 2D table to store the results of subproblems and avoid redundant calculations.
+
+#### Steps:
+1. Create a 2D array `dp` where `dp[i][j]` represents if the first `i` characters of the string match the first `j` characters of the pattern.
+2. Initialize the table for base cases.
+3. Fill the table using the following rules:
+   - If the current characters match or the pattern has `.`, update the table based on the previous values.
+   - If the pattern has `*`, consider zero or more occurrences of the preceding element.
+
+#### Code:
+```java
+public class RegexMatching {
+    public static boolean isMatch(String s, String p) {
+        int m = s.length();
+        int n = p.length();
+        boolean[][] dp = new boolean[m + 1][n + 1];
+        dp[0][0] = true;
+
+        for (int j = 1; j <= n; j++) {
+            if (p.charAt(j - 1) == '*') {
+                dp[0][j] = dp[0][j - 2];
+            }
+        }
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (p.charAt(j - 1) == '.' || p.charAt(j - 1) == s.charAt(i - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else if (p.charAt(j - 1) == '*') {
+                    dp[i][j] = dp[i][j - 2];
+                    if (p.charAt(j - 2) == '.' || p.charAt(j - 2) == s.charAt(i - 1)) {
+                        dp[i][j] = dp[i][j] || dp[i - 1][j];
+                    }
+                }
+            }
+        }
+
+        return dp[m][n];
+    }
+
+    public static void main(String[] args) {
+        String s = "aab";
+        String p = "c*a*b";
+        System.out.println("Is Match: " + isMatch(s, p)); // Output: true
+    }
+}
+```
+#### Time Complexity: \(O(m \times n)\)
+
+#### 3. Backtracking Approach
+This approach uses backtracking to explore all possible ways to match the string with the pattern.
+
+#### Steps:
+1. Define a helper function to perform backtracking.
+2. Check if the first character of the string matches the first character of the pattern or if the pattern starts with `.`.
+3. If the pattern contains `*`, handle two cases:
+   - The `*` matches zero characters.
+   - The `*` matches one or more characters.
+4. Recursively check the remaining string and pattern.
+
+#### Code:
+```java
+public class RegexMatching {
+    public static boolean isMatch(String s, String p) {
+        return isMatchHelper(s, p, 0, 0);
+    }
+
+    private static boolean isMatchHelper(String s, String p, int i, int j) {
+        if (j == p.length()) return i == s.length();
+        boolean firstMatch = (i < s.length() && (p.charAt(j) == s.charAt(i) || p.charAt(j) == '.'));
+        if (j + 1 < p.length() && p.charAt(j + 1) == '*') {
+            return (isMatchHelper(s, p, i, j + 2) || (firstMatch && isMatchHelper(s, p, i + 1, j)));
+        } else {
+            return firstMatch && isMatchHelper(s, p, i + 1, j + 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        String s = "aab";
+        String p = "c*a*b";
+        System.out.println("Is Match: " + isMatch(s, p)); // Output: true
+    }
+}
+```
+#### Time Complexity: \(O(2^n)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is simple but can be inefficient for large inputs due to its exponential time complexity.
+- The **dynamic programming approach** is more efficient with a quadratic time complexity and is commonly used.
+- The **backtracking approach** is intuitive and handles complex patterns well[1](https://www.programcreek.com/2012/12/leetcode-regular-expression-matching-in-java/)[2](https://www.w3schools.com/java/java_regex.asp)[3](https://java8.info/apicontents/regexp.html).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+
+# Justify Text
+
+Text justification involves formatting a given text so that each line has exactly a specified number of characters and is fully justified (both left and right). Here are different approaches to solve this problem in Java:
+
+### Problem Statement
+Given an array of words and a length `maxWidth`, format the text such that each line has exactly `maxWidth` characters and is fully justified. Extra spaces between words should be distributed as evenly as possible. If the number of spaces on a line does not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right. For the last line of text, it should be left-justified, and no extra space is inserted between words.
+
+### Example
+```java
+Input: words = ["This", "is", "an", "example", "of", "text", "justification."], maxWidth = 16
+Output: [
+   "This    is    an",
+   "example  of text",
+   "justification.  "
+]
+```
+
+### Different Approaches to Solve Text Justification
+
+#### 1. Greedy Approach
+This approach packs as many words as possible into each line and then distributes the extra spaces evenly.
+
+#### Steps:
+1. Iterate through the words and pack as many words as possible into each line.
+2. Calculate the number of spaces needed to fully justify the line.
+3. Distribute the spaces evenly between the words.
+4. Handle the last line separately to ensure it is left-justified.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class TextJustification {
+    public static List<String> fullJustify(String[] words, int maxWidth) {
+        List<String> result = new ArrayList<>();
+        int index = 0;
+        while (index < words.length) {
+            int count = words[index].length();
+            int last = index + 1;
+            while (last < words.length) {
+                if (count + words[last].length() + 1 > maxWidth) break;
+                count += words[last].length() + 1;
+                last++;
+            }
+            StringBuilder sb = new StringBuilder();
+            int diff = last - index - 1;
+            if (last == words.length || diff == 0) {
+                for (int i = index; i < last; i++) {
+                    sb.append(words[i]).append(" ");
+                }
+                sb.deleteCharAt(sb.length() - 1);
+                while (sb.length() < maxWidth) {
+                    sb.append(" ");
+                }
+            } else {
+                int spaces = (maxWidth - count) / diff;
+                int extraSpaces = (maxWidth - count) % diff;
+                for (int i = index; i < last - 1; i++) {
+                    sb.append(words[i]).append(" ");
+                    for (int j = 0; j < spaces + (i - index < extraSpaces ? 1 : 0); j++) {
+                        sb.append(" ");
+                    }
+                }
+                sb.append(words[last - 1]);
+            }
+            result.add(sb.toString());
+            index = last;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String[] words = {"This", "is", "an", "example", "of", "text", "justification."};
+        int maxWidth = 16;
+        List<String> justifiedText = fullJustify(words, maxWidth);
+        for (String line : justifiedText) {
+            System.out.println(line);
+        }
+    }
+}
+```
+#### Time Complexity: \(O(n)\), where \(n\) is the total number of characters in all words.
+
+### 2. Dynamic Programming Approach
+This approach uses dynamic programming to minimize the total cost of extra spaces in the lines.
+
+#### Steps:
+1. Define a cost function that penalizes lines with extra spaces.
+2. Use dynamic programming to find the optimal way to split the words into lines.
+3. Construct the justified text based on the optimal splits.
+
+#### Code:
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class TextJustification {
+    public static List<String> fullJustify(String[] words, int maxWidth) {
+        int n = words.length;
+        int[] dp = new int[n + 1];
+        int[] breaks = new int[n];
+        for (int i = n - 1; i >= 0; i--) {
+            dp[i] = Integer.MAX_VALUE;
+            int len = -1;
+            for (int j = i; j < n; j++) {
+                len += words[j].length() + 1;
+                if (len > maxWidth) break;
+                int cost = (j == n - 1) ? 0 : (maxWidth - len) * (maxWidth - len) + dp[j + 1];
+                if (cost < dp[i]) {
+                    dp[i] = cost;
+                    breaks[i] = j + 1;
+                }
+            }
+        }
+        List<String> result = new ArrayList<>();
+        int i = 0;
+        while (i < n) {
+            int j = breaks[i];
+            StringBuilder sb = new StringBuilder();
+            int len = -1;
+            for (int k = i; k < j; k++) {
+                sb.append(words[k]).append(" ");
+                len += words[k].length() + 1;
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            while (sb.length() < maxWidth) {
+                sb.append(" ");
+            }
+            result.add(sb.toString());
+            i = j;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String[] words = {"This", "is", "an", "example", "of", "text", "justification."};
+        int maxWidth = 16;
+        List<String> justifiedText = fullJustify(words, maxWidth);
+        for (String line : justifiedText) {
+            System.out.println(line);
+        }
+    }
+}
+```
+#### Time Complexity: \(O(n^2)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **greedy approach** is efficient and straightforward, making it suitable for most cases.
+- The **dynamic programming approach** can provide an optimal solution but is more complex and may be slower for large inputs[1](https://www.programcreek.com/2014/05/leetcode-text-justification-java/)[2](https://leetcode.com/problems/text-justification/)[3](https://algodaily.com/challenges/text-justification/).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## 0/1 Knapsack
+
+The 0/1 Knapsack problem is a classic problem in combinatorial optimization. It involves selecting items with given weights and values to maximize the total value without exceeding a given weight capacity. Each item can either be included in the knapsack or excluded (hence the name 0/1).
+
+### Problem Statement
+Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
+
+### Example
+```java
+Input: weights = [1, 3, 4, 5], values = [1, 4, 5, 7], capacity = 7
+Output: 9
+Explanation: The optimal solution is to take items with weights 3 and 4, which gives a total value of 9.
+```
+
+### Different Approaches to Solve 0/1 Knapsack
+
+#### 1. Recursive Approach
+This approach uses recursion to explore all possible combinations of items to find the maximum value.
+
+#### Steps:
+1. Define a recursive function that considers each item.
+2. For each item, decide whether to include it in the knapsack or not.
+3. Recursively compute the maximum value for both cases and return the maximum of the two.
+
+#### Code:
+```java
+public class Knapsack {
+    public static int knapsack(int[] weights, int[] values, int capacity) {
+        return knapsackHelper(weights, values, capacity, weights.length);
+    }
+
+    private static int knapsackHelper(int[] weights, int[] values, int capacity, int n) {
+        if (n == 0 || capacity == 0) {
+            return 0;
+        }
+        if (weights[n - 1] > capacity) {
+            return knapsackHelper(weights, values, capacity, n - 1);
+        } else {
+            return Math.max(
+                values[n - 1] + knapsackHelper(weights, values, capacity - weights[n - 1], n - 1),
+                knapsackHelper(weights, values, capacity, n - 1)
+            );
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] weights = {1, 3, 4, 5};
+        int[] values = {1, 4, 5, 7};
+        int capacity = 7;
+        System.out.println("Maximum value: " + knapsack(weights, values, capacity)); // Output: 9
+    }
+}
+```
+#### Time Complexity: \(O(2^n)\)
+
+#### 2. Dynamic Programming Approach
+This approach uses a 2D table to store the maximum value that can be obtained for each subproblem, avoiding redundant calculations.
+
+#### Steps:
+1. Create a 2D array `dp` where `dp[i][j]` represents the maximum value that can be obtained with the first `i` items and a capacity of `j`.
+2. Initialize the table for base cases.
+3. Fill the table using the following rules:
+   - If the current item's weight is less than or equal to the current capacity, consider including it.
+   - Otherwise, exclude the item.
+
+#### Code:
+```java
+public class Knapsack {
+    public static int knapsack(int[] weights, int[] values, int capacity) {
+        int n = weights.length;
+        int[][] dp = new int[n + 1][capacity + 1];
+
+        for (int i = 0; i <= n; i++) {
+            for (int w = 0; w <= capacity; w++) {
+                if (i == 0 || w == 0) {
+                    dp[i][w] = 0;
+                } else if (weights[i - 1] <= w) {
+                    dp[i][w] = Math.max(values[i - 1] + dp[i - 1][w - weights[i - 1]], dp[i - 1][w]);
+                } else {
+                    dp[i][w] = dp[i - 1][w];
+                }
+            }
+        }
+        return dp[n][capacity];
+    }
+
+    public static void main(String[] args) {
+        int[] weights = {1, 3, 4, 5};
+        int[] values = {1, 4, 5, 7};
+        int capacity = 7;
+        System.out.println("Maximum value: " + knapsack(weights, values, capacity)); // Output: 9
+    }
+}
+```
+#### Time Complexity: \(O(n \times W)\), where \(n\) is the number of items and \(W\) is the capacity of the knapsack.
+
+#### 3. Space Optimized Dynamic Programming
+This approach optimizes the space complexity of the dynamic programming solution by using a 1D array instead of a 2D array.
+
+#### Steps:
+1. Use a 1D array `dp` where `dp[j]` represents the maximum value that can be obtained with a capacity of `j`.
+2. Iterate through the items and update the `dp` array from right to left to avoid overwriting values.
+
+#### Code:
+```java
+public class Knapsack {
+    public static int knapsack(int[] weights, int[] values, int capacity) {
+        int n = weights.length;
+        int[] dp = new int[capacity + 1];
+
+        for (int i = 0; i < n; i++) {
+            for (int w = capacity; w >= weights[i]; w--) {
+                dp[w] = Math.max(dp[w], values[i] + dp[w - weights[i]]);
+            }
+        }
+        return dp[capacity];
+    }
+
+    public static void main(String[] args) {
+        int[] weights = {1, 3, 4, 5};
+        int[] values = {1, 4, 5, 7};
+        int capacity = 7;
+        System.out.println("Maximum value: " + knapsack(weights, values, capacity)); // Output: 9
+    }
+}
+```
+#### Time Complexity: \(O(n \times W)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is simple but can be inefficient for large inputs due to its exponential time complexity.
+- The **dynamic programming approach** is more efficient with a quadratic time complexity and is commonly used.
+- The **space-optimized dynamic programming approach** reduces the space complexity while maintaining the same time complexity[1](https://www.javatpoint.com/0-1-knapsack-problem)[2](https://www.javatpoint.com/knapsack-problem-java)[3](https://www.javaguides.net/2023/12/0-1-knapsack-problem-java-solution.html).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
+
+## Coin Change 
+
+The Coin Change problem involves finding the minimum number of coins needed to make up a specific amount of money, given coins of different denominations. Here are different approaches to solve this problem in Java:
+
+### Problem Statement
+Given an array of coins representing different denominations and an integer amount representing a total amount of money, determine the fewest number of coins needed to make up that amount. If it is not possible to make up the amount with the given coins, return -1.
+
+### Example
+```java
+Input: coins = [1, 2, 5], amount = 11
+Output: 3
+Explanation: 11 = 5 + 5 + 1
+```
+
+### Different Approaches to Solve Coin Change
+
+#### 1. Recursive Approach
+This approach uses recursion to explore all possible combinations of coins to find the minimum number of coins needed.
+
+#### Steps:
+1. Define a recursive function that considers each coin.
+2. For each coin, decide whether to include it in the current amount or not.
+3. Recursively compute the minimum number of coins for both cases and return the minimum of the two.
+
+#### Code:
+```java
+public class CoinChange {
+    public static int coinChange(int[] coins, int amount) {
+        if (amount == 0) return 0;
+        int result = coinChangeHelper(coins, amount);
+        return result == Integer.MAX_VALUE ? -1 : result;
+    }
+
+    private static int coinChangeHelper(int[] coins, int amount) {
+        if (amount < 0) return Integer.MAX_VALUE;
+        if (amount == 0) return 0;
+        int minCoins = Integer.MAX_VALUE;
+        for (int coin : coins) {
+            int res = coinChangeHelper(coins, amount - coin);
+            if (res != Integer.MAX_VALUE) {
+                minCoins = Math.min(minCoins, res + 1);
+            }
+        }
+        return minCoins;
+    }
+
+    public static void main(String[] args) {
+        int[] coins = {1, 2, 5};
+        int amount = 11;
+        System.out.println("Minimum coins needed: " + coinChange(coins, amount)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(2^n)\)
+
+#### 2. Dynamic Programming Approach
+This approach uses a 1D array to store the minimum number of coins needed for each amount from 0 to the given amount, avoiding redundant calculations.
+
+#### Steps:
+1. Create an array `dp` of size `amount + 1` to store the minimum number of coins needed for each amount.
+2. Initialize each element in `dp` to a maximum value, and set `dp[0]` to 0.
+3. Iterate through each coin, and for each coin, update the `dp` array for all amounts that can be reached using that coin.
+
+#### Code:
+```java
+import java.util.Arrays;
+
+public class CoinChange {
+    public static int coinChange(int[] coins, int amount) {
+        int max = amount + 1;
+        int[] dp = new int[max];
+        Arrays.fill(dp, max);
+        dp[0] = 0;
+
+        for (int coin : coins) {
+            for (int i = coin; i <= amount; i++) {
+                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+            }
+        }
+        return dp[amount] > amount ? -1 : dp[amount];
+    }
+
+    public static void main(String[] args) {
+        int[] coins = {1, 2, 5};
+        int amount = 11;
+        System.out.println("Minimum coins needed: " + coinChange(coins, amount)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(n \times W)\), where \(n\) is the number of coins and \(W\) is the amount.
+
+#### 3. Breadth-First Search (BFS) Approach
+This approach uses BFS to explore all possible combinations of coins level by level, ensuring the shortest path (minimum coins) is found first.
+
+#### Steps:
+1. Use a queue to store the current amount and the number of coins used.
+2. Use a set to store visited amounts to avoid redundant calculations.
+3. For each amount, add the next possible amounts (current amount + each coin) to the queue.
+4. If the target amount is reached, return the number of coins used.
+
+#### Code:
+```java
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+
+public class CoinChange {
+    public static int coinChange(int[] coins, int amount) {
+        if (amount == 0) return 0;
+        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+        queue.add(amount);
+        visited.add(amount);
+        int steps = 0;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            steps++;
+            for (int i = 0; i < size; i++) {
+                int current = queue.poll();
+                for (int coin : coins) {
+                    int next = current - coin;
+                    if (next == 0) return steps;
+                    if (next > 0 && !visited.contains(next)) {
+                        queue.add(next);
+                        visited.add(next);
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] coins = {1, 2, 5};
+        int amount = 11;
+        System.out.println("Minimum coins needed: " + coinChange(coins, amount)); // Output: 3
+    }
+}
+```
+#### Time Complexity: \(O(n \times W)\)
+
+### Conclusion
+Each approach has its own advantages and trade-offs:
+- The **recursive approach** is simple but can be inefficient for large inputs due to its exponential time complexity.
+- The **dynamic programming approach** is more efficient with a quadratic time complexity and is commonly used.
+- The **BFS approach** is also efficient and ensures the shortest path (minimum coins) is found first[1](https://www.sourcecodeexamples.net/2023/12/coin-change-java-solution.html)[2](https://www.codespeedy.com/solve-coin-change-problem-in-java/)[3](https://www.sixmedium.com/coin-change/).
+
+If you have any questions or need further clarification on any of these approaches, feel free to ask!
 
 

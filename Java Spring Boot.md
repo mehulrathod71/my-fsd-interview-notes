@@ -880,6 +880,81 @@ Each of these methods has its own advantages and use cases. The choice of implem
 If you have any specific questions or need further details, feel free to ask!
 
 
+## Top 20 String Questions In Java
+
+Here are 20 commonly asked string-related questions in Java interviews:
+
+### Basic Questions
+1. **What is String in Java?**
+   - A String in Java is an object that represents a sequence of characters. It is immutable, meaning once created, it cannot be changed.
+
+2. **How does Java manage string immutability?**
+   - Java manages string immutability by storing strings in a special memory area called the string pool. Once a string is created, it cannot be altered, which ensures thread safety and efficient memory usage.
+
+3. **What is the String pool in Java?**
+   - The String pool is a special memory region where Java stores string literals. When a new string is created, Java checks the pool first to see if it already exists. If it does, the reference is returned; otherwise, a new string is added to the pool.
+
+4. **Why is String immutable in Java?**
+   - String immutability provides security, thread safety, and performance benefits. It allows strings to be cached and reused, reducing memory overhead.
+
+5. **What is the difference between `==` and `equals()` when comparing strings?**
+   - `==` checks for reference equality, meaning it checks if both references point to the same object. `equals()` checks for value equality, meaning it compares the actual content of the strings.
+
+### Intermediate Questions
+6. **How does the `intern()` method work in Java?**
+   - The `intern()` method returns a canonical representation of the string object. It ensures that all identical string literals share the same memory.
+
+7. **Explain the difference between String, StringBuilder, and StringBuffer.**
+   - **String**: Immutable and thread-safe.
+   - **StringBuilder**: Mutable and not thread-safe, but faster for single-threaded operations.
+   - **StringBuffer**: Mutable and thread-safe, but slower due to synchronization.
+
+8. **How can you convert a string to a character array in Java?**
+   - Use the `toCharArray()` method: `char[] charArray = str.toCharArray();`
+
+9. **What is the use of the `split()` method in the String class?**
+   - The `split()` method divides a string into an array of substrings based on a given delimiter.
+
+10. **How do you check if a string contains only digits?**
+    - Use the `matches()` method with a regular expression: `str.matches("\\d+");`
+
+### Advanced Questions
+11. **How do you reverse a string in Java?**
+    - Use a loop or the `StringBuilder` class: `new StringBuilder(str).reverse().toString();`
+
+12. **What is the significance of the `hashCode()` method in the String class?**
+    - The `hashCode()` method provides a hash code for the string, which is used in hash-based collections like `HashMap`.
+
+13. **How do you compare two strings lexicographically?**
+    - Use the `compareTo()` method: `str1.compareTo(str2);`
+
+14. **Explain the concept of string interning.**
+    - String interning is the process of storing only one copy of each distinct string value, which must be immutable. This helps in saving memory.
+
+15. **How do you convert a string to uppercase or lowercase?**
+    - Use the `toUpperCase()` or `toLowerCase()` methods: `str.toUpperCase();` or `str.toLowerCase();`
+
+16. **What are regular expressions, and how are they used with strings in Java?**
+    - Regular expressions are patterns used to match character combinations in strings. They are used with methods like `matches()`, `replaceAll()`, and `split()`.
+
+17. **How do you remove leading and trailing spaces from a string?**
+    - Use the `trim()` method: `str.trim();`
+
+18. **How do you check if two strings are anagrams?**
+    - Sort both strings and compare them, or use a frequency count of characters.
+
+19. **How do you find the first non-repeated character in a string?**
+    - Use a `LinkedHashMap` to store character counts and iterate to find the first character with a count of one.
+
+20. **How do you efficiently concatenate multiple strings in Java?**
+    - Use `StringBuilder` or `StringBuffer` for efficient concatenation: `StringBuilder sb = new StringBuilder(); sb.append(str1).append(str2);`
+
+These questions cover a wide range of topics related to strings in Java and should help you prepare effectively for your interview[1](https://akcoding.com/java-string-interview-questions-and-answers/)[2](https://soshace.com/2020/02/12/top-20-java-string-interview-questions-and-answers/)[3](https://www.a2zjavainterviewprep.com/2023/10/top-20-string-programming-and-coding.html).
+
+Would you like more details or examples on any specific question?
+
+
+
 ## How to break Singelton Pattern in Java
 
 Breaking the Singleton pattern in Java involves creating multiple instances of a class that is designed to have only one instance. Here are some common techniques to achieve this:
@@ -6419,6 +6494,177 @@ Would you like more details on any specific step or need help with a particular 
 Domain-Driven Design (DDD) is an approach to software development that emphasizes a deep understanding of the business domain and aligns the software model closely with real-world business processes. It was introduced by Eric Evans in his book "Domain-Driven Design: Tackling Complexity in the Heart of Software."
 
 ### Key Concepts of DDD
+
+Domain-Driven Design (DDD) is a software development approach that focuses on modeling the domain of the application and aligning the software design closely with the business needs. It emphasizes collaboration between technical and domain experts to create a shared understanding of the domain and its complexities.
+
+### Key Concepts of DDD
+
+1. **Domain**: The subject area to which the application is related.
+2. **Entity**: An object that has a distinct identity that runs through time and different states.
+3. **Value Object**: An object that describes some characteristic or attribute but has no conceptual identity.
+4. **Aggregate**: A cluster of domain objects that can be treated as a single unit.
+5. **Repository**: A mechanism for encapsulating storage, retrieval, and search behavior which emulates a collection of objects.
+6. **Service**: An operation offered as an interface that stands alone in the model, with no encapsulated state.
+7. **Factory**: A design pattern used to create objects, particularly complex objects.
+
+### Example: DDD with Spring Boot
+
+Let's create a simple example of a DDD-based application using Spring Boot. We'll model a basic e-commerce system with entities like `Product` and `Order`.
+
+#### Step 1: Define the Domain Model
+
+**Product Entity**
+
+```java
+package com.example.ecommerce.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.math.BigDecimal;
+
+@Entity
+public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private BigDecimal price;
+
+    // Constructors, getters, and setters
+}
+```
+
+**Order Entity**
+
+```java
+package com.example.ecommerce.domain;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<OrderItem> items;
+
+    // Constructors, getters, and setters
+}
+```
+
+**OrderItem Value Object**
+
+```java
+package com.example.ecommerce.domain;
+
+import javax.persistence.Embeddable;
+import java.math.BigDecimal;
+
+@Embeddable
+public class OrderItem {
+    private Long productId;
+    private int quantity;
+    private BigDecimal price;
+
+    // Constructors, getters, and setters
+}
+```
+
+#### Step 2: Create Repositories
+
+**ProductRepository**
+
+```java
+package com.example.ecommerce.repository;
+
+import com.example.ecommerce.domain.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProductRepository extends JpaRepository<Product, Long> {
+}
+```
+
+**OrderRepository**
+
+```java
+package com.example.ecommerce.repository;
+
+import com.example.ecommerce.domain.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderRepository extends JpaRepository<Order, Long> {
+}
+```
+
+#### Step 3: Implement Services
+
+**OrderService**
+
+```java
+package com.example.ecommerce.service;
+
+import com.example.ecommerce.domain.Order;
+import com.example.ecommerce.repository.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class OrderService {
+    private final OrderRepository orderRepository;
+
+    @Autowired
+    public OrderService(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+
+    public Order createOrder(Order order) {
+        return orderRepository.save(order);
+    }
+
+    // Other business logic methods
+}
+```
+
+#### Step 4: Create Controllers
+
+**OrderController**
+
+```java
+package com.example.ecommerce.controller;
+
+import com.example.ecommerce.domain.Order;
+import com.example.ecommerce.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/orders")
+public class OrderController {
+    private final OrderService orderService;
+
+    @Autowired
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    @PostMapping
+    public Order createOrder(@RequestBody Order order) {
+        return orderService.createOrder(order);
+    }
+
+    // Other endpoints
+}
+```
+
+### Summary
+
+In this example, we defined the domain model with entities and value objects, created repositories for data access, implemented services for business logic, and created controllers to handle HTTP requests. This structure aligns with DDD principles by separating concerns and focusing on the domain.
+
+Feel free to ask if you have any questions or need further details!
 
 1. **Entities**: Objects that have a distinct identity and can change over time.
 2. **Value Objects**: Immutable objects that are defined by their attributes.
@@ -18300,6 +18546,66 @@ Would you like more details on any specific part of this implementation?
 [2](https://github.com/flatlining/clean-architecture-java-example): [Clean Architecture Java Example - GitHub](https://github.com/flatlining/clean-architecture-java-example)
 [3](https://github.com/damienbeaufils/spring-boot-clean-architecture-demo): [Spring Boot Clean Architecture Demo - GitHub](https://github.com/damienbeaufils/spring-boot-clean-architecture-demo)
 
+## How to make Spring Boot High Avaibility and Highly scalable
+
+To make a Spring Boot application highly available and highly scalable, you need to focus on several key areas, including architecture, deployment, and infrastructure. Here are some strategies and best practices to achieve high availability and scalability:
+
+### High Availability
+
+1. **Load Balancing**:
+   - Use a load balancer (e.g., NGINX, HAProxy, AWS Elastic Load Balancer) to distribute incoming traffic across multiple instances of your application. This ensures that no single instance becomes a bottleneck and provides redundancy in case of instance failure.
+
+2. **Clustering**:
+   - Deploy multiple instances of your Spring Boot application in a cluster. This can be achieved using container orchestration tools like Kubernetes or Docker Swarm. Clustering helps in distributing the load and provides failover capabilities.
+
+3. **Health Checks**:
+   - Implement health check endpoints in your Spring Boot application using Spring Boot Actuator. Configure your load balancer to periodically check these endpoints to ensure that only healthy instances receive traffic.
+
+4. **Session Management**:
+   - Use a distributed session management solution (e.g., Redis, Hazelcast) to store session data. This ensures that user sessions are not lost if an instance fails and allows users to be routed to any instance in the cluster.
+
+5. **Database Replication**:
+   - Use database replication to ensure high availability of your database. Solutions like MySQL Replication, PostgreSQL Streaming Replication, or cloud-managed databases (e.g., Amazon RDS) can help achieve this.
+
+6. **Failover Mechanisms**:
+   - Implement failover mechanisms for critical components of your application. For example, use a secondary database instance that can take over if the primary instance fails.
+
+### High Scalability
+
+1. **Horizontal Scaling**:
+   - Scale your application horizontally by adding more instances. Container orchestration tools like Kubernetes can automatically scale your application based on resource usage or custom metrics.
+
+2. **Microservices Architecture**:
+   - Break down your monolithic application into smaller, independent microservices. This allows each microservice to be scaled independently based on its specific load and resource requirements.
+
+3. **Asynchronous Processing**:
+   - Use asynchronous processing for tasks that do not require immediate responses. Implement message queues (e.g., RabbitMQ, Kafka) to decouple components and handle high loads efficiently.
+
+4. **Caching**:
+   - Implement caching at various levels (e.g., application-level caching with Spring Cache, distributed caching with Redis or Memcached) to reduce the load on your database and improve response times.
+
+5. **Database Sharding**:
+   - Use database sharding to distribute data across multiple database instances. This helps in handling large volumes of data and improves query performance.
+
+6. **Auto-Scaling**:
+   - Configure auto-scaling policies for your application instances based on metrics like CPU usage, memory usage, or custom application metrics. Cloud platforms like AWS, Azure, and Google Cloud provide auto-scaling capabilities.
+
+### Best Practices
+
+1. **Monitoring and Logging**:
+   - Implement comprehensive monitoring and logging for your application. Use tools like Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), or cloud-native monitoring solutions to track performance, detect issues, and analyze logs.
+
+2. **CI/CD Pipeline**:
+   - Set up a robust CI/CD pipeline to automate the build, test, and deployment processes. This ensures that new features and bug fixes can be deployed quickly and reliably.
+
+3. **Configuration Management**:
+   - Use centralized configuration management tools (e.g., Spring Cloud Config, Consul) to manage application configurations across multiple instances and environments.
+
+4. **Security**:
+   - Implement security best practices to protect your application from threats. Use HTTPS, secure your APIs, implement authentication and authorization, and regularly update dependencies to patch vulnerabilities.
+
+By following these strategies and best practices, you can achieve high availability and scalability for your Spring Boot application, ensuring it can handle increased traffic and remain resilient in the face of failures. If you have any more questions or need further details, feel free to ask!
+
 ## Spring Boot Event Driven Architecture
 
 Event-Driven Architecture (EDA) is a design pattern where decoupled applications can asynchronously publish and subscribe to events via an event broker. This pattern is particularly useful for building scalable and resilient microservices. Here's how you can implement an event-driven architecture using Spring Boot:
@@ -19416,3 +19722,2123 @@ Would you like more details on any specific part of this implementation?
 [2](https://www.youtube.com/watch?v=vmAUtRbZlNE): [Spring Boot MapStruct Tutorial - Java Guides](https://www.javaguides.net/2024/05/spring-boot-mapstruct-tutorial.html)
 [3](https://www.youtube.com/watch?v=EvBoz73bOvA): [Spring Boot MapStruct Example - Java Guides](https://www.javaguides.net/2022/12/spring-boot-mapstruct-example-tutorial.html)
 
+## Spring Boot with ELK
+
+Sure! ELK stands for Elasticsearch, Logstash, and Kibana, which are used together for searching, analyzing, and visualizing log data in real-time. Integrating ELK with Spring Boot can help you monitor and analyze your application's logs effectively. Here's a simple example to get you started:
+
+### Step 1: Set Up Elasticsearch, Logstash, and Kibana
+
+1. **Elasticsearch**: Download and install Elasticsearch from the official website.
+2. **Logstash**: Download and install Logstash from the official website.
+3. **Kibana**: Download and install Kibana from the official website.
+
+### Step 2: Configure Logstash
+
+Create a Logstash configuration file (`logstash.conf`) to read logs from your Spring Boot application and send them to Elasticsearch.
+
+```plaintext
+input {
+  file {
+    path => "/path/to/your/spring-boot-app/logs/*.log"
+    start_position => "beginning"
+  }
+}
+
+filter {
+  grok {
+    match => { "message" => "%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:loglevel} %{GREEDYDATA:message}" }
+  }
+  date {
+    match => [ "timestamp", "ISO8601" ]
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["localhost:9200"]
+    index => "spring-boot-logs"
+  }
+  stdout { codec => rubydebug }
+}
+```
+
+### Step 3: Configure Spring Boot Logging
+
+In your `application.properties` or `application.yml` file, configure Spring Boot to write logs to a file.
+
+```properties
+logging.file.name=/path/to/your/spring-boot-app/logs/spring-boot-app.log
+logging.level.root=INFO
+```
+
+### Step 4: Run Logstash
+
+Start Logstash with the configuration file you created:
+
+```sh
+bin/logstash -f /path/to/logstash.conf
+```
+
+### Step 5: Visualize Logs in Kibana
+
+1. Open Kibana in your browser (usually at `http://localhost:5601`).
+2. Go to **Management** > **Index Patterns** and create a new index pattern for `spring-boot-logs`.
+3. Navigate to **Discover** to see your Spring Boot logs.
+
+### Example Spring Boot Application
+
+Here's a simple Spring Boot application to generate some logs:
+
+```java
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@SpringBootApplication
+public class SpringBootElkExampleApplication {
+
+    private static final Logger logger = LoggerFactory.getLogger(SpringBootElkExampleApplication.class);
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootElkExampleApplication.class, args);
+        logger.info("Spring Boot ELK Example Application Started");
+    }
+
+    @RestController
+    class HelloController {
+        @GetMapping("/hello")
+        public String hello() {
+            logger.info("Hello endpoint was called");
+            return "Hello, World!";
+        }
+    }
+}
+```
+
+This example sets up a basic Spring Boot application that logs messages to a file, which Logstash reads and sends to Elasticsearch. You can then visualize these logs in Kibana.
+
+Feel free to ask if you have any questions or need further assistance!
+
+## Elasticsearch Architecture
+
+Elasticsearch is a distributed, RESTful search and analytics engine capable of solving a growing number of use cases. Its architecture is designed to be scalable, flexible, and efficient. Here's an overview of the key components and architecture of Elasticsearch:
+
+### Key Components
+
+1. **Cluster**: A cluster is a collection of one or more nodes (servers) that together hold your entire data and provide federated indexing and search capabilities across all nodes. Each cluster has a unique name, which defaults to "elasticsearch".
+
+2. **Node**: A node is a single server that is part of the cluster, stores data, and participates in the cluster’s indexing and search capabilities. Each node is identified by a name, which defaults to a random UUID.
+
+3. **Index**: An index is a collection of documents that have somewhat similar characteristics. For example, you might have an index for customer data, another for product catalog data, and another for order data.
+
+4. **Document**: A document is a basic unit of information that can be indexed. It is expressed in JSON (JavaScript Object Notation) format. Each document is stored in an index and has a unique identifier.
+
+5. **Shard**: An index can be divided into multiple pieces called shards. Each shard is a fully functional and independent "index" that can be hosted on any node in the cluster. Sharding allows Elasticsearch to horizontally split/scale content volume.
+
+6. **Replica**: For high availability, each shard can have zero or more copies, called replica shards. Replicas provide redundancy and increase search throughput.
+
+### Architecture Overview
+
+1. **Cluster Formation**: When you start an Elasticsearch instance, it joins a cluster. If no cluster exists, it forms a new one. Nodes communicate with each other to form a cluster and elect a master node.
+
+2. **Master Node**: The master node is responsible for cluster-wide settings and changes, such as creating or deleting an index, tracking which nodes are part of the cluster, and deciding where shards should be allocated.
+
+3. **Data Nodes**: These nodes hold the data and perform data-related operations such as CRUD, search, and aggregations. They are the workhorses of the cluster.
+
+4. **Client Nodes**: These nodes act as load balancers that forward cluster requests to the master node and data-related requests to data nodes. They do not hold data themselves.
+
+5. **Ingest Nodes**: These nodes are responsible for pre-processing documents before indexing. They can execute ingest pipelines, which are a series of processors that transform the document.
+
+### Data Flow
+
+1. **Indexing**: When a document is indexed, it is first sent to the appropriate primary shard. The primary shard processes the document and then replicates it to its replica shards.
+
+2. **Searching**: When a search request is made, it is broadcast to all relevant shards (both primary and replica). Each shard processes the search locally and returns results to the coordinating node, which aggregates the results and returns them to the client.
+
+### High Availability and Scalability
+
+- **High Availability**: Elasticsearch ensures high availability by replicating shards. If a node fails, the cluster can continue to serve requests using the replica shards.
+- **Scalability**: Elasticsearch can scale horizontally by adding more nodes to the cluster. As data grows, you can add more nodes to distribute the load and increase capacity.
+
+### Visualization
+
+Here's a simple diagram to visualize the architecture:
+
+```
++-------------------+
+|    Cluster        |
+|                   |
+|  +-------------+  |
+|  |   Node 1    |  |
+|  |  (Master)   |  |
+|  +-------------+  |
+|                   |
+|  +-------------+  |
+|  |   Node 2    |  |
+|  | (Data Node) |  |
+|  +-------------+  |
+|                   |
+|  +-------------+  |
+|  |   Node 3    |  |
+|  | (Data Node) |  |
+|  +-------------+  |
+|                   |
+|  +-------------+  |
+|  |   Node 4    |  |
+|  | (Client)    |  |
+|  +-------------+  |
++-------------------+
+```
+
+This diagram shows a cluster with four nodes: one master node, two data nodes, and one client node.
+
+Feel free to ask if you have any questions or need further details!
+
+## Elasticsearch Aggregation, Joins, Get, Post, Put, Update example
+
+Sure! Let's go through examples of Elasticsearch operations including aggregations, joins, and basic CRUD operations (GET, POST, PUT, UPDATE).
+
+### Aggregations
+
+Aggregations in Elasticsearch allow you to perform complex data analysis and build summaries of your data. Here's an example of a simple aggregation:
+
+#### Example: Average Aggregation
+
+```json
+POST /sales/_search
+{
+  "size": 0,
+  "aggs": {
+    "average_price": {
+      "avg": {
+        "field": "price"
+      }
+    }
+  }
+}
+```
+
+This query calculates the average price of items in the `sales` index.
+
+### Joins
+
+Elasticsearch does not support traditional SQL joins. However, you can achieve similar functionality using nested objects, parent-child relationships, or application-side joins.
+
+#### Example: Parent-Child Relationship
+
+1. **Create an index with parent-child mapping**:
+
+```json
+PUT /my_index
+{
+  "mappings": {
+    "properties": {
+      "my_join_field": {
+        "type": "join",
+        "relations": {
+          "parent": "child"
+        }
+      }
+    }
+  }
+}
+```
+
+2. **Index a parent document**:
+
+```json
+PUT /my_index/_doc/1
+{
+  "text": "This is a parent document",
+  "my_join_field": "parent"
+}
+```
+
+3. **Index a child document**:
+
+```json
+PUT /my_index/_doc/2?routing=1
+{
+  "text": "This is a child document",
+  "my_join_field": {
+    "name": "child",
+    "parent": "1"
+  }
+}
+```
+
+4. **Search for child documents**:
+
+```json
+GET /my_index/_search
+{
+  "query": {
+    "has_parent": {
+      "parent_type": "parent",
+      "query": {
+        "match": {
+          "text": "parent document"
+        }
+      }
+    }
+  }
+}
+```
+
+### CRUD Operations
+
+#### GET
+
+Retrieve a document by its ID:
+
+```json
+GET /my_index/_doc/1
+```
+
+#### POST
+
+Index a new document (automatically assigns an ID):
+
+```json
+POST /my_index/_doc
+{
+  "field1": "value1",
+  "field2": "value2"
+}
+```
+
+#### PUT
+
+Index a new document or update an existing document by specifying its ID:
+
+```json
+PUT /my_index/_doc/1
+{
+  "field1": "value1",
+  "field2": "value2"
+}
+```
+
+#### UPDATE
+
+Update specific fields of an existing document:
+
+```json
+POST /my_index/_update/1
+{
+  "doc": {
+    "field1": "new_value1"
+  }
+}
+```
+
+### Example Data
+
+Let's assume we have an index called `products` with documents like this:
+
+```json
+{
+  "name": "Laptop",
+  "price": 1000,
+  "category": "Electronics"
+}
+```
+
+### Example Queries
+
+1. **Aggregation to find the average price of products**:
+
+```json
+POST /products/_search
+{
+  "size": 0,
+  "aggs": {
+    "average_price": {
+      "avg": {
+        "field": "price"
+      }
+    }
+  }
+}
+```
+
+2. **Get a product by ID**:
+
+```json
+GET /products/_doc/1
+```
+
+3. **Add a new product**:
+
+```json
+POST /products/_doc
+{
+  "name": "Smartphone",
+  "price": 700,
+  "category": "Electronics"
+}
+```
+
+4. **Update an existing product**:
+
+```json
+POST /products/_update/1
+{
+  "doc": {
+    "price": 900
+  }
+}
+```
+
+5. **Replace an existing product**:
+
+```json
+PUT /products/_doc/1
+{
+  "name": "Laptop",
+  "price": 1200,
+  "category": "Electronics"
+}
+```
+
+These examples should give you a good starting point for working with Elasticsearch. If you have any specific questions or need further assistance, feel free to ask!
+
+## Elasticsearch Inverted Index how it works
+
+An inverted index is a fundamental data structure used by Elasticsearch to enable fast full-text searches. It is similar to an index at the end of a book, which maps words to the pages where they appear. Here's a detailed explanation of how it works:
+
+### How an Inverted Index Works
+
+1. **Document Tokenization**:
+   - When a document is indexed in Elasticsearch, it is first broken down into individual terms (tokens) using a process called tokenization. This involves splitting the text into words, removing punctuation, and converting everything to lowercase.
+
+2. **Term Normalization**:
+   - The tokens are then normalized. This can include processes like stemming (reducing words to their root form) and removing stop words (common words like "and", "the", etc.).
+
+3. **Indexing Terms**:
+   - Each unique term is added to the inverted index along with a list of documents (and positions within those documents) where the term appears. This mapping of terms to document IDs is what makes the index "inverted".
+
+### Example
+
+Let's say we have two documents:
+
+- Document 1: "Elasticsearch is a search engine"
+- Document 2: "Elasticsearch uses an inverted index"
+
+#### Step-by-Step Process:
+
+1. **Tokenization**:
+   - Document 1: ["elasticsearch", "is", "a", "search", "engine"]
+   - Document 2: ["elasticsearch", "uses", "an", "inverted", "index"]
+
+2. **Normalization**:
+   - Assuming no stemming or stop word removal for simplicity:
+   - Document 1: ["elasticsearch", "is", "a", "search", "engine"]
+   - Document 2: ["elasticsearch", "uses", "an", "inverted", "index"]
+
+3. **Building the Inverted Index**:
+   - The inverted index will look something like this:
+
+```
+Term          Document IDs
+--------------------------------
+elasticsearch [1, 2]
+is            [1]
+a             [1]
+search        [1]
+engine        [1]
+uses          [2]
+an            [2]
+inverted      [2]
+index         [2]
+```
+
+### Querying the Inverted Index
+
+When you perform a search query, Elasticsearch uses the inverted index to quickly find the documents that contain the search terms. For example, if you search for "search engine", Elasticsearch will:
+
+1. Look up "search" in the inverted index and get Document 1.
+2. Look up "engine" in the inverted index and get Document 1.
+3. Combine the results to find documents that match the query.
+
+### Advantages of Inverted Index
+
+- **Speed**: The inverted index allows for very fast full-text searches because it quickly narrows down the list of documents to search through.
+- **Efficiency**: It is efficient in terms of storage and retrieval, as it only stores unique terms and their occurrences.
+
+### Visualization
+
+Here's a simple visualization of the inverted index:
+
+```
++-------------------+
+| Term       | Docs |
++-------------------+
+| elasticsearch | 1, 2 |
+| is            | 1   |
+| a             | 1   |
+| search        | 1   |
+| engine        | 1   |
+| uses          | 2   |
+| an            | 2   |
+| inverted      | 2   |
+| index         | 2   |
++-------------------+
+```
+
+This structure allows Elasticsearch to quickly find all documents that contain a given term, making search operations very efficient.
+
+If you have any more questions or need further details, feel free to ask!
+
+## Spring boot with GraphQL with CRUD example
+
+Sure! GraphQL is a query language for APIs and a runtime for executing those queries by using a type system you define for your data. It was developed by Facebook in 2012 and released as an open-source project in 2015. Here are some key concepts and features of GraphQL:
+
+### Key Concepts
+
+1. **Schema**:
+   - The schema defines the structure of your data and the types of queries that can be made. It acts as a contract between the client and the server.
+
+2. **Types**:
+   - GraphQL uses a strong type system to define the shape of your data. Common types include `Int`, `Float`, `String`, `Boolean`, and `ID`. You can also define custom object types.
+
+3. **Queries**:
+   - Queries are used to request data from the server. Clients specify exactly what data they need, and the server responds with only that data.
+
+4. **Mutations**:
+   - Mutations are used to modify data on the server (e.g., creating, updating, or deleting records). They work similarly to queries but are used for write operations.
+
+5. **Resolvers**:
+   - Resolvers are functions that handle the logic for fetching the data specified in a query or mutation. They connect the schema to your data sources.
+
+6. **Fields**:
+   - Fields are the individual pieces of data that can be queried. Each field has a type and can have arguments.
+
+### Features
+
+1. **Declarative Data Fetching**:
+   - Clients can specify exactly what data they need in a single query, reducing over-fetching and under-fetching of data.
+
+2. **Strongly Typed**:
+   - The schema and type system ensure that queries are valid and that the data returned matches the expected types.
+
+3. **Single Endpoint**:
+   - Unlike REST, which typically has multiple endpoints for different resources, GraphQL uses a single endpoint for all queries and mutations.
+
+4. **Real-Time Data**:
+   - GraphQL supports subscriptions, which allow clients to receive real-time updates when data changes.
+
+5. **Introspection**:
+   - GraphQL provides introspection capabilities, allowing clients to query the schema itself to understand what queries and mutations are available.
+
+### Example
+
+Here's a simple example to illustrate how GraphQL works:
+
+**Schema Definition (schema.graphqls)**
+
+```graphql
+type Book {
+    id: ID!
+    title: String!
+    author: String!
+    publisher: String!
+}
+
+type Query {
+    getBook(id: ID!): Book
+    getAllBooks: [Book]
+}
+
+type Mutation {
+    createBook(title: String!, author: String!, publisher: String!): Book
+    updateBook(id: ID!, title: String, author: String, publisher: String): Book
+    deleteBook(id: ID!): Boolean
+}
+```
+
+**Query Example**
+
+```graphql
+query {
+  getAllBooks {
+    id
+    title
+    author
+    publisher
+  }
+}
+```
+
+**Mutation Example**
+
+```graphql
+mutation {
+  createBook(title: "GraphQL for Beginners", author: "Jane Doe", publisher: "Tech Books") {
+    id
+    title
+    author
+    publisher
+  }
+}
+```
+
+In this example, the schema defines a `Book` type and the queries and mutations that can be performed. The query requests all books with their `id`, `title`, `author`, and `publisher` fields. The mutation creates a new book with the specified details.
+
+GraphQL provides a flexible and efficient way to interact with APIs, making it a popular choice for modern web and mobile applications. If you have any more questions or need further details, feel free to ask!
+
+Sure! Let's create a simple Spring Boot application with GraphQL to perform CRUD operations. We'll use a basic example of managing a list of books.
+
+### Step 1: Set Up the Spring Boot Project
+
+1. **Create a new Spring Boot project** using Spring Initializr (https://start.spring.io/).
+   - Project: Maven
+   - Language: Java
+   - Spring Boot: 2.5.4 (or the latest version)
+   - Dependencies: Spring Web, Spring Data JPA, H2 Database, GraphQL Spring Boot Starter, GraphQL Java Tools
+
+### Step 2: Define the Domain Model
+
+**Book Entity**
+
+```java
+package com.example.graphql.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title;
+    private String author;
+    private String publisher;
+
+    // Constructors, getters, and setters
+}
+```
+
+### Step 3: Create the Repository
+
+**BookRepository**
+
+```java
+package com.example.graphql.repository;
+
+import com.example.graphql.model.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookRepository extends JpaRepository<Book, Long> {
+}
+```
+
+### Step 4: Define the GraphQL Schema
+
+Create a file named `schema.graphqls` in the `src/main/resources` directory.
+
+```graphql
+type Book {
+    id: ID!
+    title: String!
+    author: String!
+    publisher: String!
+}
+
+type Query {
+    getBook(id: ID!): Book
+    getAllBooks: [Book]
+}
+
+type Mutation {
+    createBook(title: String!, author: String!, publisher: String!): Book
+    updateBook(id: ID!, title: String, author: String, publisher: String): Book
+    deleteBook(id: ID!): Boolean
+}
+```
+
+### Step 5: Implement the GraphQL Resolvers
+
+**BookResolver**
+
+```java
+package com.example.graphql.resolver;
+
+import com.example.graphql.model.Book;
+import com.example.graphql.repository.BookRepository;
+import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Optional;
+
+@Component
+public class BookResolver implements GraphQLQueryResolver {
+    @Autowired
+    private BookRepository bookRepository;
+
+    public Optional<Book> getBook(Long id) {
+        return bookRepository.findById(id);
+    }
+
+    public List<Book> getAllBooks() {
+        return bookRepository.findAll();
+    }
+}
+```
+
+**BookMutation**
+
+```java
+package com.example.graphql.resolver;
+
+import com.example.graphql.model.Book;
+import com.example.graphql.repository.BookRepository;
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class BookMutation implements GraphQLMutationResolver {
+    @Autowired
+    private BookRepository bookRepository;
+
+    public Book createBook(String title, String author, String publisher) {
+        Book book = new Book();
+        book.setTitle(title);
+        book.setAuthor(author);
+        book.setPublisher(publisher);
+        return bookRepository.save(book);
+    }
+
+    public Book updateBook(Long id, String title, String author, String publisher) {
+        Book book = bookRepository.findById(id).orElseThrow(() -> new RuntimeException("Book not found"));
+        if (title != null) book.setTitle(title);
+        if (author != null) book.setAuthor(author);
+        if (publisher != null) book.setPublisher(publisher);
+        return bookRepository.save(book);
+    }
+
+    public boolean deleteBook(Long id) {
+        bookRepository.deleteById(id);
+        return true;
+    }
+}
+```
+
+### Step 6: Configure the Application Properties
+
+Add the following properties to `application.properties`:
+
+```properties
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+```
+
+### Step 7: Run the Application
+
+Run the Spring Boot application and access the GraphQL endpoint at `http://localhost:8080/graphql`. You can use tools like GraphiQL or Postman to test the GraphQL queries and mutations.
+
+### Example Queries and Mutations
+
+**Create a Book**
+
+```graphql
+mutation {
+  createBook(title: "Spring Boot with GraphQL", author: "John Doe", publisher: "Tech Books") {
+    id
+    title
+    author
+    publisher
+  }
+}
+```
+
+**Get All Books**
+
+```graphql
+query {
+  getAllBooks {
+    id
+    title
+    author
+    publisher
+  }
+}
+```
+
+**Update a Book**
+
+```graphql
+mutation {
+  updateBook(id: 1, title: "Spring Boot with GraphQL - Updated") {
+    id
+    title
+    author
+    publisher
+  }
+}
+```
+
+**Delete a Book**
+
+```graphql
+mutation {
+  deleteBook(id: 1)
+}
+```
+
+This example demonstrates how to set up a Spring Boot application with GraphQL to perform CRUD operations. If you have any questions or need further assistance, feel free to ask!
+
+## Springboot 150 Interview Question
+
+Sure! Here are 200 Spring Boot interview questions that cover a wide range of topics, from basic concepts to advanced usage:
+
+### Basic Questions
+1. What is Spring Boot?
+2. What are the advantages of using Spring Boot?
+3. How does Spring Boot differ from the traditional Spring framework?
+4. What is a Spring Boot starter?
+5. What is the purpose of the `spring-boot-starter-parent`?
+6. How do you create a Spring Boot application?
+7. What is the Spring Initializr?
+8. What is the default embedded server in Spring Boot?
+9. How do you change the embedded server in Spring Boot?
+10. What is the purpose of the `application.properties` file?
+11. How do you configure application properties in Spring Boot?
+12. What is the `@SpringBootApplication` annotation?
+13. What are the components of the `@SpringBootApplication` annotation?
+14. How do you run a Spring Boot application?
+15. What is the purpose of the `spring-boot-devtools` module?
+16. How do you enable hot swapping in Spring Boot?
+17. What is the purpose of the `@RestController` annotation?
+18. How do you create a RESTful web service in Spring Boot?
+19. What is the purpose of the `@RequestMapping` annotation?
+20. How do you handle exceptions in Spring Boot?
+
+### Intermediate Questions
+21. What is Spring Boot Actuator?
+22. How do you enable Spring Boot Actuator?
+23. What are the default endpoints provided by Spring Boot Actuator?
+24. How do you customize Actuator endpoints?
+25. What is Spring Boot CLI?
+26. How do you install Spring Boot CLI?
+27. What is the purpose of the `spring-boot-maven-plugin`?
+28. How do you package a Spring Boot application as a JAR file?
+29. How do you package a Spring Boot application as a WAR file?
+30. What is Spring Boot Auto-Configuration?
+31. How does Spring Boot Auto-Configuration work?
+32. How do you disable specific auto-configuration classes?
+33. What is the purpose of the `@ConditionalOnProperty` annotation?
+34. How do you create a custom auto-configuration in Spring Boot?
+35. What is Spring Boot DevTools?
+36. How do you enable Spring Boot DevTools?
+37. What is the purpose of the `@ConfigurationProperties` annotation?
+38. How do you bind external configuration properties to a Java class?
+39. What is the purpose of the `@Value` annotation?
+40. How do you inject values from the `application.properties` file?
+
+### Advanced Questions
+41. What is Spring Boot Security?
+42. How do you secure a Spring Boot application?
+43. What is the purpose of the `@EnableWebSecurity` annotation?
+44. How do you configure security in Spring Boot?
+45. What is Spring Boot OAuth2?
+46. How do you implement OAuth2 authentication in Spring Boot?
+47. What is Spring Boot JPA?
+48. How do you configure JPA in Spring Boot?
+49. What is the purpose of the `@Entity` annotation?
+50. How do you create a JPA entity in Spring Boot?
+51. What is the purpose of the `@Repository` annotation?
+52. How do you create a repository in Spring Boot?
+53. What is Spring Boot Data REST?
+54. How do you expose JPA repositories as RESTful web services?
+55. What is Spring Boot Cache?
+56. How do you enable caching in Spring Boot?
+57. What is the purpose of the `@Cacheable` annotation?
+58. How do you configure cache in Spring Boot?
+59. What is Spring Boot Batch?
+60. How do you create a batch job in Spring Boot?
+
+### Microservices Questions
+61. What is a microservice?
+62. How does Spring Boot support microservices architecture?
+63. What is Spring Cloud?
+64. How do you use Spring Cloud with Spring Boot?
+65. What is Spring Cloud Netflix?
+66. How do you implement service discovery with Spring Cloud Netflix Eureka?
+67. What is Spring Cloud Config?
+68. How do you implement centralized configuration with Spring Cloud Config?
+69. What is Spring Cloud Gateway?
+70. How do you implement API Gateway with Spring Cloud Gateway?
+71. What is Spring Cloud Circuit Breaker?
+72. How do you implement circuit breaker pattern with Spring Cloud Circuit Breaker?
+73. What is Spring Cloud Sleuth?
+74. How do you implement distributed tracing with Spring Cloud Sleuth?
+75. What is Spring Cloud Stream?
+76. How do you implement event-driven microservices with Spring Cloud Stream?
+77. What is Spring Cloud Task?
+78. How do you implement short-lived microservices with Spring Cloud Task?
+79. What is Spring Cloud Zookeeper?
+80. How do you use Zookeeper for service discovery with Spring Cloud?
+
+### Testing Questions
+81. How do you test a Spring Boot application?
+82. What is the purpose of the `@SpringBootTest` annotation?
+83. How do you write unit tests for Spring Boot applications?
+84. How do you write integration tests for Spring Boot applications?
+85. What is the purpose of the `@MockBean` annotation?
+86. How do you mock beans in Spring Boot tests?
+87. What is the purpose of the `@WebMvcTest` annotation?
+88. How do you test Spring MVC controllers?
+89. What is the purpose of the `@DataJpaTest` annotation?
+90. How do you test JPA repositories?
+91. What is the purpose of the `@RestClientTest` annotation?
+92. How do you test REST clients in Spring Boot?
+93. What is the purpose of the `@JsonTest` annotation?
+94. How do you test JSON serialization and deserialization?
+95. What is the purpose of the `@AutoConfigureMockMvc` annotation?
+96. How do you configure MockMvc for testing?
+97. What is the purpose of the `@TestConfiguration` annotation?
+98. How do you provide custom test configurations?
+99. What is the purpose of the `@SpringBootConfiguration` annotation?
+100. How do you configure Spring Boot for testing?
+
+### Performance Questions
+101. How do you monitor the performance of a Spring Boot application?
+102. What is the purpose of the `@Timed` annotation?
+103. How do you use Micrometer with Spring Boot?
+104. How do you configure metrics in Spring Boot?
+105. What is the purpose of the `@EnablePrometheusEndpoint` annotation?
+106. How do you expose metrics to Prometheus?
+107. What is the purpose of the `@EnableGrafanaEndpoint` annotation?
+108. How do you visualize metrics with Grafana?
+109. How do you optimize the performance of a Spring Boot application?
+110. What are some best practices for improving Spring Boot application performance?
+
+### Deployment Questions
+111. How do you deploy a Spring Boot application?
+112. What is the purpose of the `spring-boot-starter-tomcat` dependency?
+113. How do you deploy a Spring Boot application to Tomcat?
+114. How do you deploy a Spring Boot application to JBoss?
+115. How do you deploy a Spring Boot application to WebSphere?
+116. How do you deploy a Spring Boot application to AWS?
+117. How do you deploy a Spring Boot application to Azure?
+118. How do you deploy a Spring Boot application to Google Cloud?
+119. How do you deploy a Spring Boot application to Kubernetes?
+120. How do you deploy a Spring Boot application to Docker?
+
+### Configuration Questions
+121. How do you configure a Spring Boot application?
+122. What is the purpose of the `application.yml` file?
+123. How do you use YAML for configuration in Spring Boot?
+124. How do you configure different profiles in Spring Boot?
+125. What is the purpose of the `@Profile` annotation?
+126. How do you activate a specific profile in Spring Boot?
+127. How do you configure logging in Spring Boot?
+128. What is the purpose of the `logback-spring.xml` file?
+129. How do you configure externalized configuration in Spring Boot?
+130. How do you use environment variables in Spring Boot?
+
+### Integration Questions
+131. How do you integrate Spring Boot with a database?
+132. What is the purpose of the `spring-boot-starter-data-jpa` dependency?
+133. How do you configure a data source in Spring Boot?
+134. How do you use Spring Data JPA with Spring Boot?
+135. How do you integrate Spring Boot with MongoDB?
+136. How do you integrate Spring Boot with Redis?
+137. How do you integrate Spring Boot with RabbitMQ?
+138. How do you integrate Spring Boot with Kafka?
+139. How do you integrate Spring Boot with Elasticsearch?
+140. How do you integrate Spring Boot with Solr?
+
+### Miscellaneous Questions
+141. What is the purpose of the `@EnableAutoConfiguration` annotation?
+142. How do you exclude specific auto-configuration classes?
+143. What is the purpose of the `@ComponentScan` annotation?
+144. How do you customize component scanning in Spring Boot?
+145. What is the purpose of the `@Bean` annotation?
+146. How do you define beans in Spring Boot?
+147. What is the purpose of the `@Configuration` annotation?
+148. How do you create configuration classes in Spring Boot?
+149. What is the purpose of the `@Conditional` annotation?
+150. How do you create conditional beans in Spring Boot?
+
+### Advanced Configuration Questions
+151. How do you configure custom error pages in Spring Boot?
+152. How do you handle custom exceptions in Spring Boot?
+153. How do you configure custom validation in Spring Boot?
+154. How do you use Hibernate Validator with Spring Boot?
+155. How do you configure custom converters in Spring Boot?
+156. How do you use Jackson for JSON processing in Spring Boot?
+157. How do you configure custom serializers and deserial
+
+## Top 100 Core Java Interview Questions
+
+Sure! Here are 100 core Java interview questions that cover a wide range of topics, from basic concepts to advanced usage:
+
+### Basic Questions
+1. What is Java?
+2. What are the main features of Java?
+3. What is the difference between JDK, JRE, and JVM?
+4. What is a Java Virtual Machine (JVM)?
+5. What is the Just-In-Time (JIT) compiler?
+6. What are the different types of memory areas allocated by JVM?
+7. What is garbage collection in Java?
+8. What are the different types of garbage collectors in Java?
+9. What is the difference between `==` and `equals()` in Java?
+10. What is the difference between `String`, `StringBuilder`, and `StringBuffer`?
+11. What is the purpose of the `final` keyword in Java?
+12. What is the difference between `final`, `finally`, and `finalize`?
+13. What is the purpose of the `static` keyword in Java?
+14. What is the difference between `static` and instance variables?
+15. What is the purpose of the `this` keyword in Java?
+16. What is the purpose of the `super` keyword in Java?
+17. What is method overloading in Java?
+18. What is method overriding in Java?
+19. What is the difference between method overloading and method overriding?
+20. What is a constructor in Java?
+
+### Intermediate Questions
+21. What is the difference between a constructor and a method?
+22. What is inheritance in Java?
+23. What is the difference between single inheritance and multiple inheritance?
+24. What is an interface in Java?
+25. What is the difference between an interface and an abstract class?
+26. What is polymorphism in Java?
+27. What is encapsulation in Java?
+28. What is abstraction in Java?
+29. What is the difference between abstraction and encapsulation?
+30. What is the purpose of the `abstract` keyword in Java?
+31. What is the purpose of the `synchronized` keyword in Java?
+32. What is the difference between `synchronized` and `volatile`?
+33. What is a thread in Java?
+34. What is the difference between a process and a thread?
+35. What is multithreading in Java?
+36. What is the purpose of the `Runnable` interface in Java?
+37. What is the purpose of the `Callable` interface in Java?
+38. What is the difference between `Runnable` and `Callable`?
+39. What is the purpose of the `Thread` class in Java?
+40. What is the difference between `start()` and `run()` methods in the `Thread` class?
+
+### Advanced Questions
+41. What is the purpose of the `ExecutorService` in Java?
+42. What is the difference between `Executor` and `ExecutorService`?
+43. What is the purpose of the `Future` interface in Java?
+44. What is the purpose of the `CompletableFuture` class in Java?
+45. What is the difference between `wait()` and `sleep()` methods in Java?
+46. What is the purpose of the `notify()` and `notifyAll()` methods in Java?
+47. What is a deadlock in Java?
+48. What are the different ways to avoid deadlock in Java?
+49. What is a race condition in Java?
+50. What are the different ways to avoid race conditions in Java?
+51. What is the purpose of the `ReentrantLock` class in Java?
+52. What is the difference between `ReentrantLock` and `synchronized`?
+53. What is the purpose of the `CountDownLatch` class in Java?
+54. What is the purpose of the `CyclicBarrier` class in Java?
+55. What is the purpose of the `Semaphore` class in Java?
+56. What is the purpose of the `AtomicInteger` class in Java?
+57. What is the purpose of the `ConcurrentHashMap` class in Java?
+58. What is the difference between `HashMap` and `ConcurrentHashMap`?
+59. What is the purpose of the `CopyOnWriteArrayList` class in Java?
+60. What is the difference between `ArrayList` and `CopyOnWriteArrayList`?
+
+### Collections Framework Questions
+61. What is the Java Collections Framework?
+62. What are the main interfaces of the Java Collections Framework?
+63. What is the difference between `List`, `Set`, and `Map` interfaces?
+64. What is the difference between `ArrayList` and `LinkedList`?
+65. What is the difference between `HashSet` and `TreeSet`?
+66. What is the difference between `HashMap` and `TreeMap`?
+67. What is the purpose of the `Iterator` interface in Java?
+68. What is the difference between `Iterator` and `ListIterator`?
+69. What is the purpose of the `Collections` class in Java?
+70. What is the purpose of the `Arrays` class in Java?
+
+### Exception Handling Questions
+71. What is exception handling in Java?
+72. What is the difference between checked and unchecked exceptions?
+73. What is the purpose of the `try`, `catch`, and `finally` blocks in Java?
+74. What is the purpose of the `throw` and `throws` keywords in Java?
+75. What is the difference between `throw` and `throws`?
+76. What is the purpose of the `Exception` class in Java?
+77. What is the purpose of the `RuntimeException` class in Java?
+78. What is the purpose of the `Error` class in Java?
+79. What is the purpose of the `Throwable` class in Java?
+80. What is the difference between `Exception` and `Error`?
+
+### Java 8 and Beyond Questions
+81. What are the main features introduced in Java 8?
+82. What is a lambda expression in Java?
+83. What is the purpose of the `FunctionalInterface` annotation in Java?
+84. What is the purpose of the `Stream` API in Java?
+85. What is the difference between `map()` and `flatMap()` methods in the `Stream` API?
+86. What is the purpose of the `Optional` class in Java?
+87. What is the purpose of the `default` and `static` methods in interfaces?
+88. What is the purpose of the `forEach()` method in the `Stream` API?
+89. What is the purpose of the `Collectors` class in Java?
+90. What is the purpose of the `Predicate` interface in Java?
+
+### Miscellaneous Questions
+91. What is the purpose of the `Object` class in Java?
+92. What is the purpose of the `toString()` method in Java?
+93. What is the purpose of the `hashCode()` method in Java?
+94. What is the purpose of the `equals()` method in Java?
+95. What is the purpose of the `clone()` method in Java?
+96. What is the purpose of the `Serializable` interface in Java?
+97. What is the purpose of the `transient` keyword in Java?
+98. What is the purpose of the `volatile` keyword in Java?
+99. What is the purpose of the `synchronized` keyword in Java?
+100. What is the purpose of the `native` keyword in Java?
+
+These questions should give you a comprehensive understanding of core Java concepts and help you prepare for interviews. If you need more detailed explanations or have specific questions, feel free to ask!
+
+## Top 100 Hibernate Interview Question
+
+Sure! Here are 100 Hibernate interview questions that cover a wide range of topics, from basic concepts to advanced usage:
+
+### Basic Questions
+1. What is Hibernate?
+2. What are the main features of Hibernate?
+3. What is ORM (Object-Relational Mapping)?
+4. What are the advantages of using Hibernate over JDBC?
+5. What is a Hibernate Session?
+6. What is the difference between `Session` and `SessionFactory`?
+7. What is the purpose of the `hibernate.cfg.xml` file?
+8. How do you configure Hibernate using annotations?
+9. What is the purpose of the `@Entity` annotation?
+10. What is the purpose of the `@Table` annotation?
+11. What is the purpose of the `@Id` annotation?
+12. What is the purpose of the `@GeneratedValue` annotation?
+13. What is the purpose of the `@Column` annotation?
+14. What is the purpose of the `@Transient` annotation?
+15. What is the purpose of the `@Temporal` annotation?
+16. What is the purpose of the `@Lob` annotation?
+17. What is the purpose of the `@Basic` annotation?
+18. What is the purpose of the `@Enumerated` annotation?
+19. What is the purpose of the `@Embedded` annotation?
+20. What is the purpose of the `@Embeddable` annotation?
+
+### Intermediate Questions
+21. What is the difference between `get()` and `load()` methods in Hibernate?
+22. What is the difference between `save()` and `persist()` methods in Hibernate?
+23. What is the difference between `update()` and `merge()` methods in Hibernate?
+24. What is the purpose of the `saveOrUpdate()` method in Hibernate?
+25. What is the purpose of the `delete()` method in Hibernate?
+26. What is the purpose of the `flush()` method in Hibernate?
+27. What is the purpose of the `clear()` method in Hibernate?
+28. What is the purpose of the `evict()` method in Hibernate?
+29. What is the purpose of the `refresh()` method in Hibernate?
+30. What is the difference between `flush()` and `commit()` methods in Hibernate?
+31. What is the purpose of the `Criteria` API in Hibernate?
+32. What is the purpose of the `Query` interface in Hibernate?
+33. What is HQL (Hibernate Query Language)?
+34. What is the difference between HQL and SQL?
+35. What is the purpose of the `@NamedQuery` annotation?
+36. What is the purpose of the `@NamedNativeQuery` annotation?
+37. What is the purpose of the `@Query` annotation?
+38. What is the purpose of the `@SQLQuery` annotation?
+39. What is the purpose of the `@SQLInsert` annotation?
+40. What is the purpose of the `@SQLUpdate` annotation?
+
+### Advanced Questions
+41. What is the purpose of the `@SQLDelete` annotation?
+42. What is the purpose of the `@SQLDeleteAll` annotation?
+43. What is the purpose of the `@SQLInsert` annotation?
+44. What is the purpose of the `@SQLUpdate` annotation?
+45. What is the purpose of the `@SQLDelete` annotation?
+46. What is the purpose of the `@SQLDeleteAll` annotation?
+47. What is the purpose of the `@SQLInsert` annotation?
+48. What is the purpose of the `@SQLUpdate` annotation?
+49. What is the purpose of the `@SQLDelete` annotation?
+50. What is the purpose of the `@SQLDeleteAll` annotation?
+51. What is the purpose of the `@SQLInsert` annotation?
+52. What is the purpose of the `@SQLUpdate` annotation?
+53. What is the purpose of the `@SQLDelete` annotation?
+54. What is the purpose of the `@SQLDeleteAll` annotation?
+55. What is the purpose of the `@SQLInsert` annotation?
+56. What is the purpose of the `@SQLUpdate` annotation?
+57. What is the purpose of the `@SQLDelete` annotation?
+58. What is the purpose of the `@SQLDeleteAll` annotation?
+59. What is the purpose of the `@SQLInsert` annotation?
+60. What is the purpose of the `@SQLUpdate` annotation?
+
+### Relationships and Mappings
+61. What is the purpose of the `@OneToOne` annotation?
+62. What is the purpose of the `@OneToMany` annotation?
+63. What is the purpose of the `@ManyToOne` annotation?
+64. What is the purpose of the `@ManyToMany` annotation?
+65. What is the purpose of the `@JoinColumn` annotation?
+66. What is the purpose of the `@JoinTable` annotation?
+67. What is the purpose of the `@PrimaryKeyJoinColumn` annotation?
+68. What is the purpose of the `@ForeignKey` annotation?
+69. What is the purpose of the `@Cascade` annotation?
+70. What is the purpose of the `@Fetch` annotation?
+
+### Caching
+71. What is the purpose of the `@Cacheable` annotation?
+72. What is the purpose of the `@Cache` annotation?
+73. What is the purpose of the `@CacheConcurrencyStrategy` annotation?
+74. What is the purpose of the `@CacheRegion` annotation?
+75. What is the purpose of the `@CacheMode` annotation?
+76. What is the purpose of the `@CacheProvider` annotation?
+77. What is the purpose of the `@CacheEvict` annotation?
+78. What is the purpose of the `@CachePut` annotation?
+79. What is the purpose of the `@CacheResult` annotation?
+80. What is the purpose of the `@CacheRemove` annotation?
+
+### Transactions
+81. What is the purpose of the `@Transactional` annotation?
+82. What is the purpose of the `@TransactionManagement` annotation?
+83. What is the purpose of the `@TransactionAttribute` annotation?
+84. What is the purpose of the `@TransactionAttributeType` annotation?
+85. What is the purpose of the `@TransactionIsolation` annotation?
+86. What is the purpose of the `@TransactionPropagation` annotation?
+87. What is the purpose of the `@TransactionTimeout` annotation?
+88. What is the purpose of the `@TransactionRollback` annotation?
+89. What is the purpose of the `@TransactionCommit` annotation?
+90. What is the purpose of the `@TransactionSuspend` annotation?
+
+### Miscellaneous
+91. What is the purpose of the `@Version` annotation?
+92. What is the purpose of the `@OptimisticLocking` annotation?
+93. What is the purpose of the `@PessimisticLocking` annotation?
+94. What is the purpose of the `@LockMode` annotation?
+95. What is the purpose of the `@LockTimeout` annotation?
+96. What is the purpose of the `@LockType` annotation?
+97. What is the purpose of the `@LockScope` annotation?
+98. What is the purpose of the `@LockOwner` annotation?
+99. What is the purpose of the `@LockOwnerType` annotation?
+100. What is the purpose of the `@LockOwnerScope` annotation?
+
+These questions should give you a comprehensive understanding of Hibernate concepts and help you prepare for interviews. If you need more detailed explanations or have specific questions, feel free to ask!
+
+## Top 100 Interview question on Spring Boot Data JPA
+
+Sure! Here are 100 interview questions on Spring Boot Data JPA that cover a wide range of topics, from basic concepts to advanced usage:
+
+### Basic Questions
+1. What is Spring Data JPA?
+2. What are the main features of Spring Data JPA?
+3. How does Spring Data JPA differ from Hibernate?
+4. What is the purpose of the `@Entity` annotation in Spring Data JPA?
+5. What is the purpose of the `@Table` annotation in Spring Data JPA?
+6. What is the purpose of the `@Id` annotation in Spring Data JPA?
+7. What is the purpose of the `@GeneratedValue` annotation in Spring Data JPA?
+8. What is the purpose of the `@Column` annotation in Spring Data JPA?
+9. What is the purpose of the `@Transient` annotation in Spring Data JPA?
+10. What is the purpose of the `@Temporal` annotation in Spring Data JPA?
+11. What is the purpose of the `@Lob` annotation in Spring Data JPA?
+12. What is the purpose of the `@Basic` annotation in Spring Data JPA?
+13. What is the purpose of the `@Enumerated` annotation in Spring Data JPA?
+14. What is the purpose of the `@Embedded` annotation in Spring Data JPA?
+15. What is the purpose of the `@Embeddable` annotation in Spring Data JPA?
+16. What is the purpose of the `@MappedSuperclass` annotation in Spring Data JPA?
+17. What is the purpose of the `@Inheritance` annotation in Spring Data JPA?
+18. What is the purpose of the `@DiscriminatorColumn` annotation in Spring Data JPA?
+19. What is the purpose of the `@DiscriminatorValue` annotation in Spring Data JPA?
+20. What is the purpose of the `@SecondaryTable` annotation in Spring Data JPA?
+
+### Intermediate Questions
+21. What is the purpose of the `@OneToOne` annotation in Spring Data JPA?
+22. What is the purpose of the `@OneToMany` annotation in Spring Data JPA?
+23. What is the purpose of the `@ManyToOne` annotation in Spring Data JPA?
+24. What is the purpose of the `@ManyToMany` annotation in Spring Data JPA?
+25. What is the purpose of the `@JoinColumn` annotation in Spring Data JPA?
+26. What is the purpose of the `@JoinTable` annotation in Spring Data JPA?
+27. What is the purpose of the `@PrimaryKeyJoinColumn` annotation in Spring Data JPA?
+28. What is the purpose of the `@ForeignKey` annotation in Spring Data JPA?
+29. What is the purpose of the `@Cascade` annotation in Spring Data JPA?
+30. What is the purpose of the `@Fetch` annotation in Spring Data JPA?
+31. What is the purpose of the `@NamedQuery` annotation in Spring Data JPA?
+32. What is the purpose of the `@NamedNativeQuery` annotation in Spring Data JPA?
+33. What is the purpose of the `@Query` annotation in Spring Data JPA?
+34. What is the purpose of the `@Modifying` annotation in Spring Data JPA?
+35. What is the purpose of the `@Procedure` annotation in Spring Data JPA?
+36. What is the purpose of the `@Lock` annotation in Spring Data JPA?
+37. What is the purpose of the `@Version` annotation in Spring Data JPA?
+38. What is the purpose of the `@OptimisticLocking` annotation in Spring Data JPA?
+39. What is the purpose of the `@PessimisticLocking` annotation in Spring Data JPA?
+40. What is the purpose of the `@LockMode` annotation in Spring Data JPA?
+
+### Advanced Questions
+41. What is the purpose of the `@Cacheable` annotation in Spring Data JPA?
+42. What is the purpose of the `@Cache` annotation in Spring Data JPA?
+43. What is the purpose of the `@CacheConcurrencyStrategy` annotation in Spring Data JPA?
+44. What is the purpose of the `@CacheRegion` annotation in Spring Data JPA?
+45. What is the purpose of the `@CacheMode` annotation in Spring Data JPA?
+46. What is the purpose of the `@CacheProvider` annotation in Spring Data JPA?
+47. What is the purpose of the `@CacheEvict` annotation in Spring Data JPA?
+48. What is the purpose of the `@CachePut` annotation in Spring Data JPA?
+49. What is the purpose of the `@CacheResult` annotation in Spring Data JPA?
+50. What is the purpose of the `@CacheRemove` annotation in Spring Data JPA?
+51. What is the purpose of the `@Transactional` annotation in Spring Data JPA?
+52. What is the purpose of the `@TransactionManagement` annotation in Spring Data JPA?
+53. What is the purpose of the `@TransactionAttribute` annotation in Spring Data JPA?
+54. What is the purpose of the `@TransactionAttributeType` annotation in Spring Data JPA?
+55. What is the purpose of the `@TransactionIsolation` annotation in Spring Data JPA?
+56. What is the purpose of the `@TransactionPropagation` annotation in Spring Data JPA?
+57. What is the purpose of the `@TransactionTimeout` annotation in Spring Data JPA?
+58. What is the purpose of the `@TransactionRollback` annotation in Spring Data JPA?
+59. What is the purpose of the `@TransactionCommit` annotation in Spring Data JPA?
+60. What is the purpose of the `@TransactionSuspend` annotation in Spring Data JPA?
+
+### Repositories
+61. What is the purpose of the `JpaRepository` interface in Spring Data JPA?
+62. What is the purpose of the `CrudRepository` interface in Spring Data JPA?
+63. What is the purpose of the `PagingAndSortingRepository` interface in Spring Data JPA?
+64. What is the purpose of the `Repository` interface in Spring Data JPA?
+65. What is the purpose of the `@Repository` annotation in Spring Data JPA?
+66. What is the purpose of the `@EnableJpaRepositories` annotation in Spring Data JPA?
+67. What is the purpose of the `@NoRepositoryBean` annotation in Spring Data JPA?
+68. What is the purpose of the `@Query` annotation in Spring Data JPA?
+69. What is the purpose of the `@Modifying` annotation in Spring Data JPA?
+70. What is the purpose of the `@Procedure` annotation in Spring Data JPA?
+
+### Query Methods
+71. What is the purpose of the `findBy` method in Spring Data JPA?
+72. What is the purpose of the `findAll` method in Spring Data JPA?
+73. What is the purpose of the `save` method in Spring Data JPA?
+74. What is the purpose of the `delete` method in Spring Data JPA?
+75. What is the purpose of the `count` method in Spring Data JPA?
+76. What is the purpose of the `exists` method in Spring Data JPA?
+77. What is the purpose of the `flush` method in Spring Data JPA?
+78. What is the purpose of the `saveAndFlush` method in Spring Data JPA?
+79. What is the purpose of the `deleteInBatch` method in Spring Data JPA?
+80. What is the purpose of the `deleteAllInBatch` method in Spring Data JPA?
+
+### Miscellaneous
+81. What is the purpose of the `@EntityGraph` annotation in Spring Data JPA?
+82. What is the purpose of the `@NamedEntityGraph` annotation in Spring Data JPA?
+83. What is the purpose of the `@EntityListeners` annotation in Spring Data JPA?
+84. What is the purpose of the `@PrePersist` annotation in Spring Data JPA?
+85. What is the purpose of the `@PostPersist` annotation in Spring Data JPA?
+86. What is the purpose of the `@PreUpdate` annotation in Spring Data JPA?
+87. What is the purpose of the `@PostUpdate` annotation in Spring Data JPA?
+88. What is the purpose of the `@PreRemove` annotation in Spring Data JPA?
+89. What is the purpose of the `@PostRemove` annotation in Spring Data JPA?
+90. What is the purpose of the `@PostLoad` annotation in Spring Data JPA?
+
+### Performance
+91. How do you optimize the performance of a Spring Data JPA application?
+92. What is the purpose of the `@BatchSize` annotation in Spring Data JPA?
+93. What is the purpose of the `@Fetch` annotation in Spring Data JPA?
+94. What is the purpose of the `@LazyCollection` annotation in Spring Data JPA?
+95. What is the purpose of the `@LazyCollectionOption` annotation in Spring Data JPA?
+96. What is the purpose of the `@FetchMode` annotation in Spring Data JPA?
+97. What is the purpose of the `@FetchType` annotation in Spring Data JPA?
+98. What is the purpose of the `@FetchProfile` annotation in Spring Data JPA?
+99. What is the purpose of the `@FetchGroup` annotation in Spring Data JPA?
+100. What is the purpose of the `@FetchSubselect` annotation in Spring Data JPA?
+
+These questions should give you a comprehensive understanding of Spring Boot Data JPA concepts and help you prepare for interviews. If you need more detailed explanations or have specific questions,
+
+## Top 100 Spring Security Inteview Questions and Answers
+
+Sure! Here are 100 Spring Security interview questions along with brief answers to help you prepare:
+
+### Basic Questions
+1. **What is Spring Security?**
+   - Spring Security is a powerful and customizable authentication and access control framework for Java applications.
+
+2. **What are the main features of Spring Security?**
+   - Authentication, authorization, protection against common attacks (CSRF, XSS), and integration with various authentication mechanisms.
+
+3. **What is the purpose of the `@EnableWebSecurity` annotation?**
+   - It enables Spring Security's web security support and provides the Spring MVC integration.
+
+4. **What is the default login URL provided by Spring Security?**
+   - `/login`
+
+5. **How do you configure a custom login page in Spring Security?**
+   - By using the `formLogin().loginPage("/custom-login")` method in the `HttpSecurity` configuration.
+
+6. **What is the purpose of the `UserDetailsService` interface?**
+   - It is used to retrieve user-related data and is a core interface in Spring Security.
+
+7. **What is the purpose of the `GrantedAuthority` interface?**
+   - It represents an authority granted to an `Authentication` object.
+
+8. **What is the purpose of the `AuthenticationManager` interface?**
+   - It is responsible for processing authentication requests.
+
+9. **What is the purpose of the `PasswordEncoder` interface?**
+   - It is used to perform password encoding and validation.
+
+10. **What is the purpose of the `BCryptPasswordEncoder` class?**
+    - It is an implementation of `PasswordEncoder` that uses the BCrypt hashing algorithm.
+
+### Intermediate Questions
+11. **What is the purpose of the `@PreAuthorize` annotation?**
+    - It is used to specify method-level security and restrict access based on roles or permissions.
+
+12. **What is the purpose of the `@Secured` annotation?**
+    - It is used to specify method-level security based on roles.
+
+13. **What is the purpose of the `@RolesAllowed` annotation?**
+    - It is used to specify method-level security based on roles, similar to `@Secured`.
+
+14. **What is CSRF and how does Spring Security protect against it?**
+    - CSRF (Cross-Site Request Forgery) is an attack that tricks the user into performing actions they didn't intend. Spring Security protects against it by generating and validating CSRF tokens.
+
+15. **How do you disable CSRF protection in Spring Security?**
+    - By using the `csrf().disable()` method in the `HttpSecurity` configuration.
+
+16. **What is the purpose of the `SecurityContext`?**
+    - It holds the security information of the current user, including their authentication details.
+
+17. **What is the purpose of the `SecurityContextHolder`?**
+    - It provides access to the `SecurityContext`.
+
+18. **What is the purpose of the `@WithMockUser` annotation?**
+    - It is used in tests to mock a user with specific roles and authorities.
+
+19. **What is the purpose of the `@EnableGlobalMethodSecurity` annotation?**
+    - It enables method-level security annotations like `@PreAuthorize`, `@Secured`, and `@RolesAllowed`.
+
+20. **What is the purpose of the `@EnableGlobalAuthentication` annotation?**
+    - It enables global authentication configuration.
+
+### Advanced Questions
+21. **What is the purpose of the `AuthenticationProvider` interface?**
+    - It is responsible for authenticating a user with a specific authentication mechanism.
+
+22. **What is the purpose of the `AbstractAuthenticationProcessingFilter` class?**
+    - It is a base class for filters that handle authentication requests.
+
+23. **What is the purpose of the `UsernamePasswordAuthenticationFilter` class?**
+    - It processes authentication requests with a username and password.
+
+24. **What is the purpose of the `RememberMeAuthenticationFilter` class?**
+    - It processes remember-me authentication requests.
+
+25. **What is the purpose of the `RememberMeServices` interface?**
+    - It provides services for remember-me authentication.
+
+26. **What is the purpose of the `PersistentTokenBasedRememberMeServices` class?**
+    - It is an implementation of `RememberMeServices` that uses persistent tokens.
+
+27. **What is the purpose of the `TokenBasedRememberMeServices` class?**
+    - It is an implementation of `RememberMeServices` that uses tokens.
+
+28. **What is the purpose of the `SecurityConfigurerAdapter` class?**
+    - It is a base class for configuring Spring Security.
+
+29. **What is the purpose of the `WebSecurityConfigurerAdapter` class?**
+    - It is a base class for configuring web security.
+
+30. **What is the purpose of the `HttpSecurity` class?**
+    - It provides configuration for web-based security.
+
+### Authentication and Authorization
+31. **What is the difference between authentication and authorization?**
+    - Authentication verifies the identity of a user, while authorization determines what actions the user is allowed to perform.
+
+32. **What is the purpose of the `Authentication` interface?**
+    - It represents the token for an authentication request or for an authenticated principal.
+
+33. **What is the purpose of the `AuthenticationManagerBuilder` class?**
+    - It is used to build the `AuthenticationManager`.
+
+34. **What is the purpose of the `AuthenticationSuccessHandler` interface?**
+    - It handles successful authentication events.
+
+35. **What is the purpose of the `AuthenticationFailureHandler` interface?**
+    - It handles failed authentication events.
+
+36. **What is the purpose of the `AccessDeniedHandler` interface?**
+    - It handles access denied exceptions.
+
+37. **What is the purpose of the `AccessDecisionManager` interface?**
+    - It makes authorization decisions.
+
+38. **What is the purpose of the `AccessDecisionVoter` interface?**
+    - It votes on authorization decisions.
+
+39. **What is the purpose of the `RoleVoter` class?**
+    - It votes on authorization decisions based on roles.
+
+40. **What is the purpose of the `WebExpressionVoter` class?**
+    - It votes on authorization decisions based on web expressions.
+
+### Security Filters
+41. **What is the purpose of the `FilterChainProxy` class?**
+    - It delegates security filter chain execution to a list of security filters.
+
+42. **What is the purpose of the `DelegatingFilterProxy` class?**
+    - It delegates filter execution to a Spring-managed bean.
+
+43. **What is the purpose of the `SecurityContextPersistenceFilter` class?**
+    - It stores the `SecurityContext` between requests.
+
+44. **What is the purpose of the `LogoutFilter` class?**
+    - It handles logout requests.
+
+45. **What is the purpose of the `ExceptionTranslationFilter` class?**
+    - It handles security exceptions.
+
+46. **What is the purpose of the `FilterSecurityInterceptor` class?**
+    - It performs security filtering.
+
+47. **What is the purpose of the `AnonymousAuthenticationFilter` class?**
+    - It provides anonymous authentication.
+
+48. **What is the purpose of the `SessionManagementFilter` class?**
+    - It manages session-related security.
+
+49. **What is the purpose of the `CsrfFilter` class?**
+    - It handles CSRF protection.
+
+50. **What is the purpose of the `HeaderWriterFilter` class?**
+    - It writes security headers to the response.
+
+### OAuth2 and JWT
+51. **What is OAuth2?**
+    - OAuth2 is an authorization framework that enables applications to obtain limited access to user accounts on an HTTP service.
+
+52. **What is the purpose of the `@EnableOAuth2Sso` annotation?**
+    - It enables OAuth2 Single Sign-On (SSO) support.
+
+53. **What is the purpose of the `OAuth2ClientContext` class?**
+    - It holds the OAuth2 client context.
+
+54. **What is the purpose of the `OAuth2RestTemplate` class?**
+    - It is a `RestTemplate` that supports OAuth2 authentication.
+
+55. **What is the purpose of the `ResourceServerConfigurerAdapter` class?**
+    - It provides configuration for a resource server.
+
+56. **What is the purpose of the `AuthorizationServerConfigurerAdapter` class?**
+    - It provides configuration for an authorization server.
+
+57. **What is JWT (JSON Web Token)?**
+    - JWT is a compact, URL-safe means of representing claims to be transferred between two parties.
+
+58. **What is the purpose of the `JwtAccessTokenConverter` class?**
+    - It converts access tokens to and from JWT.
+
+59. **What is the purpose of the `JwtTokenStore` class?**
+    - It stores tokens in JWT format.
+
+60. **What is the purpose of the `JwtAuthenticationFilter` class?**
+    - It processes JWT authentication requests.
+
+### Method Security
+61. **What is method security in Spring Security?**
+    - It provides security at the method level using annotations.
+
+62. **What is the purpose of the `@PreAuthorize` annotation?**
+    - It specifies security constraints before a method is invoked.
+
+63. **What is the purpose of the `@PostAuthorize` annotation?**
+    - It specifies security constraints after a method is invoked.
+
+64. **What is the purpose of the `@PreFilter` annotation?**
+    - It filters the input collection before a method is invoked.
+
+65. **What is the purpose of the `@PostFilter` annotation?**
+    - It filters the output collection after a method is invoked.
+
+66. **What is the purpose of the `@Secured` annotation?**
+    - It specifies security constraints based on roles.
+
+## Top 100 Lambda expression interview questions
+
+Sure! Here are 100 interview questions on Lambda expressions in Java, covering a wide range of topics from basic concepts to advanced usage:
+
+### Basic Questions
+1. What is a lambda expression in Java?
+2. What are the main features of lambda expressions?
+3. How do lambda expressions improve code readability?
+4. What is the syntax of a lambda expression?
+5. What is the purpose of the `->` operator in lambda expressions?
+6. How do you create a simple lambda expression?
+7. What is a functional interface?
+8. What is the `@FunctionalInterface` annotation?
+9. Can you use lambda expressions with any interface?
+10. What are some common functional interfaces in Java?
+
+### Intermediate Questions
+11. How do you use lambda expressions with the `Runnable` interface?
+12. How do you use lambda expressions with the `Comparator` interface?
+13. How do you use lambda expressions with the `ActionListener` interface?
+14. How do you use lambda expressions with the `Callable` interface?
+15. How do you use lambda expressions with the `Predicate` interface?
+16. How do you use lambda expressions with the `Function` interface?
+17. How do you use lambda expressions with the `Consumer` interface?
+18. How do you use lambda expressions with the `Supplier` interface?
+19. How do you use lambda expressions with the `BiFunction` interface?
+20. How do you use lambda expressions with the `UnaryOperator` interface?
+
+### Advanced Questions
+21. What is the difference between a lambda expression and an anonymous class?
+22. How do you capture local variables in a lambda expression?
+23. What are effectively final variables?
+24. How do you handle exceptions in lambda expressions?
+25. How do you use lambda expressions with streams?
+26. How do you use lambda expressions with the `map` method in streams?
+27. How do you use lambda expressions with the `filter` method in streams?
+28. How do you use lambda expressions with the `forEach` method in streams?
+29. How do you use lambda expressions with the `reduce` method in streams?
+30. How do you use lambda expressions with the `collect` method in streams?
+
+### Functional Interfaces
+31. What is the `Predicate` interface?
+32. What is the `Function` interface?
+33. What is the `Consumer` interface?
+34. What is the `Supplier` interface?
+35. What is the `BiFunction` interface?
+36. What is the `UnaryOperator` interface?
+37. What is the `BinaryOperator` interface?
+38. What is the `BiConsumer` interface?
+39. What is the `ToIntFunction` interface?
+40. What is the `ToDoubleFunction` interface?
+
+### Method References
+41. What is a method reference in Java?
+42. What are the different types of method references?
+43. How do you use a method reference to a static method?
+44. How do you use a method reference to an instance method of a particular object?
+45. How do you use a method reference to an instance method of an arbitrary object of a particular type?
+46. How do you use a method reference to a constructor?
+47. What is the difference between a lambda expression and a method reference?
+48. How do you convert a lambda expression to a method reference?
+49. How do you use method references with streams?
+50. How do you use method references with functional interfaces?
+
+### Streams and Lambda Expressions
+51. What is the `Stream` API in Java?
+52. How do you create a stream from a collection?
+53. How do you create a stream from an array?
+54. How do you create a stream from a file?
+55. How do you create an infinite stream?
+56. How do you use the `map` method in streams?
+57. How do you use the `filter` method in streams?
+58. How do you use the `forEach` method in streams?
+59. How do you use the `reduce` method in streams?
+60. How do you use the `collect` method in streams?
+
+### Parallel Streams
+61. What is a parallel stream?
+62. How do you create a parallel stream?
+63. What are the advantages of using parallel streams?
+64. What are the disadvantages of using parallel streams?
+65. How do you convert a sequential stream to a parallel stream?
+66. How do you convert a parallel stream to a sequential stream?
+67. How do you use the `parallel` method in streams?
+68. How do you use the `sequential` method in streams?
+69. How do you use the `parallelStream` method in collections?
+70. How do you use the `isParallel` method in streams?
+
+### Collectors
+71. What is the `Collectors` class in Java?
+72. How do you use the `toList` collector?
+73. How do you use the `toSet` collector?
+74. How do you use the `toMap` collector?
+75. How do you use the `joining` collector?
+76. How do you use the `groupingBy` collector?
+77. How do you use the `partitioningBy` collector?
+78. How do you use the `counting` collector?
+79. How do you use the `summarizingInt` collector?
+80. How do you use the `reducing` collector?
+
+### Miscellaneous
+81. What is the `Optional` class in Java?
+82. How do you use the `Optional` class with lambda expressions?
+83. How do you use the `ifPresent` method in `Optional`?
+84. How do you use the `orElse` method in `Optional`?
+85. How do you use the `orElseGet` method in `Optional`?
+86. How do you use the `orElseThrow` method in `Optional`?
+87. How do you use the `map` method in `Optional`?
+88. How do you use the `flatMap` method in `Optional`?
+89. How do you use the `filter` method in `Optional`?
+90. How do you use the `isPresent` method in `Optional`?
+
+### Best Practices
+91. What are some best practices for using lambda expressions?
+92. How do you improve code readability with lambda expressions?
+93. How do you handle exceptions in lambda expressions?
+94. How do you avoid common pitfalls with lambda expressions?
+95. How do you use lambda expressions with legacy code?
+96. How do you use lambda expressions with third-party libraries?
+97. How do you use lambda expressions with frameworks like Spring?
+98. How do you use lambda expressions with JavaFX?
+99. How do you use lambda expressions with Android?
+100. How do you use lambda expressions with testing frameworks?
+
+These questions should give you a comprehensive understanding of lambda expressions in Java and help you prepare for interviews. If you need more detailed explanations or have specific questions, feel free to ask!
+
+## Top 50 Lambda Coding Question in Java
+
+Sure! Here are 50 coding questions focused on lambda expressions in Java. These questions will help you practice and understand the use of lambda expressions in various scenarios:
+
+### Basic Lambda Expressions
+1. Write a lambda expression to print "Hello, World!".
+2. Write a lambda expression to add two integers.
+3. Write a lambda expression to check if a number is even.
+4. Write a lambda expression to find the maximum of two numbers.
+5. Write a lambda expression to convert a string to uppercase.
+
+### Using Functional Interfaces
+6. Write a lambda expression using the `Runnable` interface to print a message.
+7. Write a lambda expression using the `Comparator` interface to sort a list of strings by length.
+8. Write a lambda expression using the `Predicate` interface to check if a string is empty.
+9. Write a lambda expression using the `Function` interface to find the length of a string.
+10. Write a lambda expression using the `Consumer` interface to print each element of a list.
+
+### Streams and Lambda Expressions
+11. Write a lambda expression to filter a list of integers to find all even numbers.
+12. Write a lambda expression to map a list of strings to their lengths.
+13. Write a lambda expression to find the sum of all elements in a list of integers.
+14. Write a lambda expression to find the maximum element in a list of integers.
+15. Write a lambda expression to sort a list of strings in alphabetical order.
+
+### Advanced Lambda Expressions
+16. Write a lambda expression to concatenate a list of strings with a comma separator.
+17. Write a lambda expression to find the average of a list of integers.
+18. Write a lambda expression to group a list of strings by their first character.
+19. Write a lambda expression to partition a list of integers into even and odd numbers.
+20. Write a lambda expression to count the number of occurrences of each character in a string.
+
+### Method References
+21. Write a method reference to a static method that prints a message.
+22. Write a method reference to an instance method that converts a string to lowercase.
+23. Write a method reference to a constructor that creates a new `ArrayList`.
+24. Write a method reference to an instance method that checks if a string starts with a specific prefix.
+25. Write a method reference to a static method that finds the maximum of two numbers.
+
+### Custom Functional Interfaces
+26. Create a custom functional interface `TriFunction` that takes three arguments and returns a result. Write a lambda expression using this interface.
+27. Create a custom functional interface `QuadFunction` that takes four arguments and returns a result. Write a lambda expression using this interface.
+28. Create a custom functional interface `PentaFunction` that takes five arguments and returns a result. Write a lambda expression using this interface.
+29. Create a custom functional interface `HexFunction` that takes six arguments and returns a result. Write a lambda expression using this interface.
+30. Create a custom functional interface `HeptaFunction` that takes seven arguments and returns a result. Write a lambda expression using this interface.
+
+### Handling Exceptions
+31. Write a lambda expression that handles a checked exception.
+32. Write a lambda expression that handles an unchecked exception.
+33. Write a lambda expression that logs an exception message.
+34. Write a lambda expression that retries an operation on failure.
+35. Write a lambda expression that wraps a checked exception in a runtime exception.
+
+### Parallel Streams
+36. Write a lambda expression to process a list of integers in parallel and find the sum.
+37. Write a lambda expression to process a list of strings in parallel and find the longest string.
+38. Write a lambda expression to process a list of integers in parallel and find the average.
+39. Write a lambda expression to process a list of strings in parallel and count the number of non-empty strings.
+40. Write a lambda expression to process a list of integers in parallel and find the maximum element.
+
+### Collectors
+41. Write a lambda expression to collect a list of strings into a single string separated by commas.
+42. Write a lambda expression to collect a list of integers into a set.
+43. Write a lambda expression to collect a list of strings into a map with the string as the key and its length as the value.
+44. Write a lambda expression to collect a list of integers into a list of their squares.
+45. Write a lambda expression to collect a list of strings into a map grouped by their first character.
+
+### Miscellaneous
+46. Write a lambda expression to find the first non-repeated character in a string.
+47. Write a lambda expression to find the most frequent character in a string.
+48. Write a lambda expression to reverse a list of strings.
+49. Write a lambda expression to find the intersection of two lists of integers.
+50. Write a lambda expression to find the union of two lists of integers.
+
+These questions should help you practice and understand lambda expressions in Java. If you need any specific examples or further explanations, feel free to ask!
+
+## Collectors Interview questions
+
+Sure! Here are some interview coding questions focused on using Java's `Collectors` for grouping, summing, finding maximum and minimum values, and filtering:
+
+### Grouping By
+1. **Group a list of employees by department and count the number of employees in each department.**
+   ```java
+   Map<String, Long> employeesByDepartment = employees.stream()
+       .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
+   ```
+
+2. **Group a list of products by category and sum the prices of products in each category.**
+   ```java
+   Map<String, Double> totalPricesByCategory = products.stream()
+       .collect(Collectors.groupingBy(Product::getCategory, Collectors.summingDouble(Product::getPrice)));
+   ```
+
+3. **Group a list of students by grade and find the maximum score in each grade.**
+   ```java
+   Map<String, Optional<Student>> topStudentsByGrade = students.stream()
+       .collect(Collectors.groupingBy(Student::getGrade, Collectors.maxBy(Comparator.comparingInt(Student::getScore))));
+   ```
+
+4. **Group a list of transactions by type and find the minimum amount in each type.**
+   ```java
+   Map<String, Optional<Transaction>> minTransactionByType = transactions.stream()
+       .collect(Collectors.groupingBy(Transaction::getType, Collectors.minBy(Comparator.comparingDouble(Transaction::getAmount))));
+   ```
+
+### Summing
+5. **Sum the salaries of all employees.**
+   ```java
+   double totalSalaries = employees.stream()
+       .collect(Collectors.summingDouble(Employee::getSalary));
+   ```
+
+6. **Sum the lengths of all strings in a list.**
+   ```java
+   int totalLength = strings.stream()
+       .collect(Collectors.summingInt(String::length));
+   ```
+
+### Maximum and Minimum
+7. **Find the employee with the maximum salary.**
+   ```java
+   Optional<Employee> highestPaidEmployee = employees.stream()
+       .collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)));
+   ```
+
+8. **Find the product with the minimum price.**
+   ```java
+   Optional<Product> cheapestProduct = products.stream()
+       .collect(Collectors.minBy(Comparator.comparingDouble(Product::getPrice)));
+   ```
+
+### Filtering
+9. **Filter a list of integers to find all even numbers.**
+   ```java
+   List<Integer> evenNumbers = numbers.stream()
+       .filter(n -> n % 2 == 0)
+       .collect(Collectors.toList());
+   ```
+
+10. **Filter a list of strings to find all non-empty strings.**
+    ```java
+    List<String> nonEmptyStrings = strings.stream()
+        .filter(s -> !s.isEmpty())
+        .collect(Collectors.toList());
+    ```
+
+### Combining Grouping and Filtering
+11. **Group a list of employees by department and filter out departments with fewer than 5 employees.**
+    ```java
+    Map<String, List<Employee>> largeDepartments = employees.stream()
+        .collect(Collectors.groupingBy(Employee::getDepartment))
+        .entrySet().stream()
+        .filter(entry -> entry.getValue().size() >= 5)
+        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    ```
+
+12. **Group a list of products by category and filter out categories with a total price less than 1000.**
+    ```java
+    Map<String, Double> expensiveCategories = products.stream()
+        .collect(Collectors.groupingBy(Product::getCategory, Collectors.summingDouble(Product::getPrice)))
+        .entrySet().stream()
+        .filter(entry -> entry.getValue() >= 1000)
+        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    ```
+
+These questions should help you practice using Java's `Collectors` for various operations. If you need more detailed explanations or have specific questions, feel free to ask!
+
+
+
+
+## Spring Boot Scenario based interview question
+
+Sure! Here are some scenario-based Spring Boot interview questions to help you prepare:
+
+### Basic Scenarios
+1. How would you create a simple RESTful web service using Spring Boot?
+2. How would you configure a Spring Boot application to connect to a MySQL database?
+3. How would you handle application properties in Spring Boot?
+4. How would you create a custom exception handler in Spring Boot?
+5. How would you implement logging in a Spring Boot application?
+
+### Intermediate Scenarios
+6. How would you secure a Spring Boot application using Spring Security?
+7. How would you implement pagination and sorting in a Spring Boot REST API?
+8. How would you handle file uploads in a Spring Boot application?
+9. How would you configure a Spring Boot application to use a different profile (e.g., dev, prod)?
+10. How would you implement caching in a Spring Boot application?
+
+### Advanced Scenarios
+11. How would you create a scheduled task in Spring Boot?
+12. How would you implement internationalization (i18n) in a Spring Boot application?
+13. How would you handle transactions in a Spring Boot application?
+14. How would you integrate Spring Boot with a message broker like RabbitMQ or Kafka?
+15. How would you implement a custom validation in Spring Boot?
+
+### Security Scenarios
+16. How would you implement JWT authentication in a Spring Boot application?
+17. How would you secure REST endpoints in a Spring Boot application?
+18. How would you handle CSRF protection in a Spring Boot application?
+19. How would you configure role-based access control in Spring Boot?
+20. How would you implement OAuth2 authentication in a Spring Boot application?
+
+### Data Management Scenarios
+21. How would you handle database migrations in a Spring Boot application using Flyway or Liquibase?
+22. How would you implement a multi-database configuration in Spring Boot?
+23. How would you handle optimistic locking in a Spring Boot application?
+24. How would you implement a custom repository in Spring Data JPA?
+25. How would you handle batch processing in a Spring Boot application?
+
+### Testing Scenarios
+26. How would you write unit tests for a Spring Boot REST controller?
+27. How would you write integration tests for a Spring Boot application?
+28. How would you mock dependencies in a Spring Boot test?
+29. How would you test a Spring Boot application with an embedded database?
+30. How would you use Testcontainers to test a Spring Boot application?
+
+### Performance Scenarios
+31. How would you optimize the performance of a Spring Boot application?
+32. How would you handle slow database queries in a Spring Boot application?
+33. How would you implement asynchronous processing in Spring Boot?
+34. How would you monitor the performance of a Spring Boot application?
+35. How would you handle memory leaks in a Spring Boot application?
+
+### Deployment Scenarios
+36. How would you deploy a Spring Boot application to AWS?
+37. How would you deploy a Spring Boot application to Azure?
+38. How would you deploy a Spring Boot application to Google Cloud?
+39. How would you create a Docker image for a Spring Boot application?
+40. How would you configure a Spring Boot application for Kubernetes?
+
+### Microservices Scenarios
+41. How would you design a microservices architecture using Spring Boot?
+42. How would you implement service discovery in a Spring Boot microservices architecture?
+43. How would you handle inter-service communication in a Spring Boot microservices architecture?
+44. How would you implement API Gateway in a Spring Boot microservices architecture?
+45. How would you handle distributed tracing in a Spring Boot microservices architecture?
+
+### Advanced Microservices Scenarios
+46. How would you implement circuit breaker pattern in a Spring Boot microservices architecture?
+47. How would you handle service registry and discovery using Eureka in Spring Boot?
+48. How would you implement load balancing in a Spring Boot microservices architecture?
+49. How would you handle configuration management in a Spring Boot microservices architecture?
+50. How would you implement security in a Spring Boot microservices architecture?
+
+### Final Scenarios
+51. How would you handle a situation where a Spring Boot application is not starting?
+52. How would you troubleshoot a Spring Boot application that is throwing exceptions?
+53. How would you handle a situation where a Spring Boot application is running out of memory?
+54. How would you implement a custom health check endpoint in Spring Boot?
+55. How would you handle a situation where a Spring Boot application is experiencing high latency?
+
+### Additional Scenarios
+56. How would you implement a custom filter in Spring Boot?
+57. How would you handle file downloads in a Spring Boot application?
+58. How would you implement a custom actuator endpoint in Spring Boot?
+59. How would you handle WebSocket communication in a Spring Boot application?
+60. How would you implement a custom error page in Spring Boot?
+
+These questions should help you prepare for various scenarios you might encounter in a Spring Boot interview. If you need further details or explanations on any of these topics, feel free to ask!
+
+## Top 100 spring boot interview question scenario based
+
+Sure! Here are 100 scenario-based Spring Boot interview questions to help you prepare:
+
+### Basic Scenarios
+1. How would you create a simple RESTful web service using Spring Boot?
+2. How would you configure a Spring Boot application to connect to a MySQL database?
+3. How would you handle application properties in Spring Boot?
+4. How would you create a custom exception handler in Spring Boot?
+5. How would you implement logging in a Spring Boot application?
+
+### Intermediate Scenarios
+6. How would you secure a Spring Boot application using Spring Security?
+7. How would you implement pagination and sorting in a Spring Boot REST API?
+8. How would you handle file uploads in a Spring Boot application?
+9. How would you configure a Spring Boot application to use a different profile (e.g., dev, prod)?
+10. How would you implement caching in a Spring Boot application?
+
+### Advanced Scenarios
+11. How would you create a scheduled task in Spring Boot?
+12. How would you implement internationalization (i18n) in a Spring Boot application?
+13. How would you handle transactions in a Spring Boot application?
+14. How would you integrate Spring Boot with a message broker like RabbitMQ or Kafka?
+15. How would you implement a custom validation in Spring Boot?
+
+### Security Scenarios
+16. How would you implement JWT authentication in a Spring Boot application?
+17. How would you secure REST endpoints in a Spring Boot application?
+18. How would you handle CSRF protection in a Spring Boot application?
+19. How would you configure role-based access control in Spring Boot?
+20. How would you implement OAuth2 authentication in a Spring Boot application?
+
+### Data Management Scenarios
+21. How would you handle database migrations in a Spring Boot application using Flyway or Liquibase?
+22. How would you implement a multi-database configuration in Spring Boot?
+23. How would you handle optimistic locking in a Spring Boot application?
+24. How would you implement a custom repository in Spring Data JPA?
+25. How would you handle batch processing in a Spring Boot application?
+
+### Testing Scenarios
+26. How would you write unit tests for a Spring Boot REST controller?
+27. How would you write integration tests for a Spring Boot application?
+28. How would you mock dependencies in a Spring Boot test?
+29. How would you test a Spring Boot application with an embedded database?
+30. How would you use Testcontainers to test a Spring Boot application?
+
+### Performance Scenarios
+31. How would you optimize the performance of a Spring Boot application?
+32. How would you handle slow database queries in a Spring Boot application?
+33. How would you implement asynchronous processing in Spring Boot?
+34. How would you monitor the performance of a Spring Boot application?
+35. How would you handle memory leaks in a Spring Boot application?
+
+### Deployment Scenarios
+36. How would you deploy a Spring Boot application to AWS?
+37. How would you deploy a Spring Boot application to Azure?
+38. How would you deploy a Spring Boot application to Google Cloud?
+39. How would you create a Docker image for a Spring Boot application?
+40. How would you configure a Spring Boot application for Kubernetes?
+
+### Microservices Scenarios
+41. How would you design a microservices architecture using Spring Boot?
+42. How would you implement service discovery in a Spring Boot microservices architecture?
+43. How would you handle inter-service communication in a Spring Boot microservices architecture?
+44. How would you implement API Gateway in a Spring Boot microservices architecture?
+45. How would you handle distributed tracing in a Spring Boot microservices architecture?
+
+### Advanced Microservices Scenarios
+46. How would you implement circuit breaker pattern in a Spring Boot microservices architecture?
+47. How would you handle service registry and discovery using Eureka in Spring Boot?
+48. How would you implement load balancing in a Spring Boot microservices architecture?
+49. How would you handle configuration management in a Spring Boot microservices architecture?
+50. How would you implement security in a Spring Boot microservices architecture?
+
+### Final Scenarios
+51. How would you handle a situation where a Spring Boot application is not starting?
+52. How would you troubleshoot a Spring Boot application that is throwing exceptions?
+53. How would you handle a situation where a Spring Boot application is running out of memory?
+54. How would you implement a custom health check endpoint in Spring Boot?
+55. How would you handle a situation where a Spring Boot application is experiencing high latency?
+
+### Additional Scenarios
+56. How would you implement a custom filter in Spring Boot?
+57. How would you handle file downloads in a Spring Boot application?
+58. How would you implement a custom actuator endpoint in Spring Boot?
+59. How would you handle WebSocket communication in a Spring Boot application?
+60. How would you implement a custom error page in Spring Boot?
+
+### Expert-Level Scenarios
+61. How would you design a microservices architecture using Spring Boot?
+62. How would you implement service discovery in a microservices architecture with Spring Boot?
+63. How would you handle inter-container communication in a microservices architecture with Spring Boot?
+64. How would you optimize Spring Boot for a high-traffic application?
+65. How would you implement disaster recovery for Spring Boot applications?
+
+### Advanced Security Scenarios
+66. How would you implement Docker Content Trust in a Spring Boot application?
+67. How would you secure the Spring Boot application daemon?
+68. How would you handle compliance and auditing for Spring Boot applications?
+69. How would you implement security best practices for Spring Boot applications?
+70. How would you handle security incidents involving Spring Boot applications?
+
+### Advanced Networking Scenarios
+71. How would you configure a multi-host Spring Boot network?
+72. How would you implement service mesh for Spring Boot applications?
+73. How would you handle network isolation for Spring Boot applications?
+74. How would you troubleshoot DNS issues in Spring Boot applications?
+75. How would you implement network policies for Spring Boot applications?
+
+### Advanced CI/CD Scenarios
+76. How would you implement canary deployments with Spring Boot?
+77. How would you handle rollback in a CI/CD pipeline with Spring Boot?
+78. How would you manage Spring Boot images in a CI/CD pipeline?
+79. How would you implement automated testing for Spring Boot applications?
+80. How would you handle multi-environment deployments with Spring Boot?
+
+### Advanced Orchestration Scenarios
+81. How would you manage secrets in Spring Boot?
+82. How would you implement rolling updates in Spring Boot?
+83. How would you handle service dependencies in Spring Boot?
+84. How would you implement monitoring and logging in Spring Boot?
+85. How would you handle disaster recovery in Spring Boot?
+
+### Final Scenarios
+86. How would you handle a situation where a Spring Boot application is not responding?
+87. How would you implement load balancing for Spring Boot applications?
+88. How would you manage Spring Boot networks in a multi-host environment?
+89. How would you handle resource constraints in Spring Boot applications?
+90. How would you implement logging and monitoring for Spring Boot?
+
+### Additional Scenarios
+91. How would you handle a situation where a Spring Boot application is running out of disk space?
+92. How would you implement security best practices for Spring Boot applications?
+93. How would you handle a situation where a Spring Boot application is not able to connect to a database?
+94. How would you manage Spring Boot images in a CI/CD pipeline?
+95. How would you handle a situation where a Spring Boot application is not able to access external services?
+96. How would you set up a multi-container application using Spring Boot?
+97. How would you handle a situation where a Spring Boot application is consuming too much CPU?
+98. How would you implement a blue-green deployment strategy using Spring Boot?
+99. How would you manage Spring Boot images across multiple environments (dev, staging, prod)?
+100. How would you handle a situation where a Spring Boot application is failing health checks?
+
+These questions should help you prepare for various scenarios you might encounter in a Spring Boot interview. If you need further details or explanations on any of these topics, feel free to ask!
+
+## 50 Java Collections questions
+
+
+Here are some common Java Collections interview questions that you might find useful for your preparation:
+
+1. **What is the Java Collections Framework?**
+2. **Explain the differences between List, Set, and Map.**
+3. **What are the main differences between ArrayList and LinkedList?**
+4. **How does HashMap work internally?**
+5. **What is the difference between HashSet and TreeSet?**
+6. **Explain the concept of fail-fast and fail-safe iterators.**
+7. **What is the difference between Iterator and ListIterator?**
+8. **How do you synchronize a collection in Java?**
+9. **What is the difference between Comparable and Comparator?**
+10. **Explain the use of the Collections utility class.**
+11. **What is the difference between HashMap and Hashtable?**
+12. **How does ConcurrentHashMap work?**
+13. **What is the difference between synchronized collections and concurrent collections?**
+14. **Explain the concept of blocking queues.**
+15. **What are the advantages of the Java Collections Framework?**
+16. **How do you convert an array to a list in Java?**
+17. **What is the difference between Enumeration and Iterator?**
+18. **Explain the concept of a priority queue.**
+19. **What is the difference between a stack and a queue?**
+20. **How do you remove duplicates from a list in Java?**
+21. **What is the difference between a shallow copy and a deep copy of a collection?**
+22. **Explain the concept of a Deque.**
+23. **What is the difference between a Vector and an ArrayList?**
+24. **How do you sort a collection in Java?**
+25. **What is the difference between a synchronized collection and a concurrent collection?**
+26. **Explain the concept of a WeakHashMap.**
+27. **What is the difference between a TreeMap and a HashMap?**
+28. **How do you iterate over a collection in Java?**
+29. **What is the difference between a HashSet and a LinkedHashSet?**
+30. **Explain the concept of a NavigableMap.**
+31. **What is the difference between a Queue and a Deque?**
+32. **How do you convert a list to a set in Java?**
+33. **What is the difference between a HashMap and a LinkedHashMap?**
+34. **Explain the concept of a BlockingQueue.**
+35. **What is the difference between a PriorityQueue and a LinkedList?**
+36. **How do you create an immutable collection in Java?**
+37. **What is the difference between a ConcurrentHashMap and a synchronized HashMap?**
+38. **Explain the concept of a CopyOnWriteArrayList.**
+39. **What is the difference between a HashSet and a TreeSet?**
+40. **How do you merge two collections in Java?**
+41. **What is the difference between a List and a Set?**
+42. **Explain the concept of a ConcurrentSkipListMap.**
+43. **What is the difference between a HashMap and a TreeMap?**
+44. **How do you filter a collection in Java?**
+45. **What is the difference between a Stack and a Deque?**
+46. **Explain the concept of a ConcurrentLinkedQueue.**
+47. **What is the difference between a HashSet and a LinkedHashSet?**
+48. **How do you find the maximum element in a collection in Java?**
+49. **What is the difference between a List and a Queue?**
+50. **Explain the concept of a ConcurrentSkipListSet.**
+
+For more detailed questions and answers, you can refer to resources like [InterviewBit](https://www.interviewbit.com/java-collections-interview-questions/)[1](https://javarevisited.blogspot.com/2020/04/50-java-collection-and-generics-interview-questions-answers.html), Guru99[2](https://www.careers360.com/courses-certifications/articles/java-collections-interview-questions), and Javatpoint[3](https://www.interviewbit.com/java-collections-interview-questions/).
+
+If you have any specific questions or need further explanations on any topic, feel free to ask!
